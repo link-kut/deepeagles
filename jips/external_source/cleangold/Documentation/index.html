@@ -1,0 +1,336 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>CleanGold - documentation</title>
+	
+	<meta name="description" content="Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form here. Thanks so much!">
+	<meta name="author" content="Liviu Holhos">
+	<meta name="copyright" content="Liviu Holhos">
+	<meta name="generator" content="Documenter v1.6 http://rxa.li/documenter">
+	<meta name="date" content="2012-10-22T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	
+	<link rel="shortcut icon" href="favicon.png" />
+
+	<script src="js/jquery.1.6.4.js"></script>
+	
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	
+	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+	<script src="js/shCore.js"></script>
+	<script src="js/shBrushCss.js"></script>
+	<script src="js/shBrushXml.js"></script>
+	<script src="js/shBrushJScript.js"></script>
+	<script>SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>
+
+	<script>document.createElement('section');var duration=500,easing='swing';</script>
+	<script src="js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#0000FF;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ol a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ol{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ol a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ol a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+			<li><a href="#main_structure">Main Structure</a></li>
+			<li><a href="#grid_layout">Grid Layout</a></li>
+			<li><a href="#css_styling">CSS Styling</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#tips_tricks">Tips & Tricks</a></li>
+			<li><a href="#sources_and_credits">Sources and Credits</a></li>
+
+		</ol>
+		<div id="documenter_copyright">Copyright &copy; Liviu Holhos 2012</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover"><h1>CleanGold</h1><h2>documentation</h2><hr><ul><li>Created: 03/10/2011</li><li>latest Update: 10/22/2012</li><li>By: Liviu Holhos</li><li><a href="http://themeforest.net/user/liviu_holhos">themeforest.net/user/liviu_holhos</a></li></ul><p>Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/liviu_holhos">here</a>. Thanks so much!</p></section><section id="main_structure">
+	<h3>Main Structure</h3><hr class="notop">
+<p>
+	This theme has a responsive layout with 12 columns. You can customize the content, sidebar, navbar to be as width as you want. The general template structure is the same throughout the template. Here it is:</p>
+<pre class="brush: html">
+&lt;section id=&quot;header&quot; class=&quot;container&quot;&gt;
+&lt;header id=&quot;logo&quot; class=&quot;grid3 col&quot;&gt;
+&lt;hgroup&gt;
+&lt;h1&gt;&lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;img/logo.png&quot; class=&quot;scale&quot; width=&quot;180&quot; height=&quot;67&quot; alt=&quot;CleanGold&quot;/&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/hgroup&gt;
+&lt;/header&gt;
+&lt;nav id=&quot;menu&quot; class=&quot;grid9 col clearfix&quot;&gt;
+...
+&lt;/nav&gt;
+&lt;div class=&quot;sep sep-small&quot;&gt;&lt;/div&gt;
+&lt;span id=&quot;switch&quot;&gt;Menu &lt;strong&gt;&amp;#8801;&lt;/strong&gt;&lt;/span&gt;
+&lt;/section&gt;
+&lt;section id=&quot;content&quot; class=&quot;container&quot;&gt;
+...
+&lt;a href=&quot;#top&quot; id=&quot;top-link&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/section&gt;
+&lt;footer id=&quot;footer&quot;&gt;
+...
+&lt;/footer&gt;</pre>
+<p>
+	You can change the logo image by placing an image file into the img directory and setting it in the &lt;h1&gt; element.</p>
+<p>
+	The template contain &lt;head&gt; information that you would probably want to edit: title, description (SEO relevant), keywords (SEO relevant), favicon, apple touch icon and Facebook share image:</p>
+<pre class="brush: html">
+&lt;title&gt;Title goes here&lt;/title&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Description entered for SEO&quot; /&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;list of keywords&quot; /&gt;
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.png&quot; /&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;img/touch-icon.png&quot; /&gt;
+&lt;link rel=&quot;image_src&quot; href=&quot;img/touch-icon.png&quot; /&gt;</pre>
+<p>
+	If you would like to edit the color, font, or style of any elements in one of these columns, you would do the following:</p>
+<pre class="brush: css">
+a, a:visited { color: #333; }
+a:hover, a:focus { color: #000; }</pre>
+<p>
+	If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn&#39;t a similar style that has more weight.</p>
+<pre class="brush: css">
+.container a { color: #555; }
+.container a:hover,&nbsp;.container a:focus { color: #000;  }</pre>
+<p>
+	So, to ensure that your new styles are applied, make sure that they carry enough &quot;weight&quot; and that there isn&#39;t a style lower in the CSS file that is being applied after yours.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="grid_layout">
+	<h3>Grid Layout</h3><hr class="notop">
+<p>
+	The 12-column grid is divided into portions that are fixed wide. Each column has margin on the left and right, which create some gutters between columns. The columns scale down well on mobile and can be used to create a layout with ease. There is a specific set of class based rules you need to follow. To get the idea please read a few information from this article:&nbsp;<a href="http://sonspring.com/journal/960-grid-system">http://sonspring.com/journal/960-grid-system</a></p>
+<p>
+	The <strong>container</strong> element is the top level DOM element that needs to be present. All the main section of the site already have this class, ex:</p>
+<pre class="brush: html">
+&lt;section id=&quot;header&quot; class=&quot;container&quot;&gt;</pre>
+<p>
+	After this there are column sections identified by the <strong>col</strong> class. Each column has a specific <strong>gridX</strong>&nbsp;class to specify the dimensions. For example, to build a content area 2/3 width and a sidebar 1/3 layout you&#39;ll have to follow this markup:</p>
+<p>
+	&nbsp;</p>
+<pre class="brush: html">
+&lt;div class=&quot;grid9 col&quot;&gt;
+...
+&lt;/div&gt;
+&lt;div class=&quot;grid3 col&quot;&gt;
+...
+&lt;/div&gt;
+&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</pre>
+<p>
+	A row must be 12 columns width, meaning if you add all the column sizes it must be equal to 12 (in our example 9+3=12). The clear element is used for floating fixes. Use it when neccesary:&nbsp;<a href="http://css-tricks.com/containers-dont-clear-floats/">http://css-tricks.com/containers-dont-clear-floats/</a></p>
+<p>
+	Please see the grids.html file as a starting point for your grid layout.</p>
+</section>
+<section id="css_styling">
+	<h3>CSS Styling</h3><hr class="notop">
+<p>
+	I&#39;m using only one highly optimized CSS file that uses mobile first approach. That means all the style is applied for mobile devices first and if the screen is bigger the template has more rich, bandwidth consuming features. The stylesheet contains a general reset CSS file so all browsers behave alsmost the same way. This file also contains some general styling, such as anchor tag colors, font-sizes, etc. Keep in mind, that these values might be overridden at any time.</p>
+<p>
+	The second file contains all of the specific stylings for the page. The file is separated into sections using:</p>
+<pre class="brush: css">
+/* Section */
+some code
+/* Footer */
+some codeetc, etc.
+</pre>
+<p>
+	If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited. Almost every widget in the template can be customized easily this way. Make sure you check out the HTML markup first and then modify its style in the CSS file.</p>
+</section>
+<section id="javascript">
+	<h3>JavaScript</h3><hr class="notop">
+<p>
+	This theme imports three mandatory Javascript files.</p>
+<ol>
+	<li>
+		jQuery</li>
+	<li>
+		Minified plugins</li>
+	<li>
+		The sites initialization methods</li>
+</ol>
+<ol>
+	<li>
+		jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
+	<li>
+		The template includes a rich set of plugins in order to enhace the user experience:&nbsp;window smartresize, &nbsp;mousewheel support,&nbsp;easing effects,&nbsp;tabify,&nbsp;Quicksand,&nbsp;fancyBox 2,&nbsp;Infinite Scroll 2,&nbsp;FlexSlider,&nbsp;jquery.event.drag +&nbsp;jquery.event.drop,&nbsp;Roundabout,&nbsp;panorama360,&nbsp;Isotope.</li>
+	<li>
+		The site.js script is used to initialize all the plugins and add events to certain objects. Here is the place where you can modify all the widgets behaviour.</li>
+</ol>
+<p>
+	&nbsp;</p>
+<div>
+	Here are the default setting of the plugins:</div>
+<pre class="brush: js">
+$(&#39;.flexslider.simple&#39;).flexslider({
+   animation      : &quot;slide&quot;,
+   animationSpeed : 750,
+   easing         : &quot;easeInOutCirc&quot;,
+   useCSS         : false,
+   controlNav     : false,
+   start          : function() {
+      $(&#39;html&#39;).removeClass(&#39;loading&#39;);
+   }
+});</pre>
+<p>
+	&nbsp;</p>
+<pre class="brush: js">
+$(&#39;.roundabout ul&#39;).roundabout({
+   responsive    : true,
+   enableDrag    : true,
+   easing        : &quot;easeInOutCirc&quot;,
+   dropEasing    : &#39;easeOutBounce&#39;,
+   minScale      : 0.6,
+   duration      : 400,
+   dropDuration  : 500
+});</pre>
+<p>
+	&nbsp;</p>
+<pre class="brush: js">
+$(&#39;.panorama-view&#39;).panorama360({
+   sliding_direction   : 1,
+   sliding_controls    : true,
+   sliding_interval    : 20
+});</pre>
+<p>
+	&nbsp;</p>
+<pre class="brush: js">
+$(&quot;.lightbox, .button-fullsize, .fullsize&quot;).fancybox({
+   padding    : 0,
+   loop       : true,
+   fitToView  : true,
+   mouseWheel : false,
+   width      : &#39;100%&#39;,
+   height     : &#39;90%&#39;,
+   autoSize   : false,
+   closeClick : false,
+   overlay    : { showEarly  : true },
+   helpers    : { media : {} }
+});</pre>
+<p>
+	&nbsp;</p>
+<pre class="brush: js">
+$(&#39;.isotope&#39;).isotope({
+   itemSelector    : &#39;.col:visible&#39;,
+   animationEngine : &#39;jquery&#39;,
+   resizable       : true
+});</pre>
+<p>
+	Make sure you check out thre documentation of each plugin for its complete set of options.</p>
+</section>
+<section id="tips_tricks">
+	<h3>Tips & Tricks</h3><hr class="notop">
+<p>
+	Here are a couple of neat tricks used in this theme and how to use them:</p>
+<ol>
+	<li>
+		set active menu item: add a&nbsp;<strong>current_page_item</strong> class to the active menu element (add it to the &lt;li&gt; element);</li>
+	<li>
+		create submenu: add a <strong>arrow</strong> class to the parent menu element and specify a&nbsp;&lt;ul class=&quot;sub-menu&quot;&gt; list of elements to be used for the submenu (see markup for details);</li>
+	<li>
+		the title of each page is a &lt;h1&gt; marked with&nbsp;<strong>page-title</strong> class; you can also specify a description of the page in a&nbsp;&lt;div class=&quot;subtitle&quot;&gt; container, but this is optional;</li>
+	<li>
+		add a tooltip to an element: add <strong>tooltip</strong> class to the element and specify a <strong>tip</strong> attribute:&nbsp;<span style="background-color: rgb(244, 244, 244); color: rgb(51, 51, 51); font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace; font-size: 11px; ">&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; tip=&quot;Tooltip example&quot;&gt;link&lt;/a&gt;</span></li>
+	<li>
+		set image to be responsive:&nbsp;just add a <strong>scale</strong> class to the image:&nbsp;<span style="background-color: rgb(244, 244, 244); color: rgb(51, 51, 51); font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace; font-size: 11px; ">&lt;img src=&quot;thumb.jpg&quot; class=&quot;scale&quot; alt=&quot;&quot; /&gt;</span></li>
+	<li>
+		make an image open in a lightbox: add a <strong>lightbox </strong>class to the wrapping link and everything should work out well:&nbsp;<span style="background-color: rgb(244, 244, 244); color: rgb(51, 51, 51); font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace; font-size: 11px; ">&lt;a href=&quot;full-image.jpg&quot; class=&quot;lightbox&quot;&gt;&lt;img src=&quot;thumb.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;</span></li>
+	<li>
+		create a thumbnail with link or fullsize icons:&nbsp;wrap your image in a div.thumb container and add extra information to it like this:
+		<pre>
+&lt;div class=&quot;thumb&quot;&gt;
+    &lt;a href=&quot;link.html&quot; class=&quot;lightbox&quot;&gt;&lt;img src=&quot;thumb.jpg&quot; class=&quot;scale&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;div class=&quot;info pattern&quot;&gt;
+        &lt;a href=&quot;link.html&quot; class=&quot;button-link&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+		Additional information details can be added, please see the index.html as a starting point example;</li>
+	<li>
+		add cool CSS3 animation on any element hover:&nbsp;there are plenty of animations to choose from: shake, flash, bounce, tada, swing, wobble, wiggle, pulse, flip. For example, if you want a submit buttons to shake when hovered specify the &ldquo;animated&rdquo; class and the animation type name:&nbsp;<span style="background-color: rgb(244, 244, 244); color: rgb(51, 51, 51); font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace; font-size: 11px; ">&lt;input type=&quot;submit&quot; class=&quot;animated shake&quot; value=&quot;Go&quot; /&gt;</span></li>
+	<li>
+		sticky footer:&nbsp;sometimes there are problems with pages that have little content, especially with the footer. It should stick to the bottom of the page. To add this functionality&nbsp;follow the example from the 404.html file; the markup with the &ldquo;wrapper-frame&rdquo;, &ldquo;wrapper-row&rdquo;, &ldquo;wrapper-row wrapper-expand&rdquo; classes. The original solution can be found here:<a href="http://pixelsvsbytes.com/blog/2011/09/sticky-css-footers-the-flexible-way/" rel="nofollow">http://pixelsvsbytes.com/blog/2011/09/sticky-css-footers-the-flexible-way/</a>&nbsp;(slightly modified);</li>
+	<li>
+		<p>
+			make videos and embeds responsive:&nbsp;wrap the video or embed in the following markup structure:</p>
+		<pre>
+&lt;div class=&quot;video-container&quot;&gt;
+    &lt;div class=&quot;video-wrapper&quot;&gt;
+        &lt;iframe src=&quot;...&quot;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+	</li>
+	<li>
+		there are multiple options when it comes to buttons: small, normal, big , yellow, gray, black. It&#39;s easy to add a .button class to any element (anchors for example) ad set a color preference and size option. Here is a big gray button:&nbsp;<span style="background-color: rgb(244, 244, 244); color: rgb(51, 51, 51); font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace; font-size: 11px; ">&lt;a href=&quot;#&quot; class=&quot;button big gray&quot;&gt;Big Gray&lt;/a&gt;</span>. Please see more details in the forms-buttons.html file;</li>
+	<li>
+		alerts are a good way to capture attention:&nbsp;<span style="color: rgb(51, 51, 51); font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace; font-size: 11px; background-color: rgb(244, 244, 244); ">&lt;div class=&quot;alert info&quot;&gt;Information box&lt;/div&gt;</span>. Please see the alerts-widgets.html file for different options;</li>
+	<li>
+		accordions: add a <strong>accordion</strong> class to any &lt;ul&gt; list and it will be transformed automatically into an accordion widget; additionally you can specify which accordion box is opened initally with an <strong>active</strong> class on each list&#39;s &lt;li&gt;;</li>
+	<li>
+		tab container: wrap the content in a <strong>tab-container</strong> element with a &lt;ul class&quot;tabs&quot;&gt; list followed by <strong>.tab_content</strong> elements; please see the&nbsp;alerts-widgets.html for the markup;</li>
+</ol>
+</section>
+<section id="sources_and_credits">
+	<h3>Sources and Credits</h3><hr class="notop">
+<p>
+	I&#39;ve used the following images, icons or other files as listed below:</p>
+<ul>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://960.gs/" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">960px grid</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="https://github.com/louisremi/jquery-smartresize" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Window smartresize</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://unwrongest.com/projects/tabify" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Tabify</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://razorjack.net/quicksand" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Quicksand</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://woothemes.com/flexslider" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">FlexSlider</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://fancyapps.com/fancybox" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Fancybox</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://isotope.metafizzy.co/" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Isotope</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="https://github.com/paulirish/infinite-scroll" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Infinite Scroll</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://threedubmedia.com/" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">jquery.event.drag + jquery.event.drop</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://fredhq.com/projects/roundabout" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Roundabout</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://codecanyon.net/item/360-panoramic-viewer/2684810" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">My personal Panorama360 plugin</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://brontocss.liviuholhos.com/menu.html" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">My personal Bronto CSS Menu</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://www.ascenderfonts.com/" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Open Sans Font</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://addthis.com/" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">AddThis social share</a></li>
+	<li style="margin: 0px 0px 2px; padding: 0px 0px 0px 8px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; ">
+		<a href="http://freegreatpicture.com/" rel="nofollow" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; text-decoration: none; color: rgb(138, 103, 65); ">Free images from FreeGreatPicture.com</a></li>
+</ul>
+<hr>
+<p>
+	Once again, thank you so much for purchasing this theme. As I said at the beginning, I&#39;d be glad to help you if you have any questions relating to this theme. No guarantees, but I&#39;ll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the &quot;Item Discussion&quot; section.</p>
+</section>
+
+	</div>
+</body>
+</html>

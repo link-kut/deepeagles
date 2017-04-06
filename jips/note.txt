@@ -1,0 +1,15 @@
+abstract가 안나옴 - 해결하기 위해 DB의 칼럼을 paperabstract로 변경함
+
+- DigitalLibrary.jsp 수정
+짝수에 또 생기는 이유 찾기
+
+- about.jsp 수정
+show/Hide Abstract 수정 필요
+abstract가 안나옴 - 해결하기 위해 DB의 칼럼을 paperabstract로 변경함
+journal img cover 팝업 띄우기
+
+- onlinefirst.jsp 수정
+show/Hide Abstract 수정 필요
+
+- paper.jsp
+ACM style 이름 수정 필요

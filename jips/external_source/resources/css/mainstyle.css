@@ -1,0 +1,297 @@
+body {
+  margin:0px;
+  padding:0px;
+  line-height:1.4em;
+  font-family: 'Arial', serif;
+  font-size: 15px;
+  background-color:#252525;
+  background-image:url('../images/blackleather2.jpg');
+  overflow-x:hidden;
+}
+
+div {
+  font-family: 'Arial', serif;
+}
+
+img {
+  border:0;
+}
+
+hr {
+  color: #DCDCDC;
+  size: 1px;
+}
+
+table {
+  font-family: 'Arial', serif;
+  cellpadding:0px;
+  cellspacing:0px;
+}
+
+#title {
+	font-size:medium;
+	font-weight:bold;
+	color:#2B5B09;
+}
+
+#title_name {
+	font-family:Verdana;
+	font-size:13px;
+	font-weight:bold;
+	color:#2B5B09;
+}
+
+#smalltitle {
+	font-size:small;
+	font-weight:bold;
+	color:#2B5B09;
+}
+
+#NRF {
+
+	font-weight:bold;
+	color:#634C2C;
+}
+
+.copyright {
+  padding:0; 
+  font-size:x-small; 
+  font-family:verdana;
+}
+
+.doifont {
+  color:#5d5d5d; 
+  font-size:small; 
+  font-style:italic
+}
+.DL_no {
+	font-size:small;
+	font-weight:bold;
+	color:#616D7E;
+}
+
+
+.Top {
+  background-color:white;
+  height: 5px;
+
+}
+
+.Searchbar {
+  text-align:right;
+  background-color:white;
+}
+
+.MainMenuTable {
+  width:1024px;
+  height:26px;
+  border:0px;
+}
+
+
+.Logo {
+  background-image:url('../images/logoissn.jpg');
+  width: 1024px;
+  height: 59px;
+  background-color:white;
+  color:gray;
+  font-family: 'Arial', serif;
+  font-size: 15px;
+  text-align: right;
+  z-index:3;
+  -webkit-box-shadow:0px 10px 30px 10px #000;
+  -moz-box-shadow:0px 10px 30px 10px #000;
+  box-shadow:0px 10px 30px 10px #000;
+  padding-left:0%; 
+  margin:0 auto;
+}
+
+.Menu {
+  width: 1024px;
+  height: 23px;
+  z-index:3;
+  -webkit-box-shadow:0px 10px 30px 10px #000;
+  -moz-box-shadow:0px 10px 30px 10px #000;
+  box-shadow:0px 10px 30px 10px #000;
+  margin:0 auto;
+}
+
+
+.Contents {
+  width: 1024px;
+  color:black;
+  font-family: 'Arial', serif;
+  font-size: 15px;
+  -webkit-box-shadow:0px 10px 30px 10px #000;
+  -moz-box-shadow:0px 10px 30px 10px #000;
+  box-shadow:0px 10px 30px 10px #000;
+  margin:0 auto;
+}
+
+.ContentsTable {
+  width:1024px;
+  height:auto; 
+  background-color:#F2F2F0; 
+  background-image:url('../images/table.png');
+  align:center;
+}
+
+.CommonTable {
+  width:840px;
+  height:auto;
+  background-color:#F2F2F0;
+  border:0;
+  margin:0 auto;
+}
+
+.BottomTable {
+  width:780px;
+  height:auto;
+  border:0;
+  margin:0 auto;
+}
+
+
+
+input.text {
+  background-color:#EDEDEC;
+  border-width:0px;
+  border-color:rgb(200,200,200);
+  border-style:solid;
+  ime-mode:inactive;
+  font-family: 'Verdana', serif;
+  font-size: 10px;
+  color:#333333;
+  outline:none;
+}
+
+input.button {
+  font-size:12pt;
+  font-weight:bold;
+  background-color:#EDEDEC;;
+  border-width:0px;
+  border-color:#BCBBBB;
+  border-style:solid;
+}
+
+#strong {
+	font-size: 18px;
+	color: #422A0A;
+	font-style:italic;
+}
+
+.statistics {
+  padding-right:3px;
+  padding-left:3px;
+  background-color:#EDEDEC;
+  border:1;
+  border-width:1px;
+  border-color:#BCBBBB;
+  border-style:dashed;
+}
+
+.citebox {
+  padding-right:10px;
+  padding-left:10px;
+  background-color:#EDEDEC;
+  border:1;
+  border-width:1px;
+  border-color:#BCBBBB;
+  border-style:dashed;
+}
+
+.MiniAbstract {
+
+  padding-right:5px;
+  padding-left:5px;
+  background-color:#EDEDEC;
+  border:1;
+  border-width:1px;
+  border-color:#BCBBBB;
+  border-style:dashed;
+}
+
+.aboutTable {
+  width:150px;
+  background-color:#EDEDEC;
+  border:1;
+  border-width:1px;
+  border-color:#BCBBBB;
+  border-style:dashed;
+  margin:0 auto;
+}
+
+#newGreen {
+  color:#204C00;
+}
+
+a.Mainmenu:link { text-decoration:none; color: #000000}
+a.Mainmenu:visited { text-decoration:none; color: #000000}
+a.Mainmenu:active { text-decoration:none; color: #000000}
+a.Mainmenu:hover { text-decoration:none; color: #939393}
+
+a.BlackGrayHover:link { text-decoration:none; color: #000000}
+a.BlackGrayHover:visited { text-decoration:none; color: #000000}
+a.BlackGrayHover:active { text-decoration:none; color: #000000}
+a.BlackGrayHover:hover { text-decoration:none; color: #939393}
+
+a.DL_no:link { text-decoration:none; color:#000000 }
+a.DL_no:visited { text-decoration:none; color:#000000 }
+a.DL_no:active { text-decoration:none; color:#000000 }
+a.DL_no:hover { text-decoration:underline; color:#2B5B09 }
+
+a.Papervol:link { text-decoration:none; color: #2B5B09;}
+a.Papervol:visited { text-decoration:none; color: #2B5B09;}
+a.Papervol:active { text-decoration:none; color:#2B5B09;}
+a.Papervol:hover { text-decoration:none; color: #000000;}
+
+a.Papertitle:link { text-decoration:none; color: #000000; font-size:large}
+a.Papertitle:visited { text-decoration:none; color: #000000; font-size:large}
+a.Papertitle:active { text-decoration:none; color: #000000; font-size:large}
+a.Papertitle:hover { text-decoration:none; color: #2B5B09; font-size:large}
+
+a.Recent:link { text-decoration:none; color: #000000;}
+a.Recent:visited { text-decoration:none; color: #000000;}
+a.Recent:active { text-decoration:none; color: #000000;}
+a.Recent:hover { text-decoration:none; color: #2B5B09;}
+
+a.Paperauthor:link { text-decoration:none; color: #2B5B09}
+a.Paperauthor:visited { text-decoration:none; color: #2B5B09}
+a.Paperauthor:active { text-decoration:none; color: #2B5B09}
+a.Paperauthor:hover { text-decoration:underline; color: #2B5B09}
+
+a.Paperkeyword:link { text-decoration:none; color: #000000; font-weight:bold; font-size:small}
+a.Paperkeyword:visited { text-decoration:none; color: #000000; font-weight:bold; font-size:small}
+a.Paperkeyword:active { text-decoration:none; color: #000000; font-weight:bold; font-size:small}
+a.Paperkeyword:hover { text-decoration:none; color: #2B5B09; font-weight:bold; font-size:small}
+
+a.Papervolume2:link { text-decoration:none; color: #204C00; font-weight:bold; font-size:14pt;}
+a.Papervolume2:visited { text-decoration:none; color: #204C00; font-weight:bold; font-size:14pt;}
+a.Papervolume2:active { text-decoration:none; color: #204C00; font-weight:bold; font-size:14pt;}
+a.Papervolume2:hover { text-decoration:none; color: #000000; font-weight:bold; font-size:14pt;}
+
+a.Papervolume:link { text-decoration:none; color: #204C00; font-weight:bold; font-size:small;}
+a.Papervolume:visited { text-decoration:none; color: #204C00; font-weight:bold; font-size:small;}
+a.Papervolume:active { text-decoration:none; color: #204C00; font-weight:bold; font-size:small;}
+a.Papervolume:hover { text-decoration:none; color: #000000; font-weight:bold; font-size:small;}
+
+a.Pagenum:link {text-decoration:none; color: #000000}
+a.Pagenum:visited {text-decoration:none; color: #000000}
+a.Pagenum:active {text-decoration:none; color: #000000}
+a.Pagenum:hover {text-decoration:none; color: #939393}
+
+a.PagenumCurrent:link {text-decoration:underline; color: #000000}
+a.PagenumCurrent:visited {text-decoration:underline; color: #000000}
+a.PagenumCurrent:active {text-decoration:underline; color: #000000}
+a.PagenumCurrent:hover {text-decoration:underline; color: #000000}
+
+a.Admin:link { text-decoration:none; color: #000000}
+a.Admin:visited { text-decoration:none; color: #000000}
+a.Admin:active { text-decoration:none; color: #000000}
+a.Admin:hover { text-decoration:none; color: #000000}
+
+.paperTitle {
+	margin-top: -35px !important;
+	margin-bottom: -28px !important;
+	padding-bottom: 0px !important;
+}

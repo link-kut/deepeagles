@@ -1,0 +1,171 @@
+.search-div {
+    margin-bottom: -2.0em !important;
+}
+
+.myoverflow {
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+a.BlackGrayHover:link { text-decoration:none; color: #000000}
+a.BlackGrayHover:visited { text-decoration:none; color: #000000}
+a.BlackGrayHover:active { text-decoration:none; color: #000000}
+a.BlackGrayHover:hover { text-decoration:none; color: #939393}
+
+a.DL_no:link { text-decoration:none; color:#000000 }
+a.DL_no:visited { text-decoration:none; color:#000000 }
+a.DL_no:active { text-decoration:none; color:#000000 }
+a.DL_no:hover { text-decoration:underline; color:#2B5B09 }
+
+a.Papervol:link { text-decoration:none; color: #2B5B09;}
+a.Papervol:visited { text-decoration:none; color: #2B5B09;}
+a.Papervol:active { text-decoration:none; color:#2B5B09;}
+a.Papervol:hover { text-decoration:none; color: #000000;}
+
+a.Papertitle:link { text-decoration:none; color: #000000; font-size:large}
+a.Papertitle:visited { text-decoration:none; color: #000000; font-size:large}
+a.Papertitle:active { text-decoration:none; color: #000000; font-size:large}
+a.Papertitle:hover { text-decoration:none; color: #2B5B09; font-size:large}
+
+a.Recent:link { text-decoration:none; color: #000000;}
+a.Recent:visited { text-decoration:none; color: #000000;}
+a.Recent:active { text-decoration:none; color: #000000;}
+a.Recent:hover { text-decoration:none; color: #2B5B09;}
+
+a.Paperauthor:link { text-decoration:none; color: #2B5B09}
+a.Paperauthor:visited { text-decoration:none; color: #2B5B09}
+a.Paperauthor:active { text-decoration:none; color: #2B5B09}
+a.Paperauthor:hover { text-decoration:underline; color: #2B5B09}
+
+a.Paperkeyword:link { text-decoration:none; color: #000000; font-weight:bold; font-size:small}
+a.Paperkeyword:visited { text-decoration:none; color: #000000; font-weight:bold; font-size:small}
+a.Paperkeyword:active { text-decoration:none; color: #000000; font-weight:bold; font-size:small}
+a.Paperkeyword:hover { text-decoration:none; color: #2B5B09; font-weight:bold; font-size:small}
+
+a.Papervolume2:link { text-decoration:none; color: #204C00; font-weight:bold; font-size:14pt;}
+a.Papervolume2:visited { text-decoration:none; color: #204C00; font-weight:bold; font-size:14pt;}
+a.Papervolume2:active { text-decoration:none; color: #204C00; font-weight:bold; font-size:14pt;}
+a.Papervolume2:hover { text-decoration:none; color: #000000; font-weight:bold; font-size:14pt;}
+
+a.Papervolume:link { text-decoration:none; color: #204C00; font-weight:bold; font-size:small;}
+a.Papervolume:visited { text-decoration:none; color: #204C00; font-weight:bold; font-size:small;}
+a.Papervolume:active { text-decoration:none; color: #204C00; font-weight:bold; font-size:small;}
+a.Papervolume:hover { text-decoration:none; color: #000000; font-weight:bold; font-size:small;}
+
+a.Pagenum:link {text-decoration:none; color: #000000}
+a.Pagenum:visited {text-decoration:none; color: #000000}
+a.Pagenum:active {text-decoration:none; color: #000000}
+a.Pagenum:hover {text-decoration:none; color: #939393}
+
+a.PagenumCurrent:link {text-decoration:underline; color: #000000}
+a.PagenumCurrent:visited {text-decoration:underline; color: #000000}
+a.PagenumCurrent:active {text-decoration:underline; color: #000000}
+a.PagenumCurrent:hover {text-decoration:underline; color: #000000}
+
+.mini_abstract {
+    display: none;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: #EDEDEC;
+    border-width: 1px;
+    border-color: #BCBBBB;
+    border-style: dashed;
+}
+
+.call-to-action {
+    margin-bottom: 1.0em !important;
+    padding-bottom: 1.0em !important;
+    font-size: small !important;
+}
+
+.paperDetails {
+    margin-left: 1.2em !important;
+    margin-right: 1.2em !important;
+    line-height: 1.8em !important;
+}
+
+.digitalLib {
+    margin-left: 1.0em !important;
+    line-height: 1.5em !important;
+}
+
+.onlineFirst {
+    margin-left: 0.1em !important;
+    margin-right: 0.1em !important;
+}
+
+.Paperauthor, .details {
+    font-size: 1.1em !important;
+}
+
+.Paperkeyword {
+    font-size: 1.0em !important;
+    font-weight: 200 !important;
+    text-decoration: underline dotted !important;
+    border-bottom: 1px dashed;
+}
+
+.doifont {
+    color:#5d5d5d;
+    font-size: 1.1em !important;
+    font-style:italic
+}
+
+.paperAbstract, .stat {
+    line-height: 1.5em !important;
+}
+
+.citebox {
+    line-height: 1.5em !important;
+    padding-right:10px;
+    padding-left:10px;
+    padding-top: 0.5em !important;
+    padding-bottom: 1.0em !important;
+    background-color:#EDEDEC;
+    border:1;
+    border-width:1px;
+    border-color:#BCBBBB;
+    border-style:dashed;
+}
+
+.Recent {
+    font-size: 1.2em !important;
+}
+
+h1.title {
+    font-family: 'Signika', sans-serif;
+    font-size: 2.5em;
+    line-height: 1.0em;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0 0 1.1em 0;
+}
+
+h2.title {
+    line-height: 1.0em;
+    font-weight: 400;
+    margin: 0 0 1.1em 0;
+}
+
+.statistics {
+    width: 100% !important;
+    line-height: 1.5em !important;
+    padding-right:10px;
+    padding-left:10px;
+    padding-top: 0.5em !important;
+    padding-bottom: 1.0em !important;
+    background-color:#FFFFFF;
+    border-width:1px;
+    border-color:#BCBBBB;
+    border-style:dashed;
+}
+
+#chart_div {
+    width: 100% !important;
+    height: 100%; !important;
+}
+
+strong.big {
+    font-size: 1.2em !important;
+    font-weight: 700 !important;
+}
