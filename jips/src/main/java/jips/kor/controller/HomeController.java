@@ -35,9 +35,6 @@ public class HomeController {
     @Inject
     private SystemUtil systemUtil;
 
-    @Inject
-    private StatsController statsController;
-
     @Value("${env.text}")
     private String env;
 
@@ -151,25 +148,6 @@ public class HomeController {
         return "onlinefirst";
     }
 
-    @RequestMapping("/statistics")
-    public String statistics(Model model) {
-        this.setSideModelAttributes(model);
-        AuthorCountries authorCountries = statsController.getAuthorCountiesInfo("jips");
-        ReviewerCountries reviewerCountries = statsController.getReviewerCountiesInfo("jips");
-        model.addAttribute("authorTotal", authorCountries.getTotal());
-        model.addAttribute("authorCountryCodeMap", authorCountries.getCountryCodeMapFiltered());
-
-        model.addAttribute("reviewerTotal", reviewerCountries.getTotal());
-        model.addAttribute("reviewerCountryCodeMap", reviewerCountries.getCountryCodeMapFiltered());
-
-        Map<String, Map<String, Integer>> countryCodeMaps = new HashMap<>();
-        countryCodeMaps.put("authorMap", authorCountries.getCountryCodeMapFiltered());
-        countryCodeMaps.put("reviewerMap", reviewerCountries.getCountryCodeMapFiltered());
-        String[] countryRoles = {"author", "reviewer"};
-        model.addAttribute("countryRoles", countryRoles);
-        model.addAttribute("countryCodeMaps", countryCodeMaps);
-        return "statistics";
-    }
 
     @RequestMapping("/digital.lib")
     public String DigitalList(Model model, @RequestParam int y, @RequestParam int v, @RequestParam int n) {
