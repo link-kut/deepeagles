@@ -12,6 +12,10 @@ public interface HistoryMapper {
     @Select("SELECT * FROM historydb where num=#{pn} ORDER BY hit DESC LIMIT 1;")
     History findRecentHistoryByPn(@Param("pn") int pn);
 
+    @Select("SELECT * FROM historydb")
+    History findAll();
+
+
     @Insert("INSERT INTO historydb (" +
             "year, " +
             "month, " +

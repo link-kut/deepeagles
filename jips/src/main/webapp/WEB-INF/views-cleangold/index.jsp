@@ -15,9 +15,9 @@
 	<div class="border-header"></div>
 	<%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
 	<section id="content" class="container">
-		<h1 class="page-title text-right"><strong>Journal of Information Processing Systems</strong></h1>
+		<h1 class="page-title text-right"><strong>Journal of Information Processing Systems ${test2.id}</strong></h1>
 		<div class="grid10 col">
-			<p class="normal text-justify">The <strong>Journal of Information Processing Systems</strong>
+			<p class="normal text-justify">The <strong>Journal of Information Processing Systems ttttttt</strong>
 				(JIPS) is the official international journal of the Korea Information Processing Society.
 				As information processing systems are progressing at a rapid pace, the Korea Information Processing Society is committed to providing researchers and other professionals
 				with the academic information and resources they need to keep abreast with ongoing developments. The JIPS aims to be a premier source that enables researchers and professionals

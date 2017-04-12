@@ -47,9 +47,18 @@ public class HomeController {
     @RequestMapping
     public String home(Model model) {
         this.setSideModelAttributes(model);
+        System.out.println("testestsetst testestsetst");
         model.addAttribute("features", paperMapper.findByFeatured());
         model.addAttribute("latest", paperMapper.findByLatest());
         model.addAttribute("cPage", "home");
+        model.addAttribute("test","testestsetsetsetset");
+        History history = historyMapper.findAll();
+        history.setName(11111111);
+        if (history.getNum()>11){
+            history.setDate(2017);
+        }
+        model.addAttribute("test2",history);
+
         return "index";
     }
 

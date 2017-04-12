@@ -9,6 +9,15 @@ public class History {
     private int num;
     private int hit;
     private int downhit;
+    private int name;
+
+    public int getName() {
+        return name;
+    }
+
+    public void setName(int name) {
+        this.name = name;
+    }
 
     public int getId() {
         return id;

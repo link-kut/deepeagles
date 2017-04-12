@@ -15,6 +15,16 @@ public class PaperController {
     @Inject
     private PaperMapper paperMapper;
 
+    @RequestMapping("/test")
+    public String home(Model model) {
+        System.out.println("testestsetst testestsetst");
+        model.addAttribute("features", paperMapper.findByFeatured());
+        model.addAttribute("latest", paperMapper.findByLatest());
+        model.addAttribute("cPage", "home");
+        model.addAttribute("test","testestsetsetsetset");
+        return "index";
+    }
+
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
     public String edit(@RequestParam int num, Model model) {
