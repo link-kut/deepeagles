@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SystemUtil {
+
     public CustomDate getToday() {
         GregorianCalendar today = new GregorianCalendar ( );
         int year = today.get ( today.YEAR );

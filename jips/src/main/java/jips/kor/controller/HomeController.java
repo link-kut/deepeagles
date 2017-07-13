@@ -1,9 +1,7 @@
 package jips.kor.controller;
 
 import jips.kor.SystemUtil;
-import jips.kor.domain.CustomDate;
-import jips.kor.domain.History;
-import jips.kor.domain.Paper;
+import jips.kor.domain.*;
 import jips.kor.domain.statistics.country.AuthorCountries;
 import jips.kor.domain.statistics.country.ReviewerCountries;
 import jips.kor.repository.HistoryMapper;
@@ -18,10 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/")
@@ -46,19 +41,62 @@ public class HomeController {
 
     @RequestMapping
     public String home(Model model) {
+        Date date = new Date();
+        System.out.println("date = " + date.getTime());
+
+
+
         this.setSideModelAttributes(model);
-        System.out.println("testestsetst testestsetst");
+        System.out.println("정상적으로 호출되었습니다.");
         model.addAttribute("features", paperMapper.findByFeatured());
         model.addAttribute("latest", paperMapper.findByLatest());
         model.addAttribute("cPage", "home");
-        model.addAttribute("test","testestsetsetsetset");
-        History history = historyMapper.findAll();
+        model.addAttribute("test","정상적으로 호출되었습니다.");
+
+        /*************************************************************/
+        /*  투수DB기록 테스트용 */
+        List<Pitcher > p = historyMapper.findAll_pitcher();
+        int pWin=0;
+        int pLose=0;
+
+        for(int i=0;i<p.size();i++)
+        {
+            if(p.get(i).getW() == 1){
+                pWin+=1;
+            }
+            else{
+                pLose+=1;
+            }
+        }
+        model.addAttribute("pWin", pWin);
+        model.addAttribute("pLose", pLose);
+
+        /*************************************************************/
+
+        /*************************************************************/
+        //타자기록 테스트용
+        List<Hitter> h = historyMapper.findAll_hitter();
+
+        List<Integer> teamTPA = new ArrayList<Integer>();
+        //int teamTPA[] = {0};
+
+        for(int i = 0 ; i < h.size() ; i++) {
+            teamTPA.add(h.get(i).getTpa());
+            System.out.println(teamTPA);
+        }
+        model.addAttribute("teamTPA", teamTPA);
+
+        /*************************************************************/
+
+        /***********************************************************/
+        /*  주성형 예제  */
+        History history = new History();
         history.setName(11111111);
         if (history.getNum()>11){
             history.setDate(2017);
         }
         model.addAttribute("test2",history);
-
+        /***********************************************************/
         return "index";
     }
 
@@ -68,8 +106,6 @@ public class HomeController {
         model.addAttribute("cPage", "ip");
         return "internalprovision";
     }
-
-
 
     @RequestMapping("/editorialboard")
     public String EditorialBoard(Model model) {

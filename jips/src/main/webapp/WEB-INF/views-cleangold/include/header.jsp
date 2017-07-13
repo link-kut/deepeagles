@@ -1,11 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section id="header" class="container">
     <header id="logo" class="grid2 col">
-        <h1>
+        <h2>
             <a href="${baseUrl}" rel="home" title="JIPS">
-                <img src="${resources2}/img/jips/jips_logo.png" class="scale" height="67" alt="JIPS"/>
+                <!-- Home 로고 바꾸는 부분 -->
+                <img src="${resources2}/img/jips/Han_logo.png" class="scale" height="67" alt="main_logo_here"/>
             </a>
-        </h1>
+        </h2>
     </header>
     <nav id="menu" class="grid10 col indicators clearfix">
         <ul>
@@ -15,58 +16,75 @@
             <%--<li class="${cPage == 'st' ? 'current_page_item' : ''}">--%>
                 <%--<a href="${baseUrl}/statistics">Statistics</a>--%>
             <%--</li>--%>
-            <li class="${cPage == 'dl' ? 'current_page_item' : ''}">
-                <a href="${baseUrl}/digitallibrary">Digital Library</a>
+<%--            <li class="${cPage == 'dl' ? 'current_page_item' : ''}">
+                <a href="${baseUrl}/digitallibrary">Match Schedule</a> <!-- 해당 이름의 url로 접속 한다는 의미 -->
+            </li>--%>
+            <li class="${cPage == 'of' ? 'current_page_item' : ''}">
+                <a href="${baseUrl}/onlinefirst">Today's Prediction</a>
             </li>
             <li class="${cPage == 'of' ? 'current_page_item' : ''}">
-                <a href="${baseUrl}/onlinefirst">Online First</a>
+                <a href="${baseUrl}/todaysprediction">Team DeepEagles</a>
             </li>
-            <li class="has-children ${cPage == 'ai' || cPage == 'as' ? 'current_page_item' : ''}">
-                <a href="${baseUrl}/aimsscope">Call for Papers</a>
+<%--            <li class="${cPage == 'of' ? 'current_page_item' : ''}">
+                <a href="${baseUrl}/playersinfo">Player's Info</a>
+            </li>--%>
+            <!-- 리스트 in 리스트 구현 -->
+            <%--<li class="has-children ${cPage == 'ai' || cPage == 'as' ? 'current_page_item' : ''}">
+                <a href="${baseUrl}/aimsscope">Today's Prediction</a>
+
+                <!-- 서브메뉴넣고 해당 Url넣기 -->
+
                 <ul class="sub-menu">
                     <li class="${cPage == 'as' ? 'current_page_item' : ''}">
-                        <a href="${baseUrl}/aimsscope">Aims and Scope</a>
+                        <a href="${baseUrl}/aimsscope">List Menu : 3-1</a>
                     </li>
                     <li class="${cPage == 'ai' ? 'current_page_item' : ''}">
-                        <a href="${baseUrl}/authorinfo">Author's Information</a>
+                        <a href="${baseUrl}/authorinfo">List Menu : 3-2</a>
                     </li>
                 </ul>
-            </li>
-            <li class="has-children ${cPage == 'ss' || cPage == 'si' ?  'current_page_item' : ''}">
-                <a href="${baseUrl}/ss">Specials</a>
+            </li>--%>
+            <%--<li class="has-children ${cPage == 'ss' || cPage == 'si' ?  'current_page_item' : ''}">
+                <a href="${baseUrl}/ss">Menu : 4</a>
                 <ul class="sub-menu">
                     <li class="${cPage == 'as' ? 'current_page_item' : ''}">
-                        <a href="${baseUrl}/ss">Special Sections</a>
+                        <a href="${baseUrl}/ss">List Menu : 4-1</a>
                     </li>
                     <li class="${cPage == 'ai' ? 'current_page_item' : ''}">
-                        <a href="${baseUrl}/si">Special Issues</a>
+                        <a href="${baseUrl}/si">List Menu : 4-2</a>
                     </li>
                 </ul>
-            </li>
-            <li class="has-children ${cPage == 'eb' || cPage == 'ip' || cPage == 'ep' ? 'current_page_item' : ''}">
-                <a href="${baseUrl}/editorialboard">Editorial Provision</a>
+            </li>--%>
+            <%-- <li class="has-children ${cPage == 'eb' || cPage == 'ip' || cPage == 'ep' ? 'current_page_item' : ''}">
+                <a href="${baseUrl}/editorialboard">Menu : 5</a>
                 <ul class="sub-menu">
                     <li class="${cPage == 'eb' ? 'current_page_item' : ''}">
-                        <a href="${baseUrl}/editorialboard">Editorial Board</a>
+                        <a href="${baseUrl}/editorialboard">List Menu : 5-1</a>
                     </li>
                     <li class="${cPage == 'ep' ? 'current_page_item' : ''}">
-                        <a href="${baseUrl}/editorialprocedure">Editorial Procedure</a>
+                        <a href="${baseUrl}/editorialprocedure">List Menu : 5-2</a>
                     </li>
                     <li class="${cPage == 'ip' ? 'current_page_item' : ''}">
-                        <a href="${baseUrl}/internalprovision">Internal Provision</a>
+                        <a href="${baseUrl}/internalprovision">List Menu : 5-3</a>
                     </li>
                 </ul>
-            </li>
-            <li class="${cPage == 'sm' ? 'current_page_item' : ''}">
-                <a href="${baseUrl}/submission">Submission</a>
-            </li>
+            </li>--%>
+            <%--<li class="${cPage == 'sm' ? 'current_page_item' : ''}">
+                <a href="${baseUrl}/submission">Menu : 6</a>
+            </li>--%>
         </ul>
+
+        <!-- 서치바 -->
         <div class="search-div text-right">
             <form name="search" action="${baseUrl}/searchResult?" method="get" onsubmit="return checkit()">
                 <input type="text" name="s" id="s" placeholder="SEARCH" />
-                <button type="submit" class="btn" style="margin-bottom: 0.2em !important;"><i class="fa fa-search"></i></button>
+                <button type="submit" class="btn" style="margin-bottom: 0.2em !important;">
+                    <i class="fa fa-search"></i>
+                </button>
             </form>
+            <span> Server Time : ${sTime}</span>//
+            <span> Current Time : ${cTime}</span>
         </div>
+
     </nav>
     <div class="sep sep-small"></div>
     <span id="switch">Menu <strong>&#8801;</strong></span>
@@ -149,7 +167,6 @@
                 return false;
             }
             return true;
-
         }
     </script>
 </section>

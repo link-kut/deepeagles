@@ -8,10 +8,16 @@ public class CustomDate {
     private int month;
     private int date;
 
-    public CustomDate(int year, int month, int date) {
+    private int sTime;
+    private int cTime;
+
+
+    public CustomDate(int year, int month, int date/*, int cTime, int sTime*/) {
         this.year = year;
         this.month = month;
         this.date = date;
+/*        this.sTime = sTime;
+        this.cTime = cTime;*/
     }
 
     public int getYear() {
@@ -37,6 +43,14 @@ public class CustomDate {
     public void setDate(int date) {
         this.date = date;
     }
+
+/*    public int getsTime() { return sTime; }
+
+    public void setsTime(int sTime) { this.sTime = sTime; }
+
+    public int getcTime() { return cTime; }
+
+    public void setcTime(int cTime) { this.cTime = cTime; }*/
 
     @Override
     public boolean equals(Object o) {
@@ -65,6 +79,8 @@ public class CustomDate {
                 "year=" + year +
                 ", month=" + month +
                 ", date=" + date +
+/*                ", sTIme=" + sTime +
+                ", cTIme=" + cTime +*/
                 '}';
     }
 }
