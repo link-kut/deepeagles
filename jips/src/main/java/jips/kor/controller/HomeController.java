@@ -44,8 +44,6 @@ public class HomeController {
         Date date = new Date();
         System.out.println("date = " + date.getTime());
 
-
-
         this.setSideModelAttributes(model);
         System.out.println("정상적으로 호출되었습니다.");
         model.addAttribute("features", paperMapper.findByFeatured());
@@ -82,7 +80,7 @@ public class HomeController {
 
         for(int i = 0 ; i < h.size() ; i++) {
             teamTPA.add(h.get(i).getTpa());
-            System.out.println(teamTPA);
+            //System.out.println(teamTPA);
         }
         model.addAttribute("teamTPA", teamTPA);
 

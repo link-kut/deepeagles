@@ -169,3 +169,47 @@ strong.big {
     font-size: 1.2em !important;
     font-weight: 700 !important;
 }
+
+
+
+.gameboard{
+    background-image: url("http://data.1freewallpapers.com/download/texas-rangers-ballpark.jpg");
+    background-size: 100% 800px;
+    background-repeat: no-repeat;
+}
+.menubar{
+    font-color:white;
+    background-color:black;
+}
+
+.menubar nav{
+    float : right;
+}
+.innerboard{
+    border:solid;
+    border-color:red;
+}
+
+.boardpart{
+    height:600px;
+    border:solid;
+    border-color:blue;
+}
+
+.toppart{               /* gameboard 내부 속성제어  */
+    height : 80px;
+    border:solid;
+    border-color:#70dbff;
+}
+
+.middlepart{            /* gameboard 내부 속성제어  */
+    height:240px;
+    border:solid;
+    border-color:#35ff47;
+}
+
+.bottompart{            /* gameboard 내부 속성제어  */
+    height : 80px;
+    border:solid;
+    border-color:#ff2be4;
+}

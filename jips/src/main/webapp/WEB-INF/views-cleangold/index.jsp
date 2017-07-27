@@ -12,74 +12,119 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ">
+
     <style>
         html,body {
             font-family: "Nanum Gothic", sans-serif; !important;
         }
     </style>
+
     <%@ include file="/WEB-INF/views-cleangold/include/head.jsp" %>
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
-    <!-- 글씨체 사용을 위한 설정 -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="stylesheet" href="src/webapp/WEB-INF/reesources-cleangold/css/custom.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-
 <body>
-    <div class="row">
-        <!-- 헤드-헤더.jsp를 이용한 상단 메뉴창 출력 -->
-        <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
-    </div>
-    <section id="content" class="container">
-        <h1 class="page-title text-right" style="font-family: 'Nanum Gothic';"><strong>'Deep Learning'</strong>을 이용한 프로야구 승부예측</h1>
-        <div class="grid12 col">
-
-        <%--<h2 class="title"><i class="fa fa-angle-double-right"></i> Statistics</h2>--%>
-        <div class="row">
-            <div class="col-md-6" id="chartDiv" style="height: 250px; background-color: #FFFFFF;"></div>
-            <div class="col-md-6" id="chartTPA" style="height: 250px; background-color: #FFFFFF;"></div>
+    <section class="gameboard">
+        <div class="row menubar">
+            <div class="col-md-3 dotted">
+                <img src="src/main/webapp/WEB-INF/resources-cleangold/img/jips/signature4.png"/>
+            </div>
+            <div class="col-md-9 dotted">
+                <nav>
+                    <a href="#" class="w3-bar-item w3-button">HTML</a>
+                    <a href="#"  class="w3-bar-item w3-button">CSS</a>
+                    <a href="#"  class="w3-bar-item w3-button">JavaScript</a>
+                    <a href="#"  class="w3-bar-item w3-button">jQuery</a>
+                </nav>
+            </div>
         </div>
+        <%--        <div class="row"><!--상단 메뉴창 출력 -->
+                    <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
+                </div>--%>
+        <%--        <h1 class="page-title text-right" style="font-family: 'Nanum Gothic';">
+                    <!-- <strong>'Deep Learning'</strong>을 이용한 프로야구 승부예측 -->
+                </h1>--%>
+        <div class="row innerboard">
+            <h2 style="text-align : right">
+                안녕하세요
+            </h2>
+            <div class="col-md-3 dotted boardpart"><!-- 좌측 공간 -->
+                <div class="row toppart"><!-- 좌측 상단 -->
 
-            <br/>
-            <hr/>
-            <br/>
+                </div>
+                <div class="row middlepart"><!-- 좌측 가운데 -->
+
+                </div>
+                <div class="row bottompart"><!-- 좌측 하단 -->
+
+                </div>
+            </div>
+            <div class="col-md-6 dotted boardpart"><!-- 가운데 공간 -->
+                <div class="row toppart"><!-- 좌측 상단 -->
+
+                </div>
+                <div class="row middlepart"><!-- 좌측 가운데 -->
+
+                </div>
+                <div class="row bottompart"><!-- 좌측 하단 -->
+
+                </div>
+            </div>
+            <div class="col-md-3 dotted boardpart"><!-- 우측 공간 -->
+                <div class="row toppart"><!-- 좌측 상단 -->
+
+                </div>
+                <div class="row middlepart"><!-- 좌측 가운데 -->
+
+                </div>
+                <div class="row bottompart"><!-- 좌측 하단 -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br/>
+    <hr/><!-- 영역나눔 줄 -->
+    <br/>
+
+    <div class="row">
+        <div class="col-md-6 dotted" id="chartDiv" style="height: 250px; background-color: #FFFFFF;"></div>
+        <div class="col-md-6 dotted" id="chartTPA" style="height: 250px; background-color: #FFFFFF;"></div>
     </div>
+
+    <br/>
+    <hr/><!-- 영역나눔 줄 -->
+    <br/>
 
     <div class="col-md-12 hidden-sm hidden-xs">
-        <p class="normal text-justify"> ${test2.id} The <strong>Deep Learning</strong>을 이용하여,
+        <p class="normal text-justify">The <strong>Deep Learning</strong>을 이용하여,
             2012년 부터의 프로야구 경기결과를 바탕으로, 딥러 바탕으로 한 승부예측을 하고자 함.
             또한, HTML5, CSS, Bootstrap, Spring과 같은 Front-End 작업과 Mybatis(동적 SQL)를 사용한 Back-End 작업을 통해
             승부예측에 사용한 정보를 나타내고자 함.
         </p>
-        <font face="${resources2}/fonts/NanumGothic.ttf"></font>
+
         <div class="grid12 col">
             <table border="1" width="500" height="350">
             </table>
         </div>
-        <p>
-            <font face="NanumGothic" color="red">ddd</font><strong>Team. deepEagles / Laboratory : B103A / (Online) : http://~</strong>
-        </p>
+        <p><strong>Team. deepEagles / Laboratory : B103A / (Online) : http://link.koreatech.ac.kr/</strong><p/>
     </div>
-    <%--<div class="grid2 col text-right">
-    <img src="${resources2}/img/jips/JIPS_engpaper.jpg" height="200" alt="JIPS_engpaper"/>
-    </div>--%>
 
-    <a href="#top" id="top-link"><span></span></a>
-
-</section>
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
 </body>
 
-<!-- Resources -->
-<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<!-- 그래프유형관련 js 로드(?) -->
-<script src="https://www.amcharts.com/lib/3/pie.js"></script>
-<script src="https://www.amcharts.com/lib/3/serial.js"></script>
 
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>       <!-- 그래프 : 파이 -->
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>    <!-- 그래프 : 직선 -->
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
 <script>
-    //$(".amchart-title-main").css("font-family", "Italic");
     var chart = AmCharts.makeChart( "chartDiv", {
         "type": "pie",
         "fontFamily" : "Italic",
@@ -197,12 +242,10 @@
         }
         return chartData;
     }
-</script>
 
-<script>
+
     $(document).ready(function () {
         $(".mini_abstract").hide();
     });
 </script>
-
 </html>
