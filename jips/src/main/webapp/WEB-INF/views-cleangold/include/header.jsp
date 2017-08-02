@@ -10,19 +10,22 @@
         </h2>
         <nav id="menu" class="grid10 col indicators clearfix">
             <ul>
-                <li class="${cPage == 'home' ? 'current_page_item' : ''}">
-                    <a href="${baseUrl}">Home</a> </li>
+<%--                <li class="${cPage == 'home' ? 'current_page_item' : ''}">
+                    <a href="${baseUrl}">Home</a> </li>--%>
+<%--                <li class="${cPage == 'of' ? 'current_page_item' : ''}">
+                    <a href="${baseUrl}/onlinefirst">Today's Prediction</a> </li>--%>
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
-                    <a href="${baseUrl}/onlinefirst">Today's Prediction</a> </li>
+                    <a href="localhost:8080">Today's Prediction</a> </li>
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
-                    <a href="${baseUrl}/todaysprediction">KUT. LinkLab</a> </li>
+                    <a href="http://link.koreatech.ac.kr" target="_blank">KUT. LinkLab</a> </li>
+                    <!-- 새창에서 띄우고 싶을땐 target="_blank" 속성을 추가해준다. -->
             </ul>
 
             <!-- 서치바 -->
-            <div class="search-div text-right">
+<%--            <div class="search-div text-right">
                 <span> Server Time : ${sTime}</span>//
                 <span> Current Time : ${cTime}</span>
-            </div>
+            </div>--%>
 
         </nav>
     </header>

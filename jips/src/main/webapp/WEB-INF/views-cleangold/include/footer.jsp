@@ -10,7 +10,7 @@
     </section>
     <div class="bottom">
         <section class="container">
-            <%--<div class="grid3 col">
+<%--            <div class="grid3 col">
                 <img width="100%" src="${resources2}/img/jips/KIPS-transparent.png" alt=""/>
             </div>--%>
             <div class="grid12 col">

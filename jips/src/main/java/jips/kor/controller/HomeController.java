@@ -41,9 +41,6 @@ public class HomeController {
 
     @RequestMapping
     public String home(Model model) {
-        Date date = new Date();
-        System.out.println("date = " + date.getTime());
-
         this.setSideModelAttributes(model);
         System.out.println("정상적으로 호출되었습니다.");
         model.addAttribute("features", paperMapper.findByFeatured());
@@ -53,7 +50,7 @@ public class HomeController {
 
         /*************************************************************/
         /*  투수DB기록 테스트용 */
-        List<Pitcher > p = historyMapper.findAll_pitcher();
+        List<Pitcher> p = historyMapper.findAll_pitcher();
         int pWin=0;
         int pLose=0;
 
@@ -68,33 +65,32 @@ public class HomeController {
         }
         model.addAttribute("pWin", pWin);
         model.addAttribute("pLose", pLose);
-
         /*************************************************************/
 
-        /*************************************************************/
         //타자기록 테스트용
         List<Hitter> h = historyMapper.findAll_hitter();
+        List<Integer> tpa = new ArrayList<Integer>();
 
-        List<Integer> teamTPA = new ArrayList<Integer>();
-        //int teamTPA[] = {0};
+        System.out.print("tpa : ");
+        System.out.println(h.get(0).getTpa());
 
-        for(int i = 0 ; i < h.size() ; i++) {
-            teamTPA.add(h.get(i).getTpa());
-            //System.out.println(teamTPA);
-        }
-        model.addAttribute("teamTPA", teamTPA);
+/*        for(int i=0 ; i<h.size() ; i++){
+           tpa.get(h.get(i).getTpa());
+        }*/
+
+        model.addAttribute("tpa", tpa);
 
         /*************************************************************/
 
+
+        /* 경기날짜 불러오기 */
+        List<PlayDay> playday = historyMapper.findAll_palyday();
+        System.out.print("경기날짜 : ");
+        System.out.println(h.get(0).getDay());
+
         /***********************************************************/
-        /*  주성형 예제  */
-        History history = new History();
-        history.setName(11111111);
-        if (history.getNum()>11){
-            history.setDate(2017);
-        }
-        model.addAttribute("test2",history);
-        /***********************************************************/
+
+
         return "index";
     }
 

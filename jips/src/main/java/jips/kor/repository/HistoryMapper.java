@@ -1,9 +1,6 @@
 package jips.kor.repository;
 
-import jips.kor.domain.History;
-import jips.kor.domain.Hitter;
-import jips.kor.domain.Paper;
-import jips.kor.domain.Pitcher;
+import jips.kor.domain.*;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -14,18 +11,17 @@ public interface HistoryMapper {
     @Select("SELECT * FROM historydb where num=#{pn} ORDER BY hit DESC LIMIT 1;")
     History findRecentHistoryByPn(@Param("pn") int pn);
 
+    /* 날짜 데이터를 나타내기 위해 데이터를 받아옴. */
+    @Select("SELECT * FROM basicpitcher")
+    List<PlayDay> findAll_palyday();
 
     /* 투수데이터를 나타내기 위해 데이터를 받아옴. */
     @Select("SELECT * FROM basicpitcher")
     List<Pitcher> findAll_pitcher();
 
-    /* 투수데이터를 나타내기 위해 데이터를 받아옴. */
+    /* 타자데이터를 나타내기 위해 데이터를 받아옴. */
     @Select("SELECT * FROM basichitter")
     List<Hitter> findAll_hitter();
-
-    /* 주성형 데이터 예제 */
-    @Select("SELECT * FROM jips")
-    History findAll();
 
     @Insert("INSERT INTO historydb (" +
             "year, " +

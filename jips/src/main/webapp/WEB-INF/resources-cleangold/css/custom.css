@@ -122,7 +122,7 @@ a.PagenumCurrent:hover {text-decoration:underline; color: #000000}
     padding-top: 0.5em !important;
     padding-bottom: 1.0em !important;
     background-color:#EDEDEC;
-    border:1;
+    border:1px;
     border-width:1px;
     border-color:#BCBBBB;
     border-style:dashed;
@@ -170,30 +170,25 @@ strong.big {
     font-weight: 700 !important;
 }
 
-
+/**********************************************************************************************/
 
 .gameboard{
+    height: 460px;
     background-image: url("http://data.1freewallpapers.com/download/texas-rangers-ballpark.jpg");
-    background-size: 100% 800px;
+    background-size: 100% 460px;
     background-repeat: no-repeat;
 }
-.menubar{
-    font-color:white;
-    background-color:black;
-}
 
-.menubar nav{
-    float : right;
-}
 .innerboard{
+    height: 460px;
     border:solid;
     border-color:red;
 }
 
 .boardpart{
-    height:600px;
+    height:460px;
     border:solid;
-    border-color:blue;
+    border-color: green;
 }
 
 .toppart{               /* gameboard 내부 속성제어  */
@@ -203,13 +198,38 @@ strong.big {
 }
 
 .middlepart{            /* gameboard 내부 속성제어  */
-    height:240px;
+    height : 300px;
     border:solid;
     border-color:#35ff47;
 }
 
 .bottompart{            /* gameboard 내부 속성제어  */
     height : 80px;
-    border:solid;
+    border-style:dotted;
     border-color:#ff2be4;
+}
+.img{
+    max-width: 100%;
+    height: auto;
+}
+
+.align_center{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.main_socre_left{
+    padding-left:32px;
+    text-align:right;
+}
+
+.main_socre_right{
+    padding-left:32px;
+    text-align:left;
+}
+
+.text_white{
+    color : white;
 }
