@@ -37,7 +37,7 @@
 
 <br/><hr/>
 
-<section class="gameboard">
+<section class="gameboard container">
     <div class="row innerboard">
         <div class="col-md-3 boardpart" style="background-color: rgba( 0, 0, 0, 0.1 );"><!-- 좌측 공간 -->
             <div class="row toppart text_white align_center" style="padding-top : 20px"><!-- 좌측 상단 -->
@@ -64,8 +64,10 @@
             </div>
         </div>
         <div class="col-md-6 boardpart" style="background-color: rgba( 0, 0, 0, 0.3 );"><!-- 가운데 공간 -->
-            <div class="row toppart align_center" style="padding-top : 20px"><!-- 가운데 상단 -->
+            <div class="row toppart align_center text_white" style="padding-top : 20px"><!-- 가운데 상단 -->
                     <img src="img/jips/ico_game_before.png"/>
+                <div id="dt_now"></div><!-- 현재시간 -->
+                <div id="test_st"></div>
             </div>
             <div class="row middlepart text_white"><!-- 가운데 중단 -->
                 <div class="row" style="height:160px; padding-top: 60px;"><!-- 각 팀 이름, 로고 -->
@@ -93,7 +95,7 @@
                 <strong><h3>다음 경기</h3></strong>
             </div>
             <div class="row middlepart"><!-- 우측 중단 -->
-                <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
+                <div class="row text_white"><!-- 각 팀 이름, 로고 -->
                     <div class="col-md-5 align_center">
                         <img src="img/jips/initials_eagles.png"/><h4>${TeamA_name}한화 이글스</h4>
                     </div>
@@ -110,6 +112,7 @@
             </div>
         </div>
     </div>
+
 </section>
 
 <br/><hr/>
@@ -125,20 +128,77 @@
 
     <br/><hr/><br/>
 
-    <div class="col-md-12 hidden-sm hidden-xs" style="height: 600px;">
+    <div class="col-md-12 hidden-sm hidden-xs" style="height: 300px;">
 <%--        <p class="normal text-justify">The <strong>Deep Learning</strong>을 이용하여,
             2012년 부터의 프로야구 경기결과를 바탕으로, 딥러 바탕으로 한 승부예측을 하고자 함.
             또한, HTML5, CSS, Bootstrap, Spring과 같은 Front-End 작업과 Mybatis(동적 SQL)를 사용한 Back-End 작업을 통해
             승부예측에 사용한 정보를 나타내고자 함.
         </p>--%>
-        <div class="col-md-12" id="chartCompare" style="height: 600px;"></div>
+        <div class="col-md-12" id="chartCompare" style="height: 300px;"></div>
 
         <p><strong>Team. deepEagles / Laboratory : B103A / (Online) : http://link.koreatech.ac.kr/</strong><p/>
     </div>
 
 </section>
+
+<!-- footer -->
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
 </body>
+
+<!-- 현재시간(실시간) 출력 : jQuery -->
+<script>
+    $(function() {
+        setInterval(function() {
+            $("#dt_now").text(new Date());
+        }, 1000);
+    });
+</script>
+
+<!-- 서버시간 -->
+<script>
+
+    var xmlHttp;
+
+    function srvTime(){
+
+        if (window.XMLHttpRequest) {//분기하지 않으면 IE에서만 작동된다.
+
+            xmlHttp = new XMLHttpRequest(); // IE 7.0 이상, 크롬, 파이어폭스 등
+
+            xmlHttp.open('HEAD',window.location.href.toString(),false);
+
+            xmlHttp.setRequestHeader("Content-Type", "text/html");
+
+            xmlHttp.send('');
+
+            return xmlHttp.getResponseHeader("Date");
+
+        }else if (window.ActiveXObject) {
+
+            xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+
+            xmlHttp.open('HEAD',window.location.href.toString(),false);
+
+            xmlHttp.setRequestHeader("Content-Type", "text/html");
+
+            xmlHttp.send('');
+
+            return xmlHttp.getResponseHeader("Date");
+
+        }
+
+    }
+
+    var st = srvTime();
+
+    var test_st = new Date(st);
+
+    $(function() {
+        setInterval(function() {
+            $("#test_st").text(test_st);
+        }, 1000);
+    });
+</script>
 
 <!-- 첫번째 그래프 : 승/패율 -->
 <script>
@@ -169,109 +229,101 @@
             "enabled": true
         }
     } );
+</script>
 
-
-    <!-- 2번째 그래프 : 날짜별 기록(단일) -->
-    var chartData = generateChartData();
+<!-- 두번째 그래프 : 사망 : https://www.amcharts.com/demos/date-based-data/ -->
+<script>
     var chart = AmCharts.makeChart("chartTPA", {
         "type": "serial",
         "theme": "light",
-        "border":"solid",
-        "border-color": "#ff0000",
-        "radius" : "25%",
-        "marginRight": 80,
+        "marginRight": 40,
+        "marginLeft": 40,
         "autoMarginOffset": 20,
-        "marginTop": 7,
-        "dataProvider": chartData,
+        "mouseWheelZoomEnabled":true,
+        "dataDateFormat": "YYYY-MM-DD",
         "valueAxes": [{
-            "axisAlpha": 0.2,
-            "dashLength": 1,
-            "position": "left"
+            "id": "v1",
+            "axisAlpha": 0,
+            "position": "left",
+            "ignoreAxisWidth":true
         }],
-        "mouseWheelZoomEnabled": true,
+        "balloon": {
+            "borderThickness": 1,
+            "shadowAlpha": 0
+        },
         "graphs": [{
             "id": "g1",
-            "balloonText": "[[value]]",
+            "balloon":{
+                "drop":true,
+                "adjustBorderColor":false,
+                "color":"#ffffff"
+            },
             "bullet": "round",
             "bulletBorderAlpha": 1,
             "bulletColor": "#FFFFFF",
+            "bulletSize": 5,
             "hideBulletsCount": 50,
+            "lineThickness": 2,
             "title": "red line",
-            "valueField": "visits",
             "useLineColorForBulletBorder": true,
-            "balloon":{
-                "drop":true
-            }
+            "valueField": "value",
+            "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
         }],
-        "titles": [ {
-            "id": "Title-3",
-            "size": 24,         // textsize
-            "text": "TPA : 총타석수"
-        }
-        ],
         "chartScrollbar": {
-            "autoGridCount": true,
             "graph": "g1",
-            "scrollbarHeight": 40
+            "oppositeAxis":false,
+            "offset":30,
+            "scrollbarHeight": 80,
+            "backgroundAlpha": 0,
+            "selectedBackgroundAlpha": 0.1,
+            "selectedBackgroundColor": "#888888",
+            "graphFillAlpha": 0,
+            "graphLineAlpha": 0.5,
+            "selectedGraphFillAlpha": 0,
+            "selectedGraphLineAlpha": 1,
+            "autoGridCount":true,
+            "color":"#AAAAAA"
         },
         "chartCursor": {
-            "limitToGraph":"g1"
+            "pan": true,
+            "valueLineEnabled": true,
+            "valueLineBalloonEnabled": true,
+            "cursorAlpha":1,
+            "cursorColor":"#258cbb",
+            "limitToGraph":"g1",
+            "valueLineAlpha":0.2,
+            "valueZoomable":true
+        },
+        "valueScrollbar":{
+            "oppositeAxis":false,
+            "offset":50,
+            "scrollbarHeight":10
         },
         "categoryField": "date",
         "categoryAxis": {
             "parseDates": true,
-            "axisColor": "#DADADA",
             "dashLength": 1,
             "minorGridEnabled": true
         },
         "export": {
             "enabled": true
-        }
+        },
+        "dataProvider": [{
+            "date": "2012-07-27",
+            "value": ${tpa}
+        }]
     });
 
     chart.addListener("rendered", zoomChart);
+
     zoomChart();
 
-    // this method is called when chart is first inited as we listen for "rendered" event
     function zoomChart() {
-        // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
-        chart.zoomToIndexes(chartData.length - 40, chartData.length - 1);
+        chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
     }
-
-    // generate some random data, quite different range
-
-    function generateChartData() {
-        var chartData = [];
-        var visits = [];
-        var firstDate = new Date();
-        firstDate.setDate(firstDate.getDate() - 5);
-
-        for (var i = 0; i < 10000; i++) {
-            // we create date objects here. In your data, you can have date strings
-            // and then set format of your dates using chart.dataDateFormat property,
-            // however when possible, use date objects, as this will speed up chart rendering.
-            var newDate = new Date(firstDate);
-            newDate.setDate(newDate.getDate() + i);
-
-            visits = ${tpa};
-            // = Math.round(Math.random() * (40 + i / 5)) + 20 + i;
-
-            chartData.push({
-                date: newDate,
-                visits: visits
-            });
-        }
-        return chartData;
-    }
-
-
-    $(document).ready(function () {
-        $(".mini_abstract").hide();
-    });
 </script>
 
 <!--3번째 그래프 : 날짜별 기록(다중) -->
-
 <script>
 
     var chartData = generateChartData();
@@ -384,13 +436,4 @@
     }
 </script>
 
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="../../assets/js/vendor/holder.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </html>

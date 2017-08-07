@@ -70,25 +70,26 @@ public class HomeController {
         //타자기록 테스트용
         List<Hitter> h = historyMapper.findAll_hitter();
         List<Integer> tpa = new ArrayList<Integer>();
+        List<Integer> day = new ArrayList<Integer>();
 
-        System.out.print("tpa : ");
-        System.out.println(h.get(0).getTpa());
+        for(int i=0;i<h.size();i++) {
+            System.out.print("tpa : ");
+            System.out.println(h.get(i).getTpa());
+            System.out.print("day : ");
+            System.out.println(h.get(i).getDay());
+        }
 
-/*        for(int i=0 ; i<h.size() ; i++){
-           tpa.get(h.get(i).getTpa());
+        /*for(int i=0 ; i<h.size() ; i++){
+          tpa.get(h.get(i).getTpa());
         }*/
 
         model.addAttribute("tpa", tpa);
+        model.addAttribute("day", day);
 
-        /*************************************************************/
 
-
-        /* 경기날짜 불러오기 */
-        List<PlayDay> playday = historyMapper.findAll_palyday();
-        System.out.print("경기날짜 : ");
-        System.out.println(h.get(0).getDay());
-
-        /***********************************************************/
+        /* 날짜입력 */
+        Date test_date = new Date();
+        model.addAttribute("test_date", test_date);
 
 
         return "index";
