@@ -178,34 +178,29 @@ strong.big {
     background-size: 100% 460px;
     background-repeat: no-repeat;
 }
-.innerboard{
-    height: 460px;
-    border:solid;
-    border-color:red;
-}
 
 .boardpart{
     height:460px;
-    border:solid;
-    border-color: green;
+    /*border:solid;
+    border-color: green;*/
 }
 
 .toppart{               /* gameboard 내부 속성제어  */
     height : 80px;
-    border:solid;
-    border-color:#70dbff;
+    /*border:solid;
+    border-color:#70dbff;*/
 }
 
 .middlepart{            /* gameboard 내부 속성제어  */
     height : 300px;
-    border:solid;
-    border-color:#35ff47;
+    /*border:solid;
+    border-color:#35ff47;*/
 }
 
 .bottompart{            /* gameboard 내부 속성제어  */
     height : 80px;
-    border-style:dotted;
-    border-color:#ff2be4;
+    /*border-style:dotted;
+    border-color:#ff2be4;*/
 }
 .img{
     max-width: 100%;
