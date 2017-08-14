@@ -59,7 +59,7 @@ public class HomeController {
             if(p.get(i).getW() == 1){
                 pWin+=1;
             }
-            else{
+            else if(p.get(i).getL() == 1){
                 pLose+=1;
             }
         }

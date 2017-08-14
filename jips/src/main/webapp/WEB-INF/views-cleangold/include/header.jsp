@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section id="header" class="container">
-    <header id="logo" class="grid2 col">
-        <h2>
+    <header id="logo">
+        <h2 class="grid2 col">
             <a href="${baseUrl}" rel="home" title="JIPS">
                 <!-- Home 로고 바꾸는 부분 -->
-                <!--<img src="${resources2}/img/jips/Han_logo.png" class="scale" height="67" alt="main_logo_here"/>-->
+                <img src="${resources2}/img/jips/Han_logo.png" class="scale" height="67" alt="main_logo_here"/>
             </a>
 
         </h2>

@@ -9,8 +9,9 @@ package jips.kor.domain;
 
 public class Pitcher {
 
-    private int w;
-    private int l;
+    private int w;  //승
+    private int l;  //패
+    private int sv; //무
 
     public int getL() { return l; }
 
@@ -20,11 +21,16 @@ public class Pitcher {
 
     public void setW(int w) { this.w = w; }
 
+    public int getSV() { return sv; }
+
+    public void setSV(int sv) { this.sv = sv; }
+
     @Override
     public String toString() {
         return "Pitcher{" +
                 "w=" + w +
                 ", l=" + l +
+                ", sv=" + sv +
                 '}';
     }
 }
