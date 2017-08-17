@@ -6,7 +6,6 @@
                 <!-- Home 로고 바꾸는 부분 -->
                 <img src="${resources2}/img/jips/Han_logo.png" class="scale" height="67" alt="main_logo_here"/>
             </a>
-
         </h2>
         <nav id="menu" class="grid10 col indicators clearfix">
             <ul>
