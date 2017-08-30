@@ -45,14 +45,15 @@
         <div class="row middlepart"><!-- 좌측 가운데 -->
             <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
                 <div class="col-md-5 align_right">
-                    <img src="/resources2/img/jips/initials_wyverns.png"/>
-                    <h6>SK 와이번스</h6>
+                    <img src="/resources2/img/jips/initials_eagles.png"/>
+                    <h6>한화 이글스</h6>
                 </div>
                 <div class="col-md-2 align_center">
                     <img src="/resources2/img/jips/h_game_vs.png"/>
                 </div>
                 <div class="col-md-5 align_left">
-                    <img src="/resources2/img/jips/initials_eagles.png"/><h6>한화 이글스</h6>
+                    <img src="/resources2/img/jips/initials_wyverns.png"/>
+                    <h6>SK 와이번스</h6>
                 </div>
             </div></br>
             <div class="row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
@@ -61,7 +62,7 @@
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 좌측 하단 -->
-            <h6>[대전], 2017-08-16(수) , [18:30]</h6>
+            <h6>[문학], 2017-08-27(일) , [18:00]</h6>
         </div>
     </div>
     <div class="col-md-6 boardpart" style="background-color: rgba( 0, 0, 0, 0.3 );"><!-- 가운데 공간 -->
@@ -79,18 +80,18 @@
                     <img src="resources2/img/jips/h_game_live_vs.png"/>
                 </div>
                 <div class="col-md-5 align_center" style="padding-right:30px; padding-bottom:30px;">
-                    <img src="/resources2/img/jips/nc.png"/>
-                    <h3>NC 다이노스</h3>
+                    <img src="/resources2/img/jips/lg.png"/>
+                    <h3>LG 트윈스</h3>
                 </div>
             </div>
             <div class="row text_white align_center"><!-- 각 팀 (예상)점수 -->
                 <h3>한화이글스가 64% 확률로 승리!!</h3><br/>
-                <h5>[ 표본채집기간 2017-07-01 ~ 2017-08-13 ] </h5>
+                <h5>[ 표본채집기간 2017-07-15 ~ 2017-08-29 ] </h5>
             </div>
         </div>
         <div class="row bottompart align_center text_white" style="padding-top:20px"><!-- 가운데 하단 -->
             <!-- 경기날짜 및 경지장 위치 -->
-            <h5>[마산], 2017-08-17(목) , [18:30]</h5>
+            <h5>[대전], 2017-08-29(화) , [18:30]</h5>
         </div>
     </div>
     <div class="col-md-3 boardpart" style="background-color: rgba( 0, 0, 0, 0.1 );"><!-- 우측 공간 -->
@@ -100,19 +101,21 @@
         <div class="row middlepart"><!-- 우측 중단 -->
             <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
                 <div class="col-md-5 align_right" >
-                    <img src="/resources2/img/jips/initials_eagles.png"/><h6>한화 이글스</h6>
+                    <img src="/resources2/img/jips/initials_eagles.png"/>
+                    <h6>한화 이글스</h6>
                 </div>
                 <div class="col-md-2 align_center">
                     <img src="/resources2/img/jips/h_game_vs.png"/>
                 </div>
                 <div class="col-md-5 align_left">
-                    <img src="/resources2/img/jips/initials_dinos.png"/><h6>NC 다이노스</h6>
+                    <img src="/resources2/img/jips/initials_twins.png"/>
+                    <h6>LG 트윈스</h6>
                 </div>
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 우측 하단 -->
             <!-- 특별이벤트 존재시 기재 -->
-            <h6>[마산], 2017-08-19(금) , [18:30]</h6>
+            <h6>[대전], 2017-08-29(화) , [18:30]</h6>
         </div>
     </div>
 </section>
@@ -137,7 +140,7 @@
             또한, HTML5, CSS, Bootstrap, Spring과 같은 Front-End 작업과 Mybatis(동적 SQL)를 사용한 Back-End 작업을 통해
             승부예측에 사용한 정보를 나타내고자 함.
         </p>--%>
-        <p><strong>Team. deepEagles / Laboratory : B103A / (Online) : http://link.koreatech.ac.kr/</strong><p/>
+        <p><strong>Team. deepEagles / Laboratory : B103A / (Online) : <a>http://link.koreatech.ac.kr/</a></strong><p/>
 
 </section>
 
