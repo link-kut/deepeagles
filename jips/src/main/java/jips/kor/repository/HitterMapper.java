@@ -1,8 +1,8 @@
 package jips.kor.repository;
 
 
-import jips.kor.domain.*;
-import org.apache.ibatis.annotations.*;
+import jips.kor.domain.Hitter;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

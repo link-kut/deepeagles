@@ -101,8 +101,8 @@
                         <td><c:out value = "${test_p.ip}"/></td>
                         <td><c:out value = "${test_p.pa}"/></td>
                         <td><c:out value = "${test_p.h}"/></td>
-                        <td><c:out value = "${test_p.twob}"/></td>
-                        <td><c:out value = "${test_p.threeb}"/></td>
+                        <td><c:out value = "${test_p.TWOB}"/></td>
+                        <td><c:out value = "${test_p.THREEB}"/></td>
 
                         <td><c:out value = "${test_p.hr}"/></td>
                         <td><c:out value = "${test_p.r}"/></td>
@@ -177,9 +177,9 @@
                         <td><c:out value = "${test_h.AB}"/></td>
                         <td><c:out value = "${test_h.h}"/></td>
 
-                        <td><c:out value = "${test_h.oneB}"/></td>
-                        <td><c:out value = "${test_h.twoB}"/></td>
-                        <td><c:out value = "${test_h.threeB}"/></td>
+                        <td><c:out value = "${test_h.ONEB}"/></td>
+                        <td><c:out value = "${test_h.TWOB}"/></td>
+                        <td><c:out value = "${test_h.THREEB}"/></td>
                         <td><c:out value = "${test_h.HR}"/></td>
                         <td><c:out value = "${test_h.r}"/></td>
 
@@ -201,6 +201,8 @@
                 </tbody>
             </table>
         </div>
+
+        <br/><br/>
 
         <div class="row">
             <div class="col-md-6" id="chartDiv" style="height: 300px;"></div><!-- -->
