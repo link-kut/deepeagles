@@ -5,9 +5,8 @@
             <a href="${baseUrl}" rel="home" title="JIPS">
                 <!-- Home 로고 바꾸는 부분 -->
                 <div>
-                    <img src="${resources2}/img/jips/univ_lab_logo.png" class="scale" width="100%" alt="main_univ_logo_here"/>
+                    <img src="${resources2}/img/jips/univ_lab_logo.png" style="margin-top: 25px;" class="scale" width="100%" alt="main_univ_logo_here"/>
                 </div>
-                <br/>
             </a>
         </h2>
         <nav id="menu" class="grid8 col indicators clearfix">
@@ -21,7 +20,9 @@
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
                     <a href="${baseUrl}/data">Data</a> </li>
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
-                    <a href="${baseUrl}/nonamed">Nonamed</a> </li>
+                    <a href="${baseUrl}/nonamed">Crit</a> </li>
+                <li class="${cPage == 'of' ? 'current_page_item' : ''}">
+                    <a href="${baseUrl}/about">About</a> </li>
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
                     <a href="http://link.koreatech.ac.kr" target="_blank">KUT. LinkLab</a> </li>
                     <!-- 새창에서 띄우고 싶을땐 target="_blank" 속성을 추가해준다. -->

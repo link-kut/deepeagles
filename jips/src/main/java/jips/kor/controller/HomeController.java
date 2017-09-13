@@ -95,15 +95,9 @@ public class HomeController {
 
     @RequestMapping("/data")
     public String Data(Model model) {
-        /*this.setSideModelAttributes(model);*/
-        /* 여기에 예측페이지에서 구현할 기능 설정 */
         List<Pitcher> p = pitcherMapper.findAll_pitcher();
         List<Hitter> h = hitterMapper.findAll_hitter();
 
-    /*for(int i=0;i<1;i++) {
-        System.out.println(i+"번째 트라이");
-        System.out.println(hhr.get(i).getM_acc());
-    }*/
         for(int i=0; i<p.size(); i++){
             p.get(i).toString();
         }
@@ -119,9 +113,6 @@ public class HomeController {
 
     @RequestMapping("/nonamed")
     public String Nonamed(Model model) {
-        /*this.setSideModelAttributes(model);*/
-        /* 여기에 예측페이지에서 구현할 기능 설정 */
-
         List<HHRate> hhr = hhrateMapper.findAll_hhrate();
 
         for(int i=0; i<hhr.size(); i++){
@@ -130,5 +121,11 @@ public class HomeController {
         model.addAttribute("test_hhr", hhr);
 
         return "nonamed";
+    }
+
+    @RequestMapping("/about")
+    public String About(Model model) {
+
+        return "about";
     }
 }

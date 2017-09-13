@@ -1,21 +1,20 @@
 <footer id="footer">
     <div class="sep-big"></div>
     <section class="container">
-        <div class="grid12 col">
+<%--        <div class="grid12 col">
             <h3>ABOUT Project.</h3>
-            <p class="text-justify" style="line-height: 1.6em !important;">
-
-            </p>
-            <div id="dt_now"></div><!-- 현재시간 -->
-            <div id="test_st"></div>
-        </div>
+        </div>--%>
     </section>
     <div class="bottom">
         <section class="container">
-            <div class="grid3 col">
-                <img width="60%" src="${resources2}/img/jips/cse_logo_footer.png" alt=""/>
+            <div class="grid2 col">
+                <img src="${resources2}/img/jips/cse_logo_footer.png" style="margin-top: 5px;" alt="major_logo"/>
             </div>
-            <div class="grid9 col">
+            <div class="grid4 col" style="margin-top: 15px;">
+                <div class="row" id="dt_now"></div><!-- 현재시간 -->
+                <div class="row"  id="test_st"></div>
+            </div>
+            <div class="grid6 col">
                 <p>
                     B103A, 4th Engineering Hall, KoreaTech, Byeong-cheon, Cheon-an, Republic of Korea
                     <br/>
