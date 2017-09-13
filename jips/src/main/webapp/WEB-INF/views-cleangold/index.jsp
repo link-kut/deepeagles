@@ -36,7 +36,7 @@
             <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
                 <div class="col-md-5 align_right">
                     <img src="/resources2/img/jips/team_initial/initials_eagles.png"/>
-                    <h6>한화 이글스</h6>
+                    <h6>한화 이글스 monument</h6>
                 </div>
                 <div class="col-md-2 align_center">
                     <img src="/resources2/img/jips/UI/h_game_vs.png"/>

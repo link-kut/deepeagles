@@ -69,7 +69,6 @@
                     <tfoot>
                     <tr>
                         <td colspan ="11"> 현재 데이터 무</td>
-
                     </tr>
                     </tfoot>
                 </c:if>

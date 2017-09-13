@@ -59,8 +59,8 @@
                     <th> ip</th>
                     <th> pa</th>
                     <th> h</th>
-                    <th> two_b</th>
-                    <th> three_b</th>
+                    <th> twob</th>
+                    <th> threeb</th>
                     <th> hr</th>
                     <th> r</th>
                     <th> er</th>
@@ -91,26 +91,31 @@
                         <td><c:out value = "${test_p.rank}"/></td>
                         <td><c:out value = "${test_p.game}"/></td>
                         <td><c:out value = "${test_p.w}"/></td>
+
                         <td><c:out value = "${test_p.l}"/></td>
-                        <td><c:out value = "${test_p.SV}"/></td>
+                        <td><c:out value = "${test_p.sv}"/></td>
                         <td><c:out value = "${test_p.hld}"/></td>
                         <td><c:out value = "${test_p.bs}"/></td>
                         <td><c:out value = "${test_p.qs}"/></td>
+
                         <td><c:out value = "${test_p.ip}"/></td>
                         <td><c:out value = "${test_p.pa}"/></td>
                         <td><c:out value = "${test_p.h}"/></td>
-                        <td><c:out value = "${test_p.two_b}"/></td>
-                        <td><c:out value = "${test_p.three_b}"/></td>
+                        <td><c:out value = "${test_p.twob}"/></td>
+                        <td><c:out value = "${test_p.threeb}"/></td>
+
                         <td><c:out value = "${test_p.hr}"/></td>
                         <td><c:out value = "${test_p.r}"/></td>
                         <td><c:out value = "${test_p.er}"/></td>
                         <td><c:out value = "${test_p.so}"/></td>
                         <td><c:out value = "${test_p.bb}"/></td>
+
                         <td><c:out value = "${test_p.ibb}"/></td>
                         <td><c:out value = "${test_p.hbp}"/></td>
                         <td><c:out value = "${test_p.wp}"/></td>
                         <td><c:out value = "${test_p.bk}"/></td>
                         <td><c:out value = "${test_p.pk}"/></td>
+
                         <td><c:out value = "${test_p.cs}"/></td>
                         <td><c:out value = "${test_p.sb}"/></td>
                     </tr>
@@ -133,21 +138,25 @@
                     <th> TPA</th>
                     <th> AB</th>
                     <th> H</th>
-                    <th> one_B</th>
-                    <th> two_B</th>
-                    <th> three_B</th>
+
+                    <th> oneB</th>
+                    <th> twoB</th>
+                    <th> threeB</th>
                     <th> HR</th>
                     <th> R</th>
+
                     <th> RBI</th>
                     <th> BB</th>
                     <th> IBB</th>
                     <th> HPB</th>
                     <th> SO</th>
+
                     <th> SF</th>
                     <th> SH</th>
                     <th> GDP</th>
                     <th> SB</th>
                     <th> CS</th>
+
                     <th> AVG</th>
                 </tr>
                 </thead>
@@ -163,29 +172,29 @@
                 <c:forEach var="test_h" items = "${test_h}" varStatus = "status">
                     <tr>
                         <td><c:out value = "${test_h.id}"/></td>
-
                         <td><c:out value = "${test_h.date}"/></td>
                         <td><c:out value = "${test_h.TPA}"/></td>
                         <td><c:out value = "${test_h.AB}"/></td>
                         <td><c:out value = "${test_h.h}"/></td>
-                        <td><c:out value = "${test_h.one_B}"/></td>
 
-                        <td><c:out value = "${test_h.two_B}"/></td>
-                        <td><c:out value = "${test_h.three_B}"/></td>
+                        <td><c:out value = "${test_h.oneB}"/></td>
+                        <td><c:out value = "${test_h.twoB}"/></td>
+                        <td><c:out value = "${test_h.threeB}"/></td>
                         <td><c:out value = "${test_h.HR}"/></td>
                         <td><c:out value = "${test_h.r}"/></td>
-                        <td><c:out value = "${test_h.RBI}"/></td>
 
+                        <td><c:out value = "${test_h.RBI}"/></td>
                         <td><c:out value = "${test_h.BB}"/></td>
                         <td><c:out value = "${test_h.IBB}"/></td>
                         <td><c:out value = "${test_h.HPB}"/></td>
                         <td><c:out value = "${test_h.SO}"/></td>
-                        <td><c:out value = "${test_h.SF}"/></td>
 
+                        <td><c:out value = "${test_h.SF}"/></td>
                         <td><c:out value = "${test_h.SH}"/></td>
                         <td><c:out value = "${test_h.GDP}"/></td>
                         <td><c:out value = "${test_h.SB}"/></td>
                         <td><c:out value = "${test_h.CS}"/></td>
+
                         <td><c:out value = "${test_h.AVG}"/></td>
                     </tr>
                 </c:forEach>

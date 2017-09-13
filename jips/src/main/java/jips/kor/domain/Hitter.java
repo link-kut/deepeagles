@@ -10,10 +10,10 @@ public class Hitter {
     private int TPA;
     private int AB;
     private int H;
-    private int one_B;
+    private int oneB;
 
-    private int two_B;
-    private int three_B;
+    private int twoB;
+    private int threeB;
     private int HR;
     private int R;
     private int RBI;
@@ -30,11 +30,17 @@ public class Hitter {
     private int CS;
     private double AVG;
 
-    public int getId() { return id; }
+    public int getId() {
+        return id;
+    }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public Date getDate() { return date; }
+    public Date getDate() {
+        return date;
+    }
 
     public void setDate(Date date) {
         this.date = date;
@@ -64,28 +70,28 @@ public class Hitter {
         H = h;
     }
 
-    public int getOne_B() {
-        return one_B;
+    public int getOneB() {
+        return oneB;
     }
 
-    public void setOne_B(int one_B) {
-        this.one_B = one_B;
+    public void setOneB(int oneB) {
+        this.oneB = oneB;
     }
 
-    public int getTwo_B() {
-        return two_B;
+    public int getTwoB() {
+        return twoB;
     }
 
-    public void setTwo_B(int two_B) {
-        this.two_B = two_B;
+    public void setTwoB(int twoB) {
+        this.twoB = twoB;
     }
 
-    public int getThree_B() {
-        return three_B;
+    public int getThreeB() {
+        return threeB;
     }
 
-    public void setThree_B(int three_B) {
-        this.three_B = three_B;
+    public void setThreeB(int threeB) {
+        this.threeB = threeB;
     }
 
     public int getHR() {
@@ -160,7 +166,9 @@ public class Hitter {
         this.SH = SH;
     }
 
-    public int getGDP() { return GDP; }
+    public int getGDP() {
+        return GDP;
+    }
 
     public void setGDP(int GDP) {
         this.GDP = GDP;
@@ -194,24 +202,24 @@ public class Hitter {
     public String toString() {
         return "Hitter{" +
                 "date="+ date +
-                "tpa=" + TPA +
+                "TPA=" + TPA +
                 "AB=" + AB +
-                "AB=" + H +
-                "AB=" + one_B +
-                "AB=" + two_B +
-                "AB=" + three_B +
-                "AB=" + HR +
-                "AB=" + R +
-                "AB=" + RBI +
-                "AB=" + BB+
-                "AB=" + IBB +
-                "AB=" + HPB +
-                "AB=" + SO +
-                "AB=" + SF +
-                "AB=" + SH +
-                "AB=" + GDP +
-                "AB=" + SB+
-                "AB=" + CS+
+                "H=" + H +
+                "oneB=" + oneB +
+                "twoB=" + twoB +
+                "threeB=" + threeB +
+                "HR=" + HR +
+                "R=" + R +
+                "RBI=" + RBI +
+                "BB=" + BB+
+                "IBB=" + IBB +
+                "HPB=" + HPB +
+                "SO=" + SO +
+                "SF=" + SF +
+                "SH=" + SH +
+                "GDP=" + GDP +
+                "SB=" + SB+
+                "CS=" + CS+
                 '}';
     }
 }

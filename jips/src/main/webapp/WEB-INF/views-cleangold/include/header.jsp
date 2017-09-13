@@ -1,18 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section id="header" class="container">
     <header id="logo" style="height : 10px">
-        <h2 class="grid6 col">
+        <h2 class="grid4 col" style="">
             <a href="${baseUrl}" rel="home" title="JIPS">
                 <!-- Home 로고 바꾸는 부분 -->
                 <div>
-                        <div>
-                            <img src="${resources2}/img/signature_adj4.png" class="scale" width="35%" alt="main_univ_logo_here"/>
-                            <img src="${resources2}/img/jips/link_logo2.png" class="scale" alt="main_lab_logo_here"/>
-                        </div>
+                    <img src="${resources2}/img/jips/univ_lab_logo.png" class="scale" width="100%" alt="main_univ_logo_here"/>
                 </div>
+                <br/>
             </a>
         </h2>
-        <nav id="menu" class="grid6 col indicators clearfix">
+        <nav id="menu" class="grid8 col indicators clearfix">
             <ul>
 <%--            <li class="${cPage == 'home' ? 'current_page_item' : ''}">
                     <a href="${baseUrl}">Home</a> </li>--%>

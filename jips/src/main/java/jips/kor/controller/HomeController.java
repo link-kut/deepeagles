@@ -104,6 +104,13 @@ public class HomeController {
         System.out.println(i+"번째 트라이");
         System.out.println(hhr.get(i).getM_acc());
     }*/
+        for(int i=0; i<p.size(); i++){
+            p.get(i).toString();
+        }
+        for(int i=0; i<h.size(); i++){
+            h.get(i).toString();
+        }
+
         model.addAttribute("test_p", p);
         model.addAttribute("test_h", h);
 
@@ -121,6 +128,7 @@ public class HomeController {
             hhr.get(i).toString();
         }
         model.addAttribute("test_hhr", hhr);
+
         return "nonamed";
     }
 }
