@@ -39,10 +39,14 @@
     <!-- 두번째 섹션 : 데이터 표현그래프 -->
     <section class="container"><!-- 센터 -->
 
-        <h4><strong>[Pitcher Info]</strong></h4>
+        <h1 style="padding-left: 30px;"><strong>DATA</strong></h1>
+        <br/>
+        <div class ="col sep sep-big"></div>
+
+        <h4><strong style="padding-left: 20px">[Pitcher Info]</strong></h4>
         <br/>
         <!-- 투수 정보 -->
-        <div class="row" style="width:100%; height:200px;overflow:auto;">
+        <div class="row" style="width:100%; padding-left:50px; height:200px;overflow:auto;">
             <table summary = "목록">
                 <thead>
                 <tr>
@@ -123,12 +127,12 @@
                 </tbody>
             </table>
         </div>
-
         <br/><br/>
-        <h4><strong>[Hitter Info]</strong></h4>
+        <div class ="col sep sep-big"></div>
+        <h4><strong style=" padding-left: 20px">[Hitter Info]</strong></h4>
         <br/>
         <!-- 타자 테이블-->
-        <div class="row" style="width:100%; height:200px;overflow:auto;">
+        <div class="row" style="width:100%; padding-left: 50px;height:200px;overflow:auto;">
 
             <table summary = "목록">
                 <thead>
@@ -203,13 +207,20 @@
         </div>
 
         <br/><br/>
+        <div class ="col sep sep-big"></div>
+
+        <br/><br/>
 
         <div class="row">
             <div class="col-md-6" id="chartDiv" style="height: 300px;"></div><!-- -->
-            <div class="col-md-6" id="chartDiv2" style="height: 300px;"></div><!-- -->
+            <div class="col-md-6" id="chartDiv2" style="width: 550px;height: 300px;"></div><!-- -->
         </div>
+
+        <br/><br/>
+        <div class ="col sep sep-big"></div>
+
         <div class="row">
-            <div id="chartDiv3" style="height: 300px;"></div>
+            <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
         </div>
 
         <div class="col-md-12 hidden-sm hidden-xs">
