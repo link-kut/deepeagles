@@ -7,7 +7,19 @@ package jips.kor.domain;
 *
 * */
 
+import java.util.Date;
+
 public class Pitcher {
+
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     private int w;  //승
     private int l;  //패
@@ -45,7 +57,6 @@ public class Pitcher {
     public int getSV() { return sv; }
 
     public void setSV(int sv) { this.sv = sv; }
-
 
 
     public int getHld() { return hld; }
@@ -131,29 +142,30 @@ public class Pitcher {
     @Override
     public String toString() {
         return "Pitcher{" +
+                "date="+date+
                 "w=" + w +
                 ", l=" + l +
                 ", sv=" + sv +
-                ", sv=" + hld +
-                ", sv=" + bs +
-                ", sv=" + qs +
-                ", sv=" + ip +
-                ", sv=" + pa +
-                ", sv=" + h +
-                ", sv=" + two_b +
-                ", sv=" + three_b +
-                ", sv=" + hr +
-                ", sv=" + r +
-                ", sv=" + er +
-                ", sv=" + so +
-                ", sv=" + bb +
-                ", sv=" + ibb +
-                ", sv=" + hbp +
-                ", sv=" + wp +
-                ", sv=" + bk +
-                ", sv=" + pk +
-                ", sv=" + cs +
-                ", sv=" + sb +
+                ", hld=" + hld +
+                ", bs=" + bs +
+                ", qs=" + qs +
+                ", ip=" + ip +
+                ", pa=" + pa +
+                ", h=" + h +
+                ", two_b=" + two_b +
+                ", three_b=" + three_b +
+                ", hr=" + hr +
+                ", r=" + r +
+                ", er=" + er +
+                ", so=" + so +
+                ", bb=" + bb +
+                ", ibb=" + ibb +
+                ", hbp=" + hbp +
+                ", wp=" + wp +
+                ", bk=" + bk +
+                ", pk=" + pk +
+                ", cs=" + cs +
+                ", sb=" + sb +
                 '}';
     }
 }

@@ -5,7 +5,8 @@ import jips.kor.domain.*;
 import jips.kor.domain.statistics.country.AuthorCountries;
 import jips.kor.domain.statistics.country.ReviewerCountries;
 import jips.kor.repository.HistoryMapper;
-import jips.kor.repository.PaperMapper;
+import jips.kor.repository.HitterMapper;
+import jips.kor.repository.PitcherMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +22,12 @@ import java.util.*;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-    @Inject
-    private PaperMapper paperMapper;
 
     @Inject
-    private HistoryMapper historyMapper;
+    private HitterMapper hitterMapper;
+
+    @Inject
+    private PitcherMapper pitcherMapper;
 
     @Inject
     private SystemUtil systemUtil;
@@ -41,16 +43,14 @@ public class HomeController {
 
     @RequestMapping
     public String home(Model model) {
-        this.setSideModelAttributes(model);
+        /*this.setSideModelAttributes(model);*/
         System.out.println("정상적으로 호출되었습니다.");
-        model.addAttribute("features", paperMapper.findByFeatured());
-        model.addAttribute("latest", paperMapper.findByLatest());
         model.addAttribute("cPage", "home");
         model.addAttribute("test","정상적으로 호출되었습니다.");
 
         /*************************************************************/
         /*  투수DB기록 테스트용 */
-        List<Pitcher> p = historyMapper.findAll_pitcher();
+        List<Pitcher> p = pitcherMapper.findAll_pitcher();
 
         int pWin=0;
 
@@ -68,15 +68,15 @@ public class HomeController {
         /*************************************************************/
 
         //타자기록 테스트용
-        List<Hitter> h = historyMapper.findAll_hitter();
+        List<Hitter> h = hitterMapper.findAll_hitter();
         List<Integer> tpa = new ArrayList<Integer>();
         List<Integer> day = new ArrayList<Integer>();
 
         for(int i=0;i<h.size();i++) {
             System.out.print("tpa : ");
-            System.out.println(h.get(i).getTpa());
+            System.out.println(h.get(i).getTPA());
             System.out.print("day : ");
-            System.out.println(h.get(i).getDay());
+            System.out.println(h.get(i).getDate());
         }
 
         /*for(int i=0 ; i<h.size() ; i++){
@@ -97,7 +97,7 @@ public class HomeController {
 
     @RequestMapping("/data")
     public String Data(Model model) {
-        this.setSideModelAttributes(model);
+        /*this.setSideModelAttributes(model);*/
         /* 여기에 예측페이지에서 구현할 기능 설정 */
 
         return "data";
@@ -105,13 +105,13 @@ public class HomeController {
 
     @RequestMapping("/nonamed")
     public String Nonamed(Model model) {
-        this.setSideModelAttributes(model);
+        /*this.setSideModelAttributes(model);*/
         /* 여기에 예측페이지에서 구현할 기능 설정 */
 
         return "nonamed";
     }
 
-    @RequestMapping("/internalprovision")
+    /*@RequestMapping("/internalprovision")
     public String InternalProvision(Model model) {
         this.setSideModelAttributes(model);
         model.addAttribute("cPage", "ip");
@@ -166,7 +166,7 @@ public class HomeController {
         model.addAttribute("cPage", "sm");
         return "submission";
     }
-
+    이건 년도로 찾기 최근 넘저로 찾기를 애트리뷰트 한것임 우리하고는 상관없음
     public void setSideModelAttributes(Model model) {
         model.addAttribute("years", paperMapper.findByYear());
         model.addAttribute("volumes", paperMapper.findByLatestNumber());
@@ -271,5 +271,5 @@ public class HomeController {
         model.addAttribute("searchWords", s);
         model.addAttribute("papers", paperMapper.findBySearchResult(s));
         return "searchResult";
-    }
+    }*/
 }

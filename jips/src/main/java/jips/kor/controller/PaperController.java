@@ -1,4 +1,4 @@
-package jips.kor.controller;
+/*package jips.kor.controller;
 
 import jips.kor.repository.PaperMapper;
 import org.springframework.stereotype.Controller;
@@ -33,4 +33,4 @@ public class PaperController {
     }
 
 
-}
+}*/

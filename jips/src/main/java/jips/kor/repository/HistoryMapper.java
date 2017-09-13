@@ -15,13 +15,13 @@ public interface HistoryMapper {
     @Select("SELECT * FROM basicpitcher")
     List<PlayDay> findAll_palyday();
 
-    /* 투수데이터를 나타내기 위해 데이터를 받아옴. */
+/*    *//* 투수데이터를 나타내기 위해 데이터를 받아옴. *//*
     @Select("SELECT * FROM basicpitcher")
     List<Pitcher> findAll_pitcher();
 
-    /* 타자데이터를 나타내기 위해 데이터를 받아옴. */
+    *//* 타자데이터를 나타내기 위해 데이터를 받아옴. *//*
     @Select("SELECT * FROM basichitter")
-    List<Hitter> findAll_hitter();
+    List<Hitter> findAll_hitter();*/
 
     @Insert("INSERT INTO historydb (" +
             "year, " +

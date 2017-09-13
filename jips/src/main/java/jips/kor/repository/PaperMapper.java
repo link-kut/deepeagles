@@ -1,3 +1,4 @@
+/*
 package jips.kor.repository;
 
 import jips.kor.domain.*;
@@ -76,3 +77,4 @@ public interface PaperMapper {
     @Select("SELECT * FROM historydb WHERE num = #{pn} ORDER BY year DESC, month DESC, date DESC")
     List<History> findByHistory(@Param("pn") int pn);
 }
+*/

@@ -57,6 +57,7 @@ public class History {
         this.num = num;
     }
 
+    /*이게 여기들어가있네요..ㅜ*/
     public int getHit() {
         return hit;
     }
