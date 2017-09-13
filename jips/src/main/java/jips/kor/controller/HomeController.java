@@ -51,17 +51,7 @@ public class HomeController {
 
     @RequestMapping("/data")
     public String Data(Model model) {
-<<<<<<< HEAD
-        List<Pitcher> p = pitcherMapper.findAll_pitcher();
-        List<Hitter> h = hitterMapper.findAll_hitter();
 
-        for(int i=0; i<p.size(); i++){
-            p.get(i).toString();
-        }
-        for(int i=0; i<h.size(); i++){
-            h.get(i).toString();
-        }
-=======
         /*this.setSideModelAttributes(model);*/
         /* 여기에 예측페이지에서 구현할 기능 설정 */
         List<Pitcher> pitchers = pitcherMapper.findAll_pitcher();
@@ -76,8 +66,6 @@ public class HomeController {
         System.out.println(hhr.get(i).getM_acc());
     }*/
         model.addAttribute("test_p", pitchers);
->>>>>>> 81cfa446f313ca045541d03d5796a12c8ea97669
-
         for(int i=0; i<hitters.size(); i++){
             hitters.get(i).toString();
         }
