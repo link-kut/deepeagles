@@ -10,10 +10,10 @@ public class Hitter {
     private int TPA;
     private int AB;
     private int H;
-    private int oneB;
+    private int ONEB;
 
-    private int twoB;
-    private int threeB;
+    private int TWOB;
+    private int THREEB;
     private int HR;
     private int R;
     private int RBI;
@@ -70,28 +70,28 @@ public class Hitter {
         H = h;
     }
 
-    public int getOneB() {
-        return oneB;
+    public int getONEB() {
+        return ONEB;
     }
 
-    public void setOneB(int oneB) {
-        this.oneB = oneB;
+    public void setONEB(int ONEB) {
+        this.ONEB = ONEB;
     }
 
-    public int getTwoB() {
-        return twoB;
+    public int getTWOB() {
+        return TWOB;
     }
 
-    public void setTwoB(int twoB) {
-        this.twoB = twoB;
+    public void setTWOB(int TWOB) {
+        this.TWOB = TWOB;
     }
 
-    public int getThreeB() {
-        return threeB;
+    public int getTHREEB() {
+        return THREEB;
     }
 
-    public void setThreeB(int threeB) {
-        this.threeB = threeB;
+    public void setTHREEB(int THREEB) {
+        this.THREEB = THREEB;
     }
 
     public int getHR() {
@@ -201,25 +201,27 @@ public class Hitter {
     @Override
     public String toString() {
         return "Hitter{" +
-                "date="+ date +
-                "TPA=" + TPA +
-                "AB=" + AB +
-                "H=" + H +
-                "oneB=" + oneB +
-                "twoB=" + twoB +
-                "threeB=" + threeB +
-                "HR=" + HR +
-                "R=" + R +
-                "RBI=" + RBI +
-                "BB=" + BB+
-                "IBB=" + IBB +
-                "HPB=" + HPB +
-                "SO=" + SO +
-                "SF=" + SF +
-                "SH=" + SH +
-                "GDP=" + GDP +
-                "SB=" + SB+
-                "CS=" + CS+
+                "id=" + id +
+                ", date=" + date +
+                ", TPA=" + TPA +
+                ", AB=" + AB +
+                ", H=" + H +
+                ", ONEB=" + ONEB +
+                ", TWOB=" + TWOB +
+                ", THREEB=" + THREEB +
+                ", HR=" + HR +
+                ", R=" + R +
+                ", RBI=" + RBI +
+                ", BB=" + BB +
+                ", IBB=" + IBB +
+                ", HPB=" + HPB +
+                ", SO=" + SO +
+                ", SF=" + SF +
+                ", SH=" + SH +
+                ", GDP=" + GDP +
+                ", SB=" + SB +
+                ", CS=" + CS +
+                ", AVG=" + AVG +
                 '}';
     }
 }

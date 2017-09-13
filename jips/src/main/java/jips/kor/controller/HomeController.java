@@ -46,55 +46,12 @@ public class HomeController {
         model.addAttribute("cPage", "home");
         model.addAttribute("test","정상적으로 호출되었습니다.");
 
-        /*************************************************************/
-        /*  투수DB기록 테스트용 */
-        List<Pitcher> p = pitcherMapper.findAll_pitcher();
-
-        int pWin=0;
-
-        for(int i=0;i<p.size();i++)
-        {
-            pWin = p.get(i).getW();
-            /*if(p.get(i).getW() == 1){
-                pWin+=1;
-            }
-            else if(p.get(i).getL() == 1){
-                pLose+=1;
-            }*/
-        }
-        model.addAttribute("pWin", pWin);
-        /*************************************************************/
-
-        //타자기록 테스트용
-        List<Hitter> h = hitterMapper.findAll_hitter();
-        List<Integer> tpa = new ArrayList<Integer>();
-        List<Integer> day = new ArrayList<Integer>();
-
-        for(int i=0;i<h.size();i++) {
-            System.out.print("tpa : ");
-            System.out.println(h.get(i).getTPA());
-            System.out.print("day : ");
-            System.out.println(h.get(i).getDate());
-        }
-
-        /*for(int i=0 ; i<h.size() ; i++){
-          tpa.get(h.get(i).getTpa());
-        }*/
-
-        model.addAttribute("tpa", tpa);
-        model.addAttribute("day", day);
-
-
-        /* 날짜입력 */
-        Date test_date = new Date();
-        model.addAttribute("test_date", test_date);
-
-
         return "index";
     }
 
     @RequestMapping("/data")
     public String Data(Model model) {
+<<<<<<< HEAD
         List<Pitcher> p = pitcherMapper.findAll_pitcher();
         List<Hitter> h = hitterMapper.findAll_hitter();
 
@@ -104,9 +61,27 @@ public class HomeController {
         for(int i=0; i<h.size(); i++){
             h.get(i).toString();
         }
+=======
+        /*this.setSideModelAttributes(model);*/
+        /* 여기에 예측페이지에서 구현할 기능 설정 */
+        List<Pitcher> pitchers = pitcherMapper.findAll_pitcher();
 
-        model.addAttribute("test_p", p);
-        model.addAttribute("test_h", h);
+        for(int i=0; i<pitchers.size(); i++){
+           /* System.out.println(pitchers.get(i).toString());*/
+        }
+        List<Hitter> hitters = hitterMapper.findAll_hitter();
+
+    /*for(int i=0;i<1;i++) {
+        System.out.println(i+"번째 트라이");
+        System.out.println(hhr.get(i).getM_acc());
+    }*/
+        model.addAttribute("test_p", pitchers);
+>>>>>>> 81cfa446f313ca045541d03d5796a12c8ea97669
+
+        for(int i=0; i<hitters.size(); i++){
+            hitters.get(i).toString();
+        }
+        model.addAttribute("test_h", hitters);
 
         return "data";
     }

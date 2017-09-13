@@ -27,9 +27,9 @@ public class Pitcher {
     private double ip;
     private int pa;
     private int h;
-    private int twob;
+    private int TWOB;
 
-    private int threeb;
+    private int THREEB;
     private int hr;
     private int r;
     private int er;
@@ -157,20 +157,20 @@ public class Pitcher {
         this.h = h;
     }
 
-    public int getTwob() {
-        return twob;
+    public int getTWOB() {
+        return TWOB;
     }
 
-    public void setTwob(int twob) {
-        this.twob = twob;
+    public void setTWOB(int TWOB) {
+        this.TWOB = TWOB;
     }
 
-    public int getThreeb() {
-        return threeb;
+    public int getTHREEB() {
+        return THREEB;
     }
 
-    public void setThreeb(int threeb) {
-        this.threeb = threeb;
+    public void setTHREEB(int THREEB) {
+        this.THREEB = THREEB;
     }
 
     public int getHr() {
@@ -272,8 +272,12 @@ public class Pitcher {
     @Override
     public String toString() {
         return "Pitcher{" +
-                "date="+date+
-                "w=" + w +
+                "id=" + id +
+                ", date=" + date +
+                ", rank=" + rank +
+                ", teamname='" + teamname + '\'' +
+                ", game=" + game +
+                ", w=" + w +
                 ", l=" + l +
                 ", sv=" + sv +
                 ", hld=" + hld +
@@ -282,8 +286,8 @@ public class Pitcher {
                 ", ip=" + ip +
                 ", pa=" + pa +
                 ", h=" + h +
-                ", two_b=" + twob +
-                ", three_b=" + threeb +
+                ", TWOB=" + TWOB +
+                ", THREEB=" + THREEB +
                 ", hr=" + hr +
                 ", r=" + r +
                 ", er=" + er +
