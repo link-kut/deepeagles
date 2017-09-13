@@ -4,30 +4,37 @@ import java.util.Date;
 
 public class Hitter {
 
+    private int id;
+
     private Date date;
     private int TPA;
     private int AB;
     private int H;
     private int one_B;
+
     private int two_B;
     private int three_B;
     private int HR;
     private int R;
     private int RBI;
+
     private int BB;
     private int IBB;
     private int HPB;
     private int SO;
     private int SF;
+
     private int SH;
     private int GDP;
     private int SB;
     private int CS;
-    private float AVG;
+    private double AVG;
 
-    public Date getDate() {
-        return date;
-    }
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
+    public Date getDate() { return date; }
 
     public void setDate(Date date) {
         this.date = date;
@@ -153,9 +160,7 @@ public class Hitter {
         this.SH = SH;
     }
 
-    public int getGDP() {
-        return GDP;
-    }
+    public int getGDP() { return GDP; }
 
     public void setGDP(int GDP) {
         this.GDP = GDP;
@@ -177,11 +182,11 @@ public class Hitter {
         this.CS = CS;
     }
 
-    public float getAVG() {
+    public double getAVG() {
         return AVG;
     }
 
-    public void setAVG(float AVG) {
+    public void setAVG(double AVG) {
         this.AVG = AVG;
     }
 

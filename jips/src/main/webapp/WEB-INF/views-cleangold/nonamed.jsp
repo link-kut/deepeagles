@@ -40,6 +40,60 @@
         <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
     </div>
 
+    <section class="container">
+        <!-- 경기 테이블-->
+        <div class="row" style="width:100%; height:200px;overflow:auto;">
+            <h4>Match Info</h4>
+            <table summary = "목록">
+                <thead>
+                <tr>
+                    <th> id</th>
+                    <th> Date</th>
+                    <th> starttime</th>
+                    <th> M_acc</th>
+                    <th> M_winrate</th>
+
+                    <th> M_drawrate</th>
+                    <th> M_loserate</th>
+                    <th> corrM</th>
+                    <th> corrL</th>
+                    <th> HHscore</th>
+
+                    <th> OPPscore</th>
+                </tr>
+                </thead>
+
+                <c:if test="${test_hhr.size()==0}">
+                    <tfoot>
+                    <tr>
+                        <td colspan ="11"> 현재 데이터 무</td>
+
+                    </tr>
+                    </tfoot>
+                </c:if>
+                <tbody>
+                <c:forEach var="test_hhr" items = "${test_hhr}" varStatus = "status">
+                    <tr>
+                        <td><c:out value = "${test_hhr.id}"/></td>
+                        <td><c:out value = "${test_hhr.date}"/></td>
+                        <td><c:out value = "${test_hhr.starttime}"/></td>
+                        <td><fmt:formatNumber value = "${test_hhr.m_acc}" pattern=".0000"/></td>
+                        <td><c:out value = "${test_hhr.m_winrate}"/></td>
+                        <td><c:out value = "${test_hhr.m_drawrate}"/></td>
+                        <td><c:out value = "${test_hhr.m_loserate}"/></td>
+                        <td><c:out value = "${test_hhr.corrM}"/></td>
+                        <td><c:out value = "${test_hhr.corrL}"/></td>
+                        <td><c:out value = "${test_hhr.HHscore}"/></td>
+                        <td><c:out value = "${test_hhr.OPPscore}"/></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+
     <!-- HTML -->
     <div id="chartdiv"></div>
 

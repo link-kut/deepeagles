@@ -11,16 +11,11 @@ import java.util.Date;
 
 public class Pitcher {
 
+    private int id;
     private Date date;
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
+    private int rank;
+    private String teamname;
+    private int game;
     private int w;  //승
     private int l;  //패
     private int sv; //무
@@ -46,6 +41,30 @@ public class Pitcher {
     private int cs;
     private int sb;
 
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getRank() { return rank; }
+
+    public void setRank(int rank) { this.rank = rank; }
+
+    public String getTeamname() { return teamname; }
+
+    public void setTeamname(String teamname) { this.teamname = teamname; }
+
+    public int getGame() { return game; }
+
+    public void setGame(int game) { this.game = game; }
+
     public int getL() { return l; }
 
     public void setL(int l) { this.l = l; }
@@ -57,7 +76,6 @@ public class Pitcher {
     public int getSV() { return sv; }
 
     public void setSV(int sv) { this.sv = sv; }
-
 
     public int getHld() { return hld; }
 

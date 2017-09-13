@@ -5,6 +5,7 @@
 <%@ page pageEncoding="utf-8" %>
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
 
+
 <!doctype html>
 <!--[if IE 8 ]> <html class="no-js loading ie8 oldie" dir="ltr" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
@@ -38,113 +39,156 @@
     <hr/>
     <!-- 두번째 섹션 : 데이터 표현그래프 -->
     <section class="container"><!-- 센터 -->
-        <!-- 투수 테이블-->
-        <div class="row">
-            <h1>투수 정보</h1>
-            <table class="td_ctrl">
+
+        <!-- 투수 정보 -->
+        <div class="row" style="width:100%; height:200px;overflow:auto;">
+            <h4>Pitcher Info</h4>
+            <table summary = "목록">
+                <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>Win</th>
-                    <th>Lose</th>
-                    <th>SV</th>
-                    <th>HLD</th>
-                    <th>BS</th>
-                    <th>QS</th>
-                    <th>IP</th>
-                    <th>PA</th>
-                    <th>H</th>
-                    <th>2B</th>
-                    <th>3B</th>
-                    <th>HR</th>
-                    <th>R</th>
-                    <th>ER</th>
-                    <th>SO</th>
-                    <th>BB</th>
-                    <th>IBB</th>
-                    <th>HBP</th>
-                    <th>WP</th>
-                    <th>BK</th>
-                    <th>PK</th>
-                    <th>CS</th>
-                    <th>SB</th>
+                    <th> id</th>
+                    <th> Date</th>
+                    <th> rank</th>
+                    <th> teamname</th>
+                    <th> game</th>
+                    <th> w</th>
+                    <th> l</th>
+                    <th> sv</th>
+                    <th> hld</th>
+                    <th> bs</th>
+                    <th> qs</th>
+                    <th> ip</th>
+                    <th> pa</th>
+                    <th> h</th>
+                    <th> two_b</th>
+                    <th> three_b</th>
+                    <th> hr</th>
+                    <th> r</th>
+                    <th> er</th>
+                    <th> so</th>
+                    <th> bb</th>
+                    <th> ibb</th>
+                    <th> hbp</th>
+                    <th> wp</th>
+                    <th> bk</th>
+                    <th> pk</th>
+                    <th> cs</th>
+                    <th> sb</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>${pWin.forEach(someFn)}</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>8.00</td>
-                    <td>37</td>
-                    <td>10</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>6</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                </tr>
+                </thead>
+
+                <c:if test="${test_p.size()==0}">
+                    <tfoot>
+                    <tr>
+                        <td colspan ="28"> 현재 데이터 무</td>
+                    </tr>
+                    </tfoot>
+                </c:if>
+                <tbody>
+                <c:forEach var="test_p" items = "${test_p}" varStatus = "status">
+                    <tr>
+                        <td><c:out value = "${test_p.id}"/></td>
+                        <td><c:out value = "${test_p.date}"/></td>
+                        <td><c:out value = "${test_p.rank}"/></td>
+                        <td><c:out value = "${test_p.teamname}"/></td>
+                        <td><c:out value = "${test_p.game}"/></td>
+                        <td><c:out value = "${test_p.w}"/></td>
+                        <td><c:out value = "${test_p.l}"/></td>
+                        <td><c:out value = "${test_p.SV}"/></td>
+                        <td><c:out value = "${test_p.hld}"/></td>
+                        <td><c:out value = "${test_p.bs}"/></td>
+                        <td><c:out value = "${test_p.qs}"/></td>
+                        <td><c:out value = "${test_p.ip}"/></td>
+                        <td><c:out value = "${test_p.pa}"/></td>
+                        <td><c:out value = "${test_p.h}"/></td>
+                        <td><c:out value = "${test_p.two_b}"/></td>
+                        <td><c:out value = "${test_p.three_b}"/></td>
+                        <td><c:out value = "${test_p.hr}"/></td>
+                        <td><c:out value = "${test_p.r}"/></td>
+                        <td><c:out value = "${test_p.er}"/></td>
+                        <td><c:out value = "${test_p.so}"/></td>
+                        <td><c:out value = "${test_p.bb}"/></td>
+                        <td><c:out value = "${test_p.ibb}"/></td>
+                        <td><c:out value = "${test_p.hbp}"/></td>
+                        <td><c:out value = "${test_p.wp}"/></td>
+                        <td><c:out value = "${test_p.bk}"/></td>
+                        <td><c:out value = "${test_p.pk}"/></td>
+                        <td><c:out value = "${test_p.cs}"/></td>
+                        <td><c:out value = "${test_p.sb}"/></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
             </table>
         </div>
 
         <!-- 타자 테이블-->
-        <div class="row">
-            <h1>타자 정보</h1>
-            <table class="td_ctrl">
+        <div class="row" style="width:100%; height:200px;overflow:auto;">
+            <h4>Hitter Info</h4>
+            <table summary = "목록">
+                <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>TPA</th>
-                    <th>AB</th>
-                    <th>H</th>
-                    <th>1B</th>
-                    <th>2B</th>
-                    <th>3B</th>
-                    <th>HR</th>
-                    <th>R</th>
-                    <th>RBI</th>
-                    <th>BB</th>
-                    <th>IBB</th>
-                    <th>HBP</th>
-                    <th>SO</th>
-                    <th>SF</th>
-                    <th>SH</th>
-                    <th>GDP</th>
-                    <th>SB</th>
-                    <th>CS</th>
-                    <th>AVG</th>
+                    <th> id</th>
+                    <th> date</th>
+                    <th> TPA</th>
+                    <th> AB</th>
+                    <th> H</th>
+                    <th> one_B</th>
+                    <th> two_B</th>
+                    <th> three_B</th>
+                    <th> HR</th>
+                    <th> R</th>
+                    <th> RBI</th>
+                    <th> BB</th>
+                    <th> IBB</th>
+                    <th> HPB</th>
+                    <th> SO</th>
+                    <th> SF</th>
+                    <th> SH</th>
+                    <th> GDP</th>
+                    <th> SB</th>
+                    <th> CS</th>
+                    <th> AVG</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>41</td>
-                    <td>36</td>
-                    <td>11</td>
-                    <td>9</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>4</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>6</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0.306</td>
-                </tr>
+                </thead>
+
+                <c:if test="${test_h.size()==0}">
+                    <tfoot>
+                    <tr>
+                        <td colspan ="21"> 현재 데이터 무</td>
+                    </tr>
+                    </tfoot>
+                </c:if>
+                <tbody>
+                <c:forEach var="test_h" items = "${test_h}" varStatus = "status">
+                    <tr>
+                        <td><c:out value = "${test_h.id}"/></td>
+
+                        <td><c:out value = "${test_h.date}"/></td>
+                        <td><c:out value = "${test_h.TPA}"/></td>
+                        <td><c:out value = "${test_h.AB}"/></td>
+                        <td><c:out value = "${test_h.h}"/></td>
+                        <td><c:out value = "${test_h.one_B}"/></td>
+
+                        <td><c:out value = "${test_h.two_B}"/></td>
+                        <td><c:out value = "${test_h.three_B}"/></td>
+                        <td><c:out value = "${test_h.HR}"/></td>
+                        <td><c:out value = "${test_h.r}"/></td>
+                        <td><c:out value = "${test_h.RBI}"/></td>
+
+                        <td><c:out value = "${test_h.BB}"/></td>
+                        <td><c:out value = "${test_h.IBB}"/></td>
+                        <td><c:out value = "${test_h.HPB}"/></td>
+                        <td><c:out value = "${test_h.SO}"/></td>
+                        <td><c:out value = "${test_h.SF}"/></td>
+
+                        <td><c:out value = "${test_h.SH}"/></td>
+                        <td><c:out value = "${test_h.GDP}"/></td>
+                        <td><c:out value = "${test_h.SB}"/></td>
+                        <td><c:out value = "${test_h.CS}"/></td>
+                        <td><c:out value = "${test_h.AVG}"/></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
             </table>
         </div>
 
