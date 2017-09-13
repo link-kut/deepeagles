@@ -7,18 +7,20 @@ public class HHRate {
     private int id;
     private int Date;
     private Date starttime;
-    private double M_acc;
-    private double M_winrate;
+    private double mAcc;
+    private double mWinrate;
 
-    private double M_drawrate;
-    private double M_loserate;
+    private double mDrawrate;
+    private double mLoserate;
     private int corrM;
     private int corrL;
     private int HHscore;
 
     private int OPPscore;
 
-    public int getId() { return id;}
+    public int getId() {
+        return id;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -32,44 +34,44 @@ public class HHRate {
         Date = date;
     }
 
-    public Date getStarttime() {
+    public java.util.Date getStarttime() {
         return starttime;
     }
 
-    public void setStarttime(Date starttime) {
+    public void setStarttime(java.util.Date starttime) {
         this.starttime = starttime;
     }
 
-    public double getM_acc() {
-        return M_acc;
+    public double getmAcc() {
+        return mAcc;
     }
 
-    public void setM_acc(double m_acc) {
-        M_acc = m_acc;
+    public void setmAcc(double mAcc) {
+        this.mAcc = mAcc;
     }
 
-    public double getM_winrate() {
-        return M_winrate;
+    public double getmWinrate() {
+        return mWinrate;
     }
 
-    public void setM_winrate(double m_winrate) {
-        M_winrate = m_winrate;
+    public void setmWinrate(double mWinrate) {
+        this.mWinrate = mWinrate;
     }
 
-    public double getM_drawrate() {
-        return M_drawrate;
+    public double getmDrawrate() {
+        return mDrawrate;
     }
 
-    public void setM_drawrate(double m_drawrate) {
-        M_drawrate = m_drawrate;
+    public void setmDrawrate(double mDrawrate) {
+        this.mDrawrate = mDrawrate;
     }
 
-    public double getM_loserate() {
-        return M_loserate;
+    public double getmLoserate() {
+        return mLoserate;
     }
 
-    public void setM_loserate(double m_loserate) {
-        M_loserate = m_loserate;
+    public void setmLoserate(double mLoserate) {
+        this.mLoserate = mLoserate;
     }
 
     public int getCorrM() {
@@ -104,20 +106,20 @@ public class HHRate {
         this.OPPscore = OPPscore;
     }
 
-//    @Override
-//    public String toString() {
-//        return "HHRate{" +
-//                "id="+ id +
-//                "Date=" + Date +
-//                "starttime=" + starttime+
-//                "M_acc=" + M_acc+
-//                "M_winrate=" + M_winrate+
-//                "M_drawrate=" + M_drawrate+
-//                "M_loserate=" + M_loserate+
-//                "corrM=" + corrM+
-//                "corrL=" + corrL+
-//                "HHscore=" + HHscore+
-//                "OPPscore=" + OPPscore+
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "HHRate{" +
+                "id=" + id +
+                ", Date=" + Date +
+                ", starttime=" + starttime +
+                ", mAcc=" + mAcc +
+                ", mWinrate=" + mWinrate +
+                ", mDrawrate=" + mDrawrate +
+                ", mLoserate=" + mLoserate +
+                ", corrM=" + corrM +
+                ", corrL=" + corrL +
+                ", HHscore=" + HHscore +
+                ", OPPscore=" + OPPscore +
+                '}';
+    }
 }

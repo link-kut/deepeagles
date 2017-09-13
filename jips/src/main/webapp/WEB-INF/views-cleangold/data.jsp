@@ -39,16 +39,16 @@
     <!-- 두번째 섹션 : 데이터 표현그래프 -->
     <section class="container"><!-- 센터 -->
 
+        <h4><strong>[Pitcher Info]</strong></h4>
+        <br/>
         <!-- 투수 정보 -->
         <div class="row" style="width:100%; height:200px;overflow:auto;">
-            <h4>Pitcher Info</h4>
             <table summary = "목록">
                 <thead>
                 <tr>
                     <th> id</th>
                     <th> Date</th>
                     <th> rank</th>
-                    <th> teamname</th>
                     <th> game</th>
                     <th> w</th>
                     <th> l</th>
@@ -79,7 +79,7 @@
                 <c:if test="${test_p.size()==0}">
                     <tfoot>
                     <tr>
-                        <td colspan ="28"> 현재 데이터 무</td>
+                        <td colspan ="27"> 현재 데이터 무</td>
                     </tr>
                     </tfoot>
                 </c:if>
@@ -89,7 +89,6 @@
                         <td><c:out value = "${test_p.id}"/></td>
                         <td><c:out value = "${test_p.date}"/></td>
                         <td><c:out value = "${test_p.rank}"/></td>
-                        <td><c:out value = "${test_p.teamname}"/></td>
                         <td><c:out value = "${test_p.game}"/></td>
                         <td><c:out value = "${test_p.w}"/></td>
                         <td><c:out value = "${test_p.l}"/></td>
@@ -120,9 +119,12 @@
             </table>
         </div>
 
+        <br/><br/>
+        <h4><strong>[Hitter Info]</strong></h4>
+        <br/>
         <!-- 타자 테이블-->
         <div class="row" style="width:100%; height:200px;overflow:auto;">
-            <h4>Hitter Info</h4>
+
             <table summary = "목록">
                 <thead>
                 <tr>

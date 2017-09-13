@@ -117,6 +117,9 @@ public class HomeController {
 
         List<HHRate> hhr = hhrateMapper.findAll_hhrate();
 
+        for(int i=0; i<hhr.size(); i++){
+            hhr.get(i).toString();
+        }
         model.addAttribute("test_hhr", hhr);
         return "nonamed";
     }
