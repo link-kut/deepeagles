@@ -51,20 +51,20 @@ public class HomeController {
         /*************************************************************/
         /*  투수DB기록 테스트용 */
         List<Pitcher> p = historyMapper.findAll_pitcher();
+
         int pWin=0;
-        int pLose=0;
 
         for(int i=0;i<p.size();i++)
         {
-            if(p.get(i).getW() == 1){
+            pWin = p.get(i).getW();
+            /*if(p.get(i).getW() == 1){
                 pWin+=1;
             }
             else if(p.get(i).getL() == 1){
                 pLose+=1;
-            }
+            }*/
         }
         model.addAttribute("pWin", pWin);
-        model.addAttribute("pLose", pLose);
         /*************************************************************/
 
         //타자기록 테스트용
@@ -93,6 +93,22 @@ public class HomeController {
 
 
         return "index";
+    }
+
+    @RequestMapping("/data")
+    public String Data(Model model) {
+        this.setSideModelAttributes(model);
+        /* 여기에 예측페이지에서 구현할 기능 설정 */
+
+        return "data";
+    }
+
+    @RequestMapping("/nonamed")
+    public String Nonamed(Model model) {
+        this.setSideModelAttributes(model);
+        /* 여기에 예측페이지에서 구현할 기능 설정 */
+
+        return "nonamed";
     }
 
     @RequestMapping("/internalprovision")
@@ -188,7 +204,6 @@ public class HomeController {
         return "onlinefirst";
     }
 
-
     @RequestMapping("/digital.lib")
     public String DigitalList(Model model, @RequestParam int y, @RequestParam int v, @RequestParam int n) {
         model.addAttribute("years", paperMapper.findByYear());
@@ -200,7 +215,6 @@ public class HomeController {
         model.addAttribute("cPage", "dl");
         return "digital.lib";
     }
-
 
     @RequestMapping("/q.jips")
     public String Detail(Model model, @RequestParam(value = "pn", required = false) int pn, HttpSession session) {
@@ -238,7 +252,6 @@ public class HomeController {
         return "paper";
     }
 
-
     @RequestMapping("/volume")
     public String Volume(Model model, @RequestParam int v, @RequestParam int n) {
         model.addAttribute("years", paperMapper.findByYear());
@@ -259,5 +272,4 @@ public class HomeController {
         model.addAttribute("papers", paperMapper.findBySearchResult(s));
         return "searchResult";
     }
-
 }
