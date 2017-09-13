@@ -14,4 +14,5 @@ public interface PitcherMapper {
 
     @Select("SELECT * FROM HH_P")
     List<Pitcher> findAll_pitcher();
+
 }

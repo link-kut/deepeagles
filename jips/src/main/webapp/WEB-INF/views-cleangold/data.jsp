@@ -35,7 +35,6 @@
         <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
     </div>
 
-    <hr/>
     <!-- 두번째 섹션 : 데이터 표현그래프 -->
     <section class="container"><!-- 센터 -->
         <!-- 투수 테이블-->
