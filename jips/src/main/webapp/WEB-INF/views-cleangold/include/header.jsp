@@ -20,7 +20,7 @@
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
                     <a href="${baseUrl}/data">Data</a> </li>
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
-                    <a href="${baseUrl}/nonamed">Crit</a> </li>
+                    <a href="${baseUrl}/nonamed">Predict</a> </li>
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
                     <a href="${baseUrl}/about">About</a> </li>
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">

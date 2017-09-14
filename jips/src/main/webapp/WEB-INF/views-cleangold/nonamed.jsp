@@ -43,9 +43,12 @@
 
     <section class="container">
         <!-- 경기 테이블-->
-        <h4><strong>[Match Info]</strong></h4>
-        <br/><br/>
-        <div class="row" style="width:100%; height:200px;overflow:auto;">
+
+        <br/>
+        <div class ="col sep sep-big"></div>
+        <h4><strong style="padding-left: 20px;">[PREDICT]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+        <br/>
+        <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
             <table summary = "목록">
                 <thead>
@@ -93,11 +96,19 @@
             </table>
 
         </div>
-    </section>
+
+        <br/><br/>
+        <div class ="col sep sep-big"></div>
 
     <br/><br/>
     <!-- HTML -->
     <div id="chartdiv"></div>
+
+        <br/><br/><br/>
+        <div class ="col sep sep-big"></div>
+
+
+    </section>
 
     <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
 </body>
@@ -108,51 +119,31 @@
      * Define data for each year
      */
     var chartData = {
-        "1995": [
-            { "sector": "Agriculture", "size": 6.6 },
-            { "sector": "Mining and Quarrying", "size": 0.6 },
-            { "sector": "Manufacturing", "size": 23.2 },
-            { "sector": "Electricity and Water", "size": 2.2 },
-            { "sector": "Construction", "size": 4.5 },
-            { "sector": "Trade (Wholesale, Retail, Motor)", "size": 14.6 },
-            { "sector": "Transport and Communication", "size": 9.3 },
-            { "sector": "Finance, real estate and business services", "size": 22.5 } ],
-        "1996": [
-            { "sector": "Agriculture", "size": 6.4 },
-            { "sector": "Mining and Quarrying", "size": 0.5 },
-            { "sector": "Manufacturing", "size": 22.4 },
-            { "sector": "Electricity and Water", "size": 2 },
-            { "sector": "Construction", "size": 4.2 },
-            { "sector": "Trade (Wholesale, Retail, Motor)", "size": 14.8 },
-            { "sector": "Transport and Communication", "size": 9.7 },
-            { "sector": "Finance, real estate and business services", "size": 22 } ],
-        "1997": [
-            { "sector": "Agriculture", "size": 6.1 },
-            { "sector": "Mining and Quarrying", "size": 0.2 },
-            { "sector": "Manufacturing", "size": 20.9 },
-            { "sector": "Electricity and Water", "size": 1.8 },
-            { "sector": "Construction", "size": 4.2 },
-            { "sector": "Trade (Wholesale, Retail, Motor)", "size": 13.7 },
-            { "sector": "Transport and Communication", "size": 9.4 },
-            { "sector": "Finance, real estate and business services", "size": 22.1 } ],
-        "1998": [
-            { "sector": "Agriculture", "size": 6.2 },
-            { "sector": "Mining and Quarrying", "size": 0.3 },
-            { "sector": "Manufacturing", "size": 21.4 },
-            { "sector": "Electricity and Water", "size": 1.9 },
-            { "sector": "Construction", "size": 4.2 },
-            { "sector": "Trade (Wholesale, Retail, Motor)", "size": 14.5 },
-            { "sector": "Transport and Communication", "size": 10.6 },
-            { "sector": "Finance, real estate and business services", "size": 23 } ],
-        "1999": [
-            { "sector": "Agriculture", "size": 5.7 },
-            { "sector": "Mining and Quarrying", "size": 0.2 },
-            { "sector": "Manufacturing", "size": 20 },
-            { "sector": "Electricity and Water", "size": 1.8 },
-            { "sector": "Construction", "size": 4.4 },
-            { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.2 },
-            { "sector": "Transport and Communication", "size": 10.5 },
-            { "sector": "Finance, real estate and business services", "size": 24.7 } ],
+        "20170913": [
+            { "sector": "패", "size": 6.6 },
+            { "sector": "무", "size": 0.6 },
+            { "sector": "승", "size": 23.2 }
+             ],
+        "20170913": [
+            { "sector": "패", "size": 6.4 },
+            { "sector": "무 ", "size": 0.5 },
+            { "sector": "승", "size": 22.4 }
+             ],
+        "20170913": [
+            { "sector": "패", "size": 6.1 },
+            { "sector": "무", "size": 0.2 },
+            { "sector": "승", "size": 20.9 }
+             ],
+        "20170913": [
+            { "sector": "패", "size": 6.2 },
+            { "sector": "무", "size": 0.3 },
+            { "sector": "승", "size": 21.4 }
+             ],
+        "20170913": [
+            { "sector": "패", "size": 5.7 },
+            { "sector": "무", "size": 0.2 },
+            { "sector": "승", "size": 20 }
+             ]/*
         "2000": [
             { "sector": "Agriculture", "size": 5.1 },
             { "sector": "Mining and Quarrying", "size": 0.3 },
@@ -287,14 +278,14 @@
             { "sector": "Construction", "size": 5.6 },
             { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.6 },
             { "sector": "Transport and Communication", "size": 10.5 },
-            { "sector": "Finance, real estate and business services", "size": 26.5 } ]
+            { "sector": "Finance, real estate and business services", "size": 26.5 } ]*/
     };
 
 
     /**
      * Create the chart
      */
-    var currentYear = 1995;
+    var currentYear = 20170913;
     var chart = AmCharts.makeChart( "chartdiv", {
         "type": "pie",
         "theme": "light",
@@ -306,20 +297,20 @@
         "pullOutRadius": 20,
         "marginTop": 30,
         "titles": [{
-            "text": "South African Economy"
+            "text": "오늘의 승부"
         }],
         "allLabels": [{
             "y": "54%",
             "align": "center",
             "size": 25,
             "bold": true,
-            "text": "1995",
+            "text": "20170913",
             "color": "#70dbff"
         }, {
             "y": "49%",
             "align": "center",
             "size": 15,
-            "text": "Year",
+            "text": "DATE",
             "color": "#2d1555"
         }],
         "listeners": [ {
