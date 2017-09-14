@@ -42,13 +42,29 @@
         </h4>
     </section>
 
-    <section class="container" style="height:400px">
+    <section class="container" style="height:600px">
         <img src="${resources2}/img/jips/bar2.png" width="100%" style="margin-left: auto; margin-right: auto; display: block;">
-        <div class="row">
-            <h2><strong>Machine Learning Members</strong></h2>
+        <br/>
+        <div class="row" style="height:300px;">
+            <section class="container">
+                <h4 class="align_center"><strong>Machine Learning Members</strong></h4><br/>
+                <div>
+                    <div class="col-md-4"><img src="${resources2}/img/jips/face002.png" style="margin-left:200px;" width="50%"></div>
+                    <div class="col-md-4"><img src="${resources2}/img/jips/face001.png" style="margin-left:100px;" width="50%"></div>
+                    <div class="col-md-4"><img src="${resources2}/img/jips/face0004.png" style="margin-left:20px;" width="50%"></div>
+                </div>
+
+            </section>
+
         </div>
-        <div class="row">
-            <h2><strong>Front/Back-End Members</strong></h2>
+        <div class="row" style="height:300px;">
+            <section class="container">
+                <h4 class="align_center"><strong>Front/Back-End Members</strong></h4><br/>
+                <div>
+                    <div class="col-md-6"><img src="${resources2}/img/jips/face1.png" style="margin-left:300px;" width="30%"></div>
+                    <div class="col-md-6"><img src="${resources2}/img/jips/face004.png" style="margin-left:80px;" width="30%"></div>
+                </div>
+            </section>
         </div>
     </section>
 
