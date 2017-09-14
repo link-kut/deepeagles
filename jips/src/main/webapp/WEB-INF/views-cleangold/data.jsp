@@ -49,33 +49,31 @@
             <table summary = "목록">
                 <thead>
                 <tr>
-                    <th> id</th>
-                    <th> Date</th>
-                    <th> rank</th>
-                    <th> game</th>
-                    <th> w</th>
-                    <th> l</th>
-                    <th> sv</th>
-                    <th> hld</th>
-                    <th> bs</th>
-                    <th> qs</th>
-                    <th> ip</th>
-                    <th> pa</th>
-                    <th> h</th>
-                    <th> twob</th>
-                    <th> threeb</th>
-                    <th> hr</th>
-                    <th> r</th>
-                    <th> er</th>
-                    <th> so</th>
-                    <th> bb</th>
-                    <th> ibb</th>
-                    <th> hbp</th>
-                    <th> wp</th>
-                    <th> bk</th>
-                    <th> pk</th>
-                    <th> cs</th>
-                    <th> sb</th>
+                    <th> ID</th>
+                    <th> DATE</th>
+                    <th title="승리"> W</th>
+                    <th title="패배"> L</th>
+                    <th title="세이브"> SV</th>
+                    <th title="홀드"> HLD</th>
+                    <th title="블론"> BS</th>
+                    <th title="선발"> QS</th>
+                    <th title="이닝"> IP</th>
+                    <th title="투수가 상대한 타자수"> TBP</th>
+                    <th title="피안타수"> H</th>
+                    <th title="2루타"> TWOB</th>
+                    <th title="3루타"> THREEB</th>
+                    <th title="홈런"> HR</th>
+                    <th title="실점"> R</th>
+                    <th title="자책점"> ER</th>
+                    <th title="삼진"> SO</th>
+                    <th title="볼넷"> BB</th>
+                    <th title="고의 4구"> IBB</th>
+                    <th title="데드볼"> HBP</th>
+                    <th title="폭투"> WP</th>
+                    <th title="보크"> BK</th>
+                    <th title="견제사"> PK</th>
+                    <th title="도루저지"> CS</th>
+                    <th title="도루허용"> SB</th>
                 </tr>
                 </thead>
 
@@ -91,8 +89,6 @@
                     <tr>
                         <td><c:out value = "${test_p.id}"/></td>
                         <td><c:out value = "${test_p.date}"/></td>
-                        <td><c:out value = "${test_p.rank}"/></td>
-                        <td><c:out value = "${test_p.game}"/></td>
                         <td><c:out value = "${test_p.w}"/></td>
 
                         <td><c:out value = "${test_p.l}"/></td>
@@ -136,31 +132,31 @@
             <table summary = "목록">
                 <thead>
                 <tr>
-                    <th> id</th>
-                    <th> date</th>
-                    <th> TPA</th>
-                    <th> AB</th>
-                    <th> H</th>
+                    <th title="test"> ID</th>
+                    <th> DATE</th>
+                    <th title="타석수"> TPA</th>
+                    <th title="타수"> AB</th>
+                    <th title="안타"> H</th>
 
-                    <th> oneB</th>
-                    <th> twoB</th>
-                    <th> threeB</th>
-                    <th> HR</th>
-                    <th> R</th>
+                    <th title="1루타"> ONEB</th>
+                    <th title="2루타"> TWOB</th>
+                    <th title="3루타"> THREEB</th>
+                    <th title="홈런"> HR</th>
+                    <th title="득점"> R</th>
 
-                    <th> RBI</th>
-                    <th> BB</th>
-                    <th> IBB</th>
-                    <th> HPB</th>
-                    <th> SO</th>
+                    <th title="타점"> RBI</th>
+                    <th title="볼넷"> BB</th>
+                    <th title="고의4구"> IBB</th>
+                    <th title="데드볼"> HPB</th>
+                    <th title="삼진"> SO</th>
 
-                    <th> SF</th>
-                    <th> SH</th>
-                    <th> GDP</th>
-                    <th> SB</th>
-                    <th> CS</th>
+                    <th title="희생플라이"> SF</th>
+                    <th title="희생타"> SH</th>
+                    <th title="병살"> GDP</th>
+                    <th title="도루성공"> SB</th>
+                    <th title="도루실패"> CS</th>
 
-                    <th> AVG</th>
+                    <th title="타율"> AVG</th>
                 </tr>
                 </thead>
                 <c:if test="${test_h.size()==0}">
