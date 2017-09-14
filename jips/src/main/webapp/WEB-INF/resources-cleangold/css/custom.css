@@ -237,35 +237,3 @@ strong.big {
 .text_white{
     color : white;
 }
-
-
-<!-- -->
-
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.th_ctrl {
-    border-bottom: 1px solid #b3b3b3;
-    border-top : 3px solid rgba(3, 24, 73, 0.94);
-    text-align: center;
-    font-weight: bold;
-    padding: 4px;
-}
-
-.td_ctrl {
-    border: 1px solid #000000;
-    text-align: center;
-    padding: 10px;
-}
-
-/*td:nth-child(2) {
-    text-align: left;
-}*/
-
-tr:nth-child(even) {
-    background-color: #35ffb0;
-}
