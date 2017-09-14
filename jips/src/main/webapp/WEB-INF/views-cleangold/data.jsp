@@ -24,6 +24,7 @@
     <script src="https://www.amcharts.com/lib/3/serial.js"></script>    <!-- 그래프 : 직선 -->
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
 
     <%@ include file="/WEB-INF/views-cleangold/include/head.jsp" %>
     <link rel="stylesheet" href="webapp/resources-cleangold/css/custom.css?ver=1">
@@ -35,10 +36,8 @@
     <div class="row" style="height:160px;"><!--상단 메뉴창 출력 -->
         <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
     </div>
-
     <!-- 두번째 섹션 : 데이터 표현그래프 -->
     <section class="container"><!-- 센터 -->
-
         <h1 style="padding-left: 30px;"><strong>DATA</strong></h1>
         <br/>
         <div class ="col sep sep-big"></div>
@@ -164,7 +163,6 @@
                     <th> AVG</th>
                 </tr>
                 </thead>
-
                 <c:if test="${test_h.size()==0}">
                     <tfoot>
                     <tr>
@@ -207,6 +205,7 @@
         </div>
 
         <br/><br/>
+
         <div class ="col sep sep-big"></div>
 
         <br/><br/>
@@ -431,12 +430,12 @@
         }],
         "graphs": [{
             "valueAxis": "v1",
-            "lineColor": "#FF6600",
+            "lineColor": "#01ff00",
             "bullet": "round",
             "bulletBorderThickness": 1,
             "hideBulletsCount": 30,
-            "title": "TPA : 타석에 들어선 총 횟수",
-            "valueField": "visits",
+            "title": "승리할 확률 : ",
+            "valueField": "mWinrate",
             "fillAlphas": 0
         }, {
             "valueAxis": "v2",
@@ -444,17 +443,17 @@
             "bullet": "square",
             "bulletBorderThickness": 1,
             "hideBulletsCount": 30,
-            "title": "AB : 타수[총 타석에 들어선 횟수 - (4사구 + 희생타)]",
-            "valueField": "hits",
+            "title": "무승부 확률 : ",
+            "valueField": "mDrawrate",
             "fillAlphas": 0
         }, {
             "valueAxis": "v3",
-            "lineColor": "#B0DE09",
+            "lineColor": "#de0c16",
             "bullet": "triangleUp",
             "bulletBorderThickness": 1,
             "hideBulletsCount": 30,
-            "title": "H : 총 안타수",
-            "valueField": "views",
+            "title": "패배할 확률 : ",
+            "valueField": "mLoserate",
             "fillAlphas": 0
         }],
         "chartScrollbar": {},
@@ -483,26 +482,39 @@
         var firstDate = new Date();
         firstDate.setDate(firstDate.getDate() - 100);
 
-        var visits = 500;
-        var hits = 500;
-        var views = 10;
+        /*var visits = 1600;
+        var hits = 2900;
+        var views = 8700;*/
 
-        for (var i = 0; i < 100; i++) {
+        var mWinrate = 0;
+        var mDrawrate = 0;
+        var mLoserate = 0;
+
+        for (var i = 0; i < ${data_hhr.size()}; i++) {
             // we create date objects here. In your data, you can have date strings
             // and then set format of your dates using chart.dataDateFormat property,
             // however when possible, use date objects, as this will speed up chart rendering.
+
             var newDate = new Date(firstDate);
             newDate.setDate(newDate.getDate() + i);
 
-            visits = Math.round((Math.random()<0.5?1:0.8)*Math.random()*60);
-            hits = Math.round((Math.random()<0.5?1:0.8)*Math.random()*60);
-            views = Math.round((Math.random()<0.5?1:1)*Math.random()*15);
+            console.log(${data_hhr.get(i).date});
+            /*visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+            hits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+            views += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);*/
 
+            newDate = ${data_hhr.get(i).date};
+            mWinrate = ${data_hhr.get(i).mWinrate};
+            mDrawrate = ${data_hhr.get(i).mDrawrate};
+            mLoserate = ${data_hhr.get(i).mLoserate};
             chartData.push({
                 date: newDate,
-                visits: visits,
+                /*visits: visits,
                 hits: hits,
-                views: views
+                views: views,*/
+                mWinrate : mWinrate,
+                mDrawrate : mDrawrate,
+                mLoserate : mLoserate
             });
         }
         return chartData;
@@ -511,5 +523,6 @@
     function zoomChart(){
         chart.zoomToIndexes(chart.dataProvider.length - 20, chart.dataProvider.length - 1);
     }
+
 </script>
 </html>

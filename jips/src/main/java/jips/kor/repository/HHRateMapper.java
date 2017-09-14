@@ -16,4 +16,7 @@ public interface HHRateMapper {
      //* 타자수데이터를 나타내기 위해 데이터를 받아옴. *//*
     @Select("SELECT * FROM HHRate")
     List<HHRate> findAll_hhrate();
+
+    @Select("SELECT Date FROM HHRate")
+    List<HHRate> findDate_hhrate();
 }

@@ -47,6 +47,7 @@
         <br/>
         <div class="row" style="height:300px;">
             <section class="container">
+                <!-- 분야 타이틀_1 -->
                 <h4 class="align_center"><strong>Machine Learning Members</strong></h4><br/>
                 <div>
                     <div class="col-md-4"><img src="${resources2}/img/jips/face002.png" style="margin-left:200px;" width="50%"></div>
@@ -59,6 +60,7 @@
         </div>
         <div class="row" style="height:300px;">
             <section class="container">
+                <!-- 분야 타이틀_2 -->
                 <h4 class="align_center"><strong>Front/Back-End Members</strong></h4><br/>
                 <div>
                     <div class="col-md-6"><img src="${resources2}/img/jips/face1.png" style="margin-left:300px;" width="30%"></div>

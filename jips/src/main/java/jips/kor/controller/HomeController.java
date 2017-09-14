@@ -55,21 +55,19 @@ public class HomeController {
         /*this.setSideModelAttributes(model);*/
         /* 여기에 예측페이지에서 구현할 기능 설정 */
         List<Pitcher> pitchers = pitcherMapper.findAll_pitcher();
-
-        for(int i=0; i<pitchers.size(); i++){
-           /* System.out.println(pitchers.get(i).toString());*/
-        }
-        List<Hitter> hitters = hitterMapper.findAll_hitter();
-
-    /*for(int i=0;i<1;i++) {
-        System.out.println(i+"번째 트라이");
-        System.out.println(hhr.get(i).getM_acc());
-    }*/
         model.addAttribute("test_p", pitchers);
+
+        List<Hitter> hitters = hitterMapper.findAll_hitter();
+        model.addAttribute("test_h", hitters);
         for(int i=0; i<hitters.size(); i++){
             hitters.get(i).toString();
         }
-        model.addAttribute("test_h", hitters);
+
+        List<HHRate> hhr = hhrateMapper.findAll_hhrate();
+        model.addAttribute("data_hhr", hhr);
+/*        for(int i=0; i<hhr.size(); i++){
+            hitters.get(i).toString();
+        }*/
 
         return "data";
     }
