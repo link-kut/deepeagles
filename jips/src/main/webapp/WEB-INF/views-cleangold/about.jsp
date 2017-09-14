@@ -38,12 +38,12 @@
     <section class="container" style=" height:auto;">
         <img src="${resources2}/img/jips/bar1.png"width="100%" style="margin-left: auto; margin-right: auto; display: block;">
         <br/>
-        <div class="row" style="padding-left: 250px; width: 80%; font-size: 15px;">최근 딥러닝(Deep-learning) 을 활용한 기상 예측, 심리 예측, 교통상황 예측 등 다양한 분야에 걸쳐 여러 모델의 인공신경망이 활용되고 있다.  여러 분류 중, 스포츠라는 분야에 접근했으며 더 나아가 데이터의 스포츠라고 일컫는 야구로 선정하였다. 야구의 승부는 선수의 능력치, 기상의 변화, 홈/어웨이 여부, 교체 여부 등 가늠할 수 없이 수많은 데이터들에 의존하고 있다. 인지하고 있는 이러한 수많은 데이터 이외의 무언가가 존재할 수도 있다. 하지만 본 연구에서는 지난 경기의 기록들을 바탕으로 그 다음 경기의 승부를 예측할 수 있는지를 실험한. 날짜 별 경기들이 훈련데이터가 되고 목표는 이전 경기들의 영향으로 예측된 다음 경기의 승/패, 즉 순차적인 데이터의 활용에 적합한 모델, RNN(Recurrent Neural-Network)으로 선정하였으며, 이를 통해 승/패를 예측할 수 있는지의 도전적인 연구를 실행하였다.
+        <div class="row" id="font_style" style="padding-left: 250px; width: 80%; font-size: 15px;">최근 딥러닝(Deep-learning) 을 활용한 기상 예측, 심리 예측, 교통상황 예측 등 다양한 분야에 걸쳐 여러 모델의 인공신경망이 활용되고 있다.  여러 분류 중, 스포츠라는 분야에 접근했으며 더 나아가 데이터의 스포츠라고 일컫는 야구로 선정하였다. 야구의 승부는 선수의 능력치, 기상의 변화, 홈/어웨이 여부, 교체 여부 등 가늠할 수 없이 수많은 데이터들에 의존하고 있다. 인지하고 있는 이러한 수많은 데이터 이외의 무언가가 존재할 수도 있다. 하지만 본 연구에서는 지난 경기의 기록들을 바탕으로 그 다음 경기의 승부를 예측할 수 있는지를 실험한. 날짜 별 경기들이 훈련데이터가 되고 목표는 이전 경기들의 영향으로 예측된 다음 경기의 승/패, 즉 순차적인 데이터의 활용에 적합한 모델, RNN(Recurrent Neural-Network)으로 선정하였으며, 이를 통해 승/패를 예측할 수 있는지의 도전적인 연구를 실행하였다.
         </div>
         <br/><br/>
 
         <div class="row" style="padding-left: 250px; width: 80%; font-size: 15px; text-align: center">
-            <h5 style="font-family: "Nanum Gothic", sans-serif><strong>[Deeplearning model]</strong></h5>
+            <h5 style="font-family: Nanum Gothic", sans-serif><strong>[Deeplearning model]</strong></h5>
         </div>
         <div>
             <img src="${resources2}/img/jips/rnnmodel.png"style=" position: relative; width = 400px; height: 300px; margin-left: auto; margin-right: auto; display: block;">
@@ -80,8 +80,6 @@
             </section>
         </div>
     </section>
-
-
     <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
 </body>
 </html>

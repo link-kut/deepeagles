@@ -27,7 +27,7 @@
     <script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
 
     <%@ include file="/WEB-INF/views-cleangold/include/head.jsp" %>
-    <link rel="stylesheet" href="webapp/resources-cleangold/css/custom.css?ver=1">
+    <link rel="stylesheet" href="webapp/WEB-INF/resources-cleangold/css/custom.css?ver=1">
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 </head>
@@ -48,7 +48,7 @@
         <div class="row" style="width:100%; padding-left:50px; height:200px;overflow:auto;">
             <table summary = "목록">
                 <thead>
-                <tr>
+                <tr class="pitcher_tr">
                     <th> ID</th>
                     <th> DATE</th>
                     <th title="승리"> W</th>
@@ -492,13 +492,12 @@
             // however when possible, use date objects, as this will speed up chart rendering.
 
             var newDate = new Date(firstDate);
-            newDate.setDate(newDate.getDate() + i);
 
             console.log(${data_hhr.get(i).date});
             console.log(i);
-            /*visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-            hits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-            views += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);*/
+
+
+            console.log(${data_hhr.get(i).date});
 
             newDate = ${data_hhr.get(i).date};
             mWinrate = ${data_hhr.get(i).mWinrate};
