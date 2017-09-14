@@ -495,6 +495,7 @@
             newDate.setDate(newDate.getDate() + i);
 
             console.log(${data_hhr.get(i).date});
+            console.log(i);
             /*visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
             hits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
             views += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);*/
