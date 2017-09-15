@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section id="header" class="container">
     <header id="logo" style="height : 10px">
+        <style>
+        </style>
         <h2 class="grid4 col" style="">
             <a href="${baseUrl}" rel="home" title="JIPS">
                 <!-- Home 로고 바꾸는 부분 -->

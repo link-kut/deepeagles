@@ -237,3 +237,27 @@ strong.big {
 .text_white{
     color : white;
 }
+
+.pitcher_table thead tr th{
+    text-align: center;
+}
+.pitcher_table tbody tr td:nth-child(odd){
+    background-color: #ffce4c !important;"
+}
+.hitter_table thead tr th{
+    background-color: #d3702a;"
+}
+.hitter_table tbody tr td:nth-child(odd){
+    background-color: #ffce4c !important;"
+}
+
+
+#fixed-menu {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#fixed_menu li{
+    display: inline-block;
+    margin-right: 30px;
+}
