@@ -48,7 +48,7 @@
 
         <br/>
         <div class ="col sep sep-big"></div>
-        <h4><strong style="padding-left: 20px;">[PREDICT]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+        <h4><strong style="padding-left: 20px;">[PREDICT LIST]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
         <br/>
         <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
@@ -105,6 +105,7 @@
     <br/><br/>
     <!-- HTML -->
 
+        <h4><strong style="padding-left: 20px;">[TODAY PREDICT]</strong></h4>
 
         <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
         <script>
