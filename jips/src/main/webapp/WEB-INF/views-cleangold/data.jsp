@@ -478,14 +478,6 @@
         var a = 0;
         var firstDate = new Date();
         firstDate.setDate(a);
-        /*var visits = 1600;
-        var hits = 2900;
-        var views = 8700;*/
-
-
-        var mWinrate = 0;
-        var mDrawrate = 0;
-        var mLoserate = 0;
 
         <c:forEach items="${graphdata}" var="graphdata" varStatus="i">
 
@@ -503,29 +495,7 @@
         });
 
         </c:forEach>
-        <%--for (var i = 0; i < ${data_hhr.size()}; i++) {--%>
-            <%--// we create date objects here. In your data, you can have date strings--%>
-            <%--// and then set format of your dates using chart.dataDateFormat property,--%>
-            <%--// however when possible, use date objects, as this will speed up chart rendering.--%>
 
-            <%--var newDate = new Date(firstDate);--%>
-
-            <%----%>
-
-            <%--newDate = ${data_hhr.get(i).date};--%>
-            <%--mWinrate = ${data_hhr.get(i).mWinrate};--%>
-            <%--mDrawrate = ${data_hhr.get(i).mDrawrate};--%>
-            <%--mLoserate = ${data_hhr.get(i).mLoserate};--%>
-            <%--chartData.push({--%>
-                <%--date: newDate,--%>
-                <%--/*visits: visits,--%>
-                <%--hits: hits,--%>
-                <%--views: views,*/--%>
-                <%--mWinrate : mWinrate,--%>
-                <%--mDrawrate : mDrawrate,--%>
-                <%--mLoserate : mLoserate--%>
-            <%--});--%>
-        <%--}--%>
         return chartData;
     }
 
