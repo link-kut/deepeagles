@@ -258,12 +258,9 @@
         <br/><br/>
         <div class ="col sep sep-big"></div>
 
-        <div class="row">
-            <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
-        </div>
-
         <div class="col-md-12 hidden-sm hidden-xs">
             <p><strong>Team. deepEagles / Laboratory : B103A / (Online) : <a>http://link.koreatech.ac.kr/</a></strong><p/>
+        </div>
     </section>
 
     <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
@@ -430,117 +427,4 @@
     });
 </script> <!-- 경기전적 비교 그래프 -->
 
-<!-- 세번째 그래프 : 기타 기록 열거 -->
-<script>
-    var chartData = generateChartData();
-
-    var chart = AmCharts.makeChart("chartDiv3", {
-        "type": "serial",
-        "theme": "light",
-        "legend": {
-            "useGraphSettings": true
-        },
-        "dataProvider": chartData,
-        "synchronizeGrid":true,
-        "valueAxes": [{
-            "id":"v1",
-            "axisColor": "#FF6600",
-            "axisThickness": 2,
-            "axisAlpha": 1,
-            "position": "left"
-        }, {
-            "id":"v2",
-            "axisColor": "#FCD202",
-            "axisThickness": 2,
-            "axisAlpha": 1,
-            "position": "right"
-        }, {
-            "id":"v3",
-            "axisColor": "#B0DE09",
-            "axisThickness": 2,
-            "gridAlpha": 0,
-            "offset": 50,
-            "axisAlpha": 1,
-            "position": "left"
-        }],
-        "graphs": [{
-            "valueAxis": "v1",
-            "lineColor": "#01ff00",
-            "bullet": "round",
-            "bulletBorderThickness": 1,
-            "hideBulletsCount": 30,
-            "title": "승리할 확률 : ",
-            "valueField": "mWinrate",
-            "fillAlphas": 0
-        }, {
-            "valueAxis": "v2",
-            "lineColor": "#FCD202",
-            "bullet": "square",
-            "bulletBorderThickness": 1,
-            "hideBulletsCount": 30,
-            "title": "무승부 확률 : ",
-            "valueField": "mDrawrate",
-            "fillAlphas": 0
-        }, {
-            "valueAxis": "v3",
-            "lineColor": "#de0c16",
-            "bullet": "triangleUp",
-            "bulletBorderThickness": 1,
-            "hideBulletsCount": 30,
-            "title": "패배할 확률 : ",
-            "valueField": "mLoserate",
-            "fillAlphas": 0
-        }],
-        "chartScrollbar": {},
-        "chartCursor": {
-            "cursorPosition": "mouse"
-        },
-        "categoryField": "date",
-        "categoryAxis": {
-            "parseDates": true,
-            "axisColor": "#DADADA",
-            "minorGridEnabled": true
-        },
-        "export": {
-            "enabled": true,
-            "position": "bottom-right"
-        }
-    });
-
-    chart.addListener("dataUpdated", zoomChart);
-    zoomChart();
-
-
-    // generate some random data, quite different range
-    function generateChartData() {
-        var chartData = [];
-        var a = 0;
-        var firstDate = new Date();
-        firstDate.setDate(a);
-
-        <c:forEach items="${graphdata}" var="graphdata" varStatus="i">
-
-        var newDate = new Date(firstDate);
-        newDate.setDate(${graphdata.datenum});
-        console.log(${graphdata.datenum});
-        chartData.push({
-            date: newDate,
-            /*visits: visits,
-             hits: hits,
-             views: views,*/
-            mWinrate : ${graphdata.mWinrate},
-            mDrawrate : ${graphdata.mDrawrate},
-            mLoserate : ${graphdata.mLoserate}
-        });
-
-        </c:forEach>
-
-        return chartData;
-    }
-
-    function zoomChart(){
-        chart.zoomToIndexes(chart.dataProvider.length - 20, chart.dataProvider.length - 1);
-    }
-
-</script>
 </html>
