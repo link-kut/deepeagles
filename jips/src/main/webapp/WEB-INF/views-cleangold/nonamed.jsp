@@ -47,79 +47,71 @@
 </head>
 
 <body>
-    <div class="row" style="height:160px;"><!--상단 메뉴창 출력 -->
-        <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
+<div class="row" style="height:160px;"><!--상단 메뉴창 출력 -->
+    <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
+</div>
+
+
+<section class="container">
+    <!-- 경기 테이블-->
+
+    <h4><strong style="padding-left: 20px;">[PREDICT GRAPH]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+    <div class="row">
+        <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
     </div>
 
+    <br/>
+    <div class ="col sep sep-big"></div>
+    <h4><strong style="padding-left: 20px;">[PREDICT LIST]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+    <br/>
+    <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
-    <section class="container">
-        <!-- 경기 테이블-->
+        <table summary = "목록">
+            <thead>
+            <tr>
+                <th> id</th>
+                <th> Date</th>
+                <th> starttime</th>
+                <th> Accuracy</th>
+                <th> Winrate</th>
 
-        <h4><strong style="padding-left: 20px;">[PREDICT GRAPH]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
-        <div class="row">
-            <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
-        </div>
+                <th> Drawrate</th>
+                <th> Loserate</th>
+                <th> correct</th>
+                <th> HHscore</th>
 
-        <br/>
-        <div class ="col sep sep-big"></div>
-        <h4><strong style="padding-left: 20px;">[PREDICT LIST]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
-        <br/>
-        <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
-
-            <table class="hhrate_table" summary = "목록">
-                <thead>
+                <th> OPPscore</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="test_hhr" items = "${test_hhr}" varStatus = "status">
                 <tr>
-                    <th> id</th>
-                    <th> Date</th>
-                    <th> starttime</th>
-                    <th> Accuracy</th>
-                    <th> Winrate</th>
+                    <td><c:out value = "${test_hhr.id}"/></td>
+                    <td><c:out value = "${test_hhr.date}"/></td>
+                    <td><c:out value = "${test_hhr.starttime}"/></td>
+                    <td><fmt:formatNumber value = "${test_hhr.mAcc}" pattern=".0000"/></td>
+                    <td><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${test_hhr.mWinrate}"/></td>
 
-                    <th> Drawrate</th>
-                    <th> Loserate</th>
-                    <th> correct</th>
-                    <th> HHscore</th>
-
-                    <th> OPPscore</th>
-                </tr>
-                </thead>
-
-                <c:if test="${test_hhr.size()==0}">
-                    <tfoot>
-                    <tr>
-                        <td colspan ="11"> 현재 데이터 무</td>
-                    </tr>
-                    </tfoot>
-                </c:if>
-                <tbody>
-                <c:forEach var="test_hhr" items = "${test_hhr}" varStatus = "status">
-                    <tr>
-                        <td><c:out value = "${test_hhr.id}"/></td>
-                        <td><c:out value = "${test_hhr.date}"/></td>
-                        <td><c:out value = "${test_hhr.starttime}"/></td>
-                        <td><fmt:formatNumber value = "${test_hhr.mAcc}" pattern=".0000"/></td>
-                        <td><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${test_hhr.mWinrate}"/></td>
-
-                        <td><c:out value = "${test_hhr.mDrawrate}"/></td>
-                        <td><c:out value = "${test_hhr.mLoserate}"/></td>
-                        <td><c:out value = "${test_hhr.corrM}"/></td>
+                    <td><c:out value = "${test_hhr.mDrawrate}"/></td>
+                    <td><c:out value = "${test_hhr.mLoserate}"/></td>
+                    <td><c:out value = "${test_hhr.corrM}"/></td>
                         <%--<td><c:out value = "${test_hhr.corrL}"/></td>--%>
-                        <td><c:out value = "${test_hhr.HHscore}"/></td>
-                        <td><c:out value = "${test_hhr.OPPscore}"/></td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+                    <td><c:out value = "${test_hhr.HHscore}"/></td>
+                    <td><c:out value = "${test_hhr.OPPscore}"/></td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
 
-        </div>
+    </div>
 
-        <br/><br/>
-        <div class ="col sep sep-big"></div>
+    <br/><br/>
+    <div class ="col sep sep-big"></div>
 
     <br/><br/>
     <!-- HTML -->
 
-        <h4><strong style="padding-left: 20px;">[TODAY PREDICT]</strong></h4>
+    <h4><strong style="padding-left: 20px;">[TODAY PREDICT]</strong></h4>
 
         <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
 
@@ -127,9 +119,10 @@
 
 
 
-    </section>
 
-    <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
+</section>
+
+<%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
 </body>
 
 <!-- Chart code -->
@@ -139,13 +132,78 @@
         y: [${datarecent.get(0).mWinrate}, ${datarecent.get(0).mDrawrate}, ${datarecent.get(0).mLoserate}],
         type: 'bar'
     }];
-
     Plotly.newPlot('myDiv', data);
-</script>
-<script>
 
+    /**
+     * Define data for each year
+     */
+    /*var chartData = {
+     "20170913": [
+     { "sector": "패", "size":33 },
+     { "sector": "무", "size": 22},
+     { "sector": "승", "size": 11}
+     ]
+     };
+     /!**
+     * Create the chart
+     *!/
+     var currentYear = 20170913;
+     var chart = AmCharts.makeChart( "chartdiv", {
+     "type": "pie",
+     "theme": "light",
+     "dataProvider": [],
+     "valueField": "size",
+     "titleField": "sector",
+     "startDuration": 0,
+     "innerRadius": 80,
+     "pullOutRadius": 20,
+     "marginTop": 30,
+     "titles": [{
+     "text": "오늘의 승부"
+     }],
+     "allLabels": [{
+     "y": "54%",
+     "align": "center",
+     "size": 25,
+     "bold": true,
+     "text": "20170913",
+     "color": "#70dbff"
+     }, {
+     "y": "49%",
+     "align": "center",
+     "size": 15,
+     "text": "DATE",
+     "color": "#2d1555"
+     }],
+     "listeners": [ {
+     "event": "init",
+     "method": function( e ) {
+     var chart = e.chart;
+     function getCurrentData() {
+     var data = chartData[currentYear];
+     currentYear++;
+     if (currentYear > 2014)
+     currentYear = 1995;
+     return data;
+     }
+     function loop() {
+     chart.allLabels[0].text = currentYear;
+     var data = getCurrentData();
+     chart.animateData( data, {
+     duration: 1000,
+     complete: function() {
+     setTimeout( loop, 3000 );
+     }
+     } );
+     }
+     loop();
+     }
+     } ],
+     "export": {
+     "enabled": true
+     }
+     } );*/
     var chartData = generateChartData();
-
     var chart = AmCharts.makeChart("chartDiv3", {
         "type": "serial",
         "theme": "light",
@@ -218,11 +276,8 @@
             "position": "bottom-right"
         }
     });
-
     chart.addListener("dataUpdated", zoomChart);
     zoomChart();
-
-
     // generate some random data, quite different range
     function generateChartData() {
         var chartData = [];
@@ -231,7 +286,6 @@
         firstDate.setDate(a);
 
         <c:forEach items="${graphdata}" var="graphdata" varStatus="i">
-
         var newDate = new Date(firstDate);
         newDate.setDate(${graphdata.datenum});
         console.log(${graphdata.datenum});
@@ -241,12 +295,10 @@
             mDrawrate : ${graphdata.mDrawrate},
             mLoserate : ${graphdata.mLoserate}
         });
-
         </c:forEach>
 
         return chartData;
     }
-
     function zoomChart(){
         chart.zoomToIndexes(chart.dataProvider.length - 20, chart.dataProvider.length - 1);
     }
