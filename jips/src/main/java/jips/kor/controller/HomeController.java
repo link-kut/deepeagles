@@ -84,6 +84,9 @@ public class HomeController {
         }
         model.addAttribute("test_hhr", hhr);
 
+        List<HHRate> hhrecent = hhrateMapper.findrecent_hhrate();
+        model.addAttribute("datarecent",hhrecent);
+
         return "nonamed";
     }
 

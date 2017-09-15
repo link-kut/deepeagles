@@ -19,4 +19,7 @@ public interface HHRateMapper {
 
     @Select("SELECT Datenum,M_winrate,M_drawrate,M_loserate FROM HHRate")
     List<HHRate> findgraph_hhrate();
+
+    @Select("SELECT M_winrate,M_drawrate,M_loserate FROM HHRate ORDER BY id DESC")
+    List<HHRate> findrecent_hhrate();
 }
