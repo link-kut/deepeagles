@@ -28,6 +28,7 @@
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -45,6 +46,11 @@
 
     <section class="container">
         <!-- 경기 테이블-->
+
+        <h4><strong style="padding-left: 20px;">[PREDICT GRAPH]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+        <div class="row">
+            <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
+        </div>
 
         <br/>
         <div class ="col sep sep-big"></div>
@@ -138,7 +144,7 @@
      * Define data for each year
      */
 
-    console.log(${datarecent.get(0).mLoserate})
+    /*console.log(${datarecent.get(0).mLoserate})
     var chartData = {
         "20170913": [
             { "sector": "패", "size":33 },
@@ -148,9 +154,9 @@
     };
 
 
-    /**
+    /!**
      * Create the chart
-     */
+     *!/
     var currentYear = 20170913;
     var chart = AmCharts.makeChart( "chartdiv", {
         "type": "pie",
@@ -209,7 +215,148 @@
         "export": {
             "enabled": true
         }
-    } );
+    } );*/
+
+    var chartData = generateChartData();
+
+    var chart = AmCharts.makeChart("chartDiv3", {
+        "type": "serial",
+        "theme": "light",
+        "legend": {
+            "useGraphSettings": true
+        },
+        "dataProvider": chartData,
+        "synchronizeGrid":true,
+        "valueAxes": [{
+            "id":"v1",
+            "axisColor": "#FF6600",
+            "axisThickness": 2,
+            "axisAlpha": 1,
+            "position": "left"
+        }, {
+            "id":"v2",
+            "axisColor": "#FCD202",
+            "axisThickness": 2,
+            "axisAlpha": 1,
+            "position": "right"
+        }, {
+            "id":"v3",
+            "axisColor": "#B0DE09",
+            "axisThickness": 2,
+            "gridAlpha": 0,
+            "offset": 50,
+            "axisAlpha": 1,
+            "position": "left"
+        }],
+        "graphs": [{
+            "valueAxis": "v1",
+            "lineColor": "#01ff00",
+            "bullet": "round",
+            "bulletBorderThickness": 1,
+            "hideBulletsCount": 30,
+            "title": "승리할 확률 : ",
+            "valueField": "mWinrate",
+            "fillAlphas": 0
+        }, {
+            "valueAxis": "v2",
+            "lineColor": "#FCD202",
+            "bullet": "square",
+            "bulletBorderThickness": 1,
+            "hideBulletsCount": 30,
+            "title": "무승부 확률 : ",
+            "valueField": "mDrawrate",
+            "fillAlphas": 0
+        }, {
+            "valueAxis": "v3",
+            "lineColor": "#de0c16",
+            "bullet": "triangleUp",
+            "bulletBorderThickness": 1,
+            "hideBulletsCount": 30,
+            "title": "패배할 확률 : ",
+            "valueField": "mLoserate",
+            "fillAlphas": 0
+        }],
+        "chartScrollbar": {},
+        "chartCursor": {
+            "cursorPosition": "mouse"
+        },
+        "categoryField": "date",
+        "categoryAxis": {
+            "parseDates": true,
+            "axisColor": "#DADADA",
+            "minorGridEnabled": true
+        },
+        "export": {
+            "enabled": true,
+            "position": "bottom-right"
+        }
+    });
+
+    chart.addListener("dataUpdated", zoomChart);
+    zoomChart();
+
+
+    // generate some random data, quite different range
+    function generateChartData() {
+        var chartData = [];
+        var a = 0;
+        var firstDate = new Date();
+        firstDate.setDate(a);
+        /*var visits = 1600;
+         var hits = 2900;
+         var views = 8700;*/
+
+
+        var mWinrate = 0;
+        var mDrawrate = 0;
+        var mLoserate = 0;
+
+        <c:forEach items="${graphdata}" var="graphdata" varStatus="i">
+
+        var newDate = new Date(firstDate);
+        newDate.setDate(${graphdata.datenum});
+        console.log(${graphdata.datenum});
+        chartData.push({
+            date: newDate,
+            /*visits: visits,
+             hits: hits,
+             views: views,*/
+            mWinrate : ${graphdata.mWinrate},
+            mDrawrate : ${graphdata.mDrawrate},
+            mLoserate : ${graphdata.mLoserate}
+        });
+
+        </c:forEach>
+        <%--for (var i = 0; i < ${data_hhr.size()}; i++) {--%>
+        <%--// we create date objects here. In your data, you can have date strings--%>
+        <%--// and then set format of your dates using chart.dataDateFormat property,--%>
+        <%--// however when possible, use date objects, as this will speed up chart rendering.--%>
+
+        <%--var newDate = new Date(firstDate);--%>
+
+        <%----%>
+
+        <%--newDate = ${data_hhr.get(i).date};--%>
+        <%--mWinrate = ${data_hhr.get(i).mWinrate};--%>
+        <%--mDrawrate = ${data_hhr.get(i).mDrawrate};--%>
+        <%--mLoserate = ${data_hhr.get(i).mLoserate};--%>
+        <%--chartData.push({--%>
+        <%--date: newDate,--%>
+        <%--/*visits: visits,--%>
+        <%--hits: hits,--%>
+        <%--views: views,*/--%>
+        <%--mWinrate : mWinrate,--%>
+        <%--mDrawrate : mDrawrate,--%>
+        <%--mLoserate : mLoserate--%>
+        <%--});--%>
+        <%--}--%>
+        return chartData;
+    }
+
+    function zoomChart(){
+        chart.zoomToIndexes(chart.dataProvider.length - 20, chart.dataProvider.length - 1);
+    }
+
 </script>
 
 </html>
