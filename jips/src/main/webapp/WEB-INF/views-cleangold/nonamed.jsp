@@ -16,9 +16,17 @@
         html,body {
             font-family: "Nanum Gothic", sans-serif; !important;
         }
-        #chartdiv {
-            width: 100%;
-            height: 500px;
+
+        .hhrate_table thead tr th{
+            width:auto;
+            background-color: #d3702a;
+            text-align: center;
+        }
+        .hhrate_table tbody tr td{
+            text-align: center;
+        }
+        .hhrate_table tbody tr td:nth-child(odd){
+            background-color: #ffce4c !important;
         }
     </style>
 
@@ -58,7 +66,7 @@
         <br/>
         <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
-            <table summary = "목록">
+            <table class="hhrate_table" summary = "목록">
                 <thead>
                 <tr>
                     <th> id</th>
@@ -114,12 +122,7 @@
         <h4><strong style="padding-left: 20px;">[TODAY PREDICT]</strong></h4>
 
         <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-        <script>
-            <!-- JAVASCRIPT CODE GOES HERE -->
-        </script>
 
-       <%-- <div id="chartdiv"></div>--%>
-        <%--<br/><br/><br/>--%>
         <div class ="col sep sep-big"></div>
 
 
@@ -131,7 +134,6 @@
 
 <!-- Chart code -->
 <script>
-
     var data = [{
         x: ['승', '무', '패'],
         y: [${datarecent.get(0).mWinrate}, ${datarecent.get(0).mDrawrate}, ${datarecent.get(0).mLoserate}],
@@ -139,83 +141,8 @@
     }];
 
     Plotly.newPlot('myDiv', data);
-
-    /**
-     * Define data for each year
-     */
-
-    /*console.log(${datarecent.get(0).mLoserate})
-    var chartData = {
-        "20170913": [
-            { "sector": "패", "size":33 },
-            { "sector": "무", "size": 22},
-            { "sector": "승", "size": 11}
-             ]
-    };
-
-
-    /!**
-     * Create the chart
-     *!/
-    var currentYear = 20170913;
-    var chart = AmCharts.makeChart( "chartdiv", {
-        "type": "pie",
-        "theme": "light",
-        "dataProvider": [],
-        "valueField": "size",
-        "titleField": "sector",
-        "startDuration": 0,
-        "innerRadius": 80,
-        "pullOutRadius": 20,
-        "marginTop": 30,
-        "titles": [{
-            "text": "오늘의 승부"
-        }],
-        "allLabels": [{
-            "y": "54%",
-            "align": "center",
-            "size": 25,
-            "bold": true,
-            "text": "20170913",
-            "color": "#70dbff"
-        }, {
-            "y": "49%",
-            "align": "center",
-            "size": 15,
-            "text": "DATE",
-            "color": "#2d1555"
-        }],
-        "listeners": [ {
-            "event": "init",
-            "method": function( e ) {
-                var chart = e.chart;
-
-                function getCurrentData() {
-                    var data = chartData[currentYear];
-                    currentYear++;
-                    if (currentYear > 2014)
-                        currentYear = 1995;
-                    return data;
-                }
-
-                function loop() {
-                    chart.allLabels[0].text = currentYear;
-                    var data = getCurrentData();
-                    chart.animateData( data, {
-                        duration: 1000,
-                        complete: function() {
-                            setTimeout( loop, 3000 );
-                        }
-                    } );
-                }
-
-                loop();
-            }
-        } ],
-        "export": {
-            "enabled": true
-        }
-    } );*/
+</script>
+<script>
 
     var chartData = generateChartData();
 
@@ -302,14 +229,6 @@
         var a = 0;
         var firstDate = new Date();
         firstDate.setDate(a);
-        /*var visits = 1600;
-         var hits = 2900;
-         var views = 8700;*/
-
-
-        var mWinrate = 0;
-        var mDrawrate = 0;
-        var mLoserate = 0;
 
         <c:forEach items="${graphdata}" var="graphdata" varStatus="i">
 
@@ -318,45 +237,19 @@
         console.log(${graphdata.datenum});
         chartData.push({
             date: newDate,
-            /*visits: visits,
-             hits: hits,
-             views: views,*/
             mWinrate : ${graphdata.mWinrate},
             mDrawrate : ${graphdata.mDrawrate},
             mLoserate : ${graphdata.mLoserate}
         });
 
         </c:forEach>
-        <%--for (var i = 0; i < ${data_hhr.size()}; i++) {--%>
-        <%--// we create date objects here. In your data, you can have date strings--%>
-        <%--// and then set format of your dates using chart.dataDateFormat property,--%>
-        <%--// however when possible, use date objects, as this will speed up chart rendering.--%>
 
-        <%--var newDate = new Date(firstDate);--%>
-
-        <%----%>
-
-        <%--newDate = ${data_hhr.get(i).date};--%>
-        <%--mWinrate = ${data_hhr.get(i).mWinrate};--%>
-        <%--mDrawrate = ${data_hhr.get(i).mDrawrate};--%>
-        <%--mLoserate = ${data_hhr.get(i).mLoserate};--%>
-        <%--chartData.push({--%>
-        <%--date: newDate,--%>
-        <%--/*visits: visits,--%>
-        <%--hits: hits,--%>
-        <%--views: views,*/--%>
-        <%--mWinrate : mWinrate,--%>
-        <%--mDrawrate : mDrawrate,--%>
-        <%--mLoserate : mLoserate--%>
-        <%--});--%>
-        <%--}--%>
         return chartData;
     }
 
     function zoomChart(){
         chart.zoomToIndexes(chart.dataProvider.length - 20, chart.dataProvider.length - 1);
     }
-
 </script>
 
 </html>

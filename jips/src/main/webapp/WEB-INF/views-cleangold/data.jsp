@@ -318,58 +318,6 @@
         }
     });
 </script>
-<%--<script>
-    var chart = AmCharts.makeChart("chartDiv2", {
-        "type": "serial",
-        "theme": "light",
-        "marginRight": 70,
-        "dataProvider": [{
-            "country": "승",
-            "visits": 321,
-            "color": "#FF0F00"
-        }, {
-            "country": "패",
-            "visits": 452,
-            "color": "#FF6600"
-        }, {
-            "country": "무",
-            "visits": 10,
-            "color": "#FF9E01"
-        }],
-        "titles": [ {
-            "id": "Title-2",
-            "size": 24,         // textsize
-            "text": "경기 전적 [17년 / 전체]"
-        } ],
-        "valueAxes": [{
-            "axisAlpha": 0,
-            "position": "left",
-            "title": "Visitors from country"
-        }],
-        "startDuration": 1,
-        "graphs": [{
-            "balloonText": "<b>[[category]]: [[value]]</b>",
-            "fillColorsField": "color",
-            "fillAlphas": 0.9,
-            "lineAlpha": 0.2,
-            "type": "column",
-            "valueField": "visits"
-        }],
-        "chartCursor": {
-            "categoryBalloonEnabled": false,
-            "cursorAlpha": 0,
-            "zoomable": false
-        },
-        "categoryField": "country",
-        "categoryAxis": {
-            "gridPosition": "start",
-            "labelRotation": 45
-        },
-        "export": {
-            "enabled": true
-        }
-    });
-</script>--%> <!-- 경기전적 파이 그래프 -->
 
 <!-- 두번째 그래프 : 경기전적 / 12-17년 & 17년 시즌 비교 -->
 <script>
