@@ -17,6 +17,6 @@ public interface HHRateMapper {
     @Select("SELECT * FROM HHRate")
     List<HHRate> findAll_hhrate();
 
-    @Select("SELECT Date FROM HHRate")
-    List<HHRate> findDate_hhrate();
+    @Select("SELECT Datenum,M_winrate,M_drawrate,M_loserate FROM HHRate")
+    List<HHRate> findgraph_hhrate();
 }

@@ -475,44 +475,57 @@
     // generate some random data, quite different range
     function generateChartData() {
         var chartData = [];
+        var a = 0;
         var firstDate = new Date();
-        firstDate.setDate(firstDate.getDate() - 100);
-
+        firstDate.setDate(a);
         /*var visits = 1600;
         var hits = 2900;
         var views = 8700;*/
+
 
         var mWinrate = 0;
         var mDrawrate = 0;
         var mLoserate = 0;
 
-        for (var i = 0; i < ${data_hhr.size()}; i++) {
-            // we create date objects here. In your data, you can have date strings
-            // and then set format of your dates using chart.dataDateFormat property,
-            // however when possible, use date objects, as this will speed up chart rendering.
+        <c:forEach items="${graphdata}" var="graphdata" varStatus="i">
 
-            var newDate = new Date(firstDate);
+        var newDate = new Date(firstDate);
+        newDate.setDate(${graphdata.datenum});
+        console.log(${graphdata.datenum});
+        chartData.push({
+            date: newDate,
+            /*visits: visits,
+             hits: hits,
+             views: views,*/
+            mWinrate : ${graphdata.mWinrate},
+            mDrawrate : ${graphdata.mDrawrate},
+            mLoserate : ${graphdata.mLoserate}
+        });
 
-            console.log(${data_hhr.get(i).date});
-            console.log(i);
+        </c:forEach>
+        <%--for (var i = 0; i < ${data_hhr.size()}; i++) {--%>
+            <%--// we create date objects here. In your data, you can have date strings--%>
+            <%--// and then set format of your dates using chart.dataDateFormat property,--%>
+            <%--// however when possible, use date objects, as this will speed up chart rendering.--%>
 
+            <%--var newDate = new Date(firstDate);--%>
 
-            console.log(${data_hhr.get(i).date});
+            <%----%>
 
-            newDate = ${data_hhr.get(i).date};
-            mWinrate = ${data_hhr.get(i).mWinrate};
-            mDrawrate = ${data_hhr.get(i).mDrawrate};
-            mLoserate = ${data_hhr.get(i).mLoserate};
-            chartData.push({
-                date: newDate,
-                /*visits: visits,
-                hits: hits,
-                views: views,*/
-                mWinrate : mWinrate,
-                mDrawrate : mDrawrate,
-                mLoserate : mLoserate
-            });
-        }
+            <%--newDate = ${data_hhr.get(i).date};--%>
+            <%--mWinrate = ${data_hhr.get(i).mWinrate};--%>
+            <%--mDrawrate = ${data_hhr.get(i).mDrawrate};--%>
+            <%--mLoserate = ${data_hhr.get(i).mLoserate};--%>
+            <%--chartData.push({--%>
+                <%--date: newDate,--%>
+                <%--/*visits: visits,--%>
+                <%--hits: hits,--%>
+                <%--views: views,*/--%>
+                <%--mWinrate : mWinrate,--%>
+                <%--mDrawrate : mDrawrate,--%>
+                <%--mLoserate : mLoserate--%>
+            <%--});--%>
+        <%--}--%>
         return chartData;
     }
 

@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class HHRate {
     private int id;
-    private int Date;
+    private Date Date;
     private Date starttime;
     private double mAcc;
     private double mWinrate;
@@ -17,6 +17,7 @@ public class HHRate {
     private int HHscore;
 
     private int OPPscore;
+    private int Datenum;
 
     public int getId() {
         return id;
@@ -24,11 +25,11 @@ public class HHRate {
 
     public void setId(int id) { this.id = id; }
 
-    public int getDate() {
+    public Date getDate() {
         return Date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         Date = date;
     }
 
@@ -104,6 +105,14 @@ public class HHRate {
         this.OPPscore = OPPscore;
     }
 
+    public int getDatenum() {
+        return Datenum;
+    }
+
+    public void setDatenum(int datenum) {
+        Datenum = datenum;
+    }
+
     @Override
     public String toString() {
         return "HHRate{" +
@@ -118,6 +127,7 @@ public class HHRate {
                 ", corrL=" + corrL +
                 ", HHscore=" + HHscore +
                 ", OPPscore=" + OPPscore +
+                ", Datenum =" + Datenum +
                 '}';
     }
 }

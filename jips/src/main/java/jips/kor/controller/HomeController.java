@@ -69,6 +69,9 @@ public class HomeController {
             hitters.get(i).toString();
         }*/
 
+        List<HHRate> hhgraph = hhrateMapper.findgraph_hhrate();
+        model.addAttribute("graphdata",hhgraph);
+
         return "data";
     }
 
