@@ -82,10 +82,10 @@
         <br/>
         <!-- 투수 정보 -->
 
-        <div class="row" style="width:100%; padding-left:50px; height:200px;overflow:auto;">
+        <div class="row" style="width:100%; padding-left:50px; height:200px; overflow:auto;">
             <div>
-                <table border=1 class="pitcher_table" summary = "목록">
-                    <thead>
+                <table style="" border=1 class="pitcher_table" summary = "목록">
+                    <thead >
                         <tr>
                             <th> ID</th>
                             <th> DATE</th>

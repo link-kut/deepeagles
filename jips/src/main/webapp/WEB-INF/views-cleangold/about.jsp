@@ -46,7 +46,7 @@
             <h5 style="font-family: Nanum Gothic", sans-serif><strong>[Deeplearning model]</strong></h5>
         </div>
         <div>
-            <img src="${resources2}/img/jips/rnnmodel.png"style=" position: relative; width = 400px; height: 300px; margin-left: auto; margin-right: auto; display: block;">
+            <img src="${resources2}/img/jips/rnnmodel.png"style=" position: relative; width : 500px; height: 300px; margin-left: auto; margin-right: auto; display: block;">
         </div>
         <div class="row" style="padding-left: 250px; width: 80%; font-size: 15px;">RNN모델에 경기별 기본기록들을 Feeding 시키는 그림을 나타내었습니다. DATA 페이지의 각 경기당 투수,타자 기록들의 총 42개는 RNN의 cell에 input이 되며 가중치와 편향이 계산되어집니다. 계산된 가중치와 편향은 다음 경기의 input의 계산에 반영되어지며 마지막의 36번째 경기가 feeding되고 계산되어지며 소프트맥스하기전의 값을 넘겨받게 됩니다. 그 값은 37번째 경기, 즉 미래의 경기에 대한 예측 값이며 승 무 패의 LABLE에 맵핑되게 됩니다.  </div>
         <br/><br/>
