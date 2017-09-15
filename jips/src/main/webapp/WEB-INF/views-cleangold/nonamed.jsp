@@ -29,6 +29,8 @@
     <script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <%@ include file="/WEB-INF/views-cleangold/include/head.jsp" %>
     <link rel="stylesheet" href="webapp/resources-cleangold/css/custom.css?ver=1">
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
@@ -102,10 +104,17 @@
 
     <br/><br/>
     <!-- HTML -->
-    <div id="chartdiv"></div>
 
-        <br/><br/><br/>
+
+        <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+        <script>
+            <!-- JAVASCRIPT CODE GOES HERE -->
+        </script>
+
+       <%-- <div id="chartdiv"></div>--%>
+        <%--<br/><br/><br/>--%>
         <div class ="col sep sep-big"></div>
+
 
 
     </section>
@@ -115,6 +124,14 @@
 
 <!-- Chart code -->
 <script>
+
+    var data = [{
+        x: ['승', '무', '패'],
+        y: [${datarecent.get(0).mWinrate}, ${datarecent.get(0).mDrawrate}, ${datarecent.get(0).mLoserate}],
+        type: 'bar'
+    }];
+
+    Plotly.newPlot('myDiv', data);
 
     /**
      * Define data for each year

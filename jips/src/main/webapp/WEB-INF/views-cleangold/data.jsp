@@ -24,6 +24,7 @@
     <script src="https://www.amcharts.com/lib/3/serial.js"></script>    <!-- 그래프 : 직선 -->
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script><%--추가--%>
     <script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
 
     <%@ include file="/WEB-INF/views-cleangold/include/head.jsp" %>
