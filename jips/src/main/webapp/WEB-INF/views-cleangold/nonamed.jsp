@@ -117,9 +117,6 @@
 
         <div class ="col sep sep-big"></div>
 
-
-
-
 </section>
 
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
@@ -134,75 +131,6 @@
     }];
     Plotly.newPlot('myDiv', data);
 
-    /**
-     * Define data for each year
-     */
-    /*var chartData = {
-     "20170913": [
-     { "sector": "패", "size":33 },
-     { "sector": "무", "size": 22},
-     { "sector": "승", "size": 11}
-     ]
-     };
-     /!**
-     * Create the chart
-     *!/
-     var currentYear = 20170913;
-     var chart = AmCharts.makeChart( "chartdiv", {
-     "type": "pie",
-     "theme": "light",
-     "dataProvider": [],
-     "valueField": "size",
-     "titleField": "sector",
-     "startDuration": 0,
-     "innerRadius": 80,
-     "pullOutRadius": 20,
-     "marginTop": 30,
-     "titles": [{
-     "text": "오늘의 승부"
-     }],
-     "allLabels": [{
-     "y": "54%",
-     "align": "center",
-     "size": 25,
-     "bold": true,
-     "text": "20170913",
-     "color": "#70dbff"
-     }, {
-     "y": "49%",
-     "align": "center",
-     "size": 15,
-     "text": "DATE",
-     "color": "#2d1555"
-     }],
-     "listeners": [ {
-     "event": "init",
-     "method": function( e ) {
-     var chart = e.chart;
-     function getCurrentData() {
-     var data = chartData[currentYear];
-     currentYear++;
-     if (currentYear > 2014)
-     currentYear = 1995;
-     return data;
-     }
-     function loop() {
-     chart.allLabels[0].text = currentYear;
-     var data = getCurrentData();
-     chart.animateData( data, {
-     duration: 1000,
-     complete: function() {
-     setTimeout( loop, 3000 );
-     }
-     } );
-     }
-     loop();
-     }
-     } ],
-     "export": {
-     "enabled": true
-     }
-     } );*/
     var chartData = generateChartData();
     var chart = AmCharts.makeChart("chartDiv3", {
         "type": "serial",

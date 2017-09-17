@@ -261,3 +261,7 @@ strong.big {
     display: inline-block;
     margin-right: 30px;
 }
+
+.result_box{
+    background-color: red;
+}

@@ -46,6 +46,9 @@ public class HomeController {
         model.addAttribute("cPage", "home");
         model.addAttribute("test","정상적으로 호출되었습니다.");
 
+        List<HHRate> hhr = hhrateMapper.findAll_hhrate();
+        model.addAttribute("home_hhr", hhr);
+
         return "index";
     }
 
