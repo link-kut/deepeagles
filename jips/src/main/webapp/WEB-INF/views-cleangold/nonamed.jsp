@@ -74,15 +74,15 @@
         <table class="hhrate_table" summary = "목록">
             <thead>
             <tr>
-                <th> id</th>
+                <th> ID</th>
                 <th> Date</th>
-                <th> starttime</th>
+                <th> Start time</th>
                 <th> Accuracy</th>
-                <th> Winrate</th>
+                <th> Win_rate</th>
 
-                <th> Drawrate</th>
-                <th> Loserate</th>
-                <th> correct</th>
+                <th> Draw_rate</th>
+                <th> Lose_rate</th>
+                <th> Correct</th>
                 <th> HHscore</th>
 
                 <th> OPPscore</th>
