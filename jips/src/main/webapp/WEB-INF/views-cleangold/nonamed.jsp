@@ -138,22 +138,21 @@
 </section>
 
 <section class="container">
-    <h4><strong style="padding-left: 20px;">[CORR. List]</strong></h4><br/>
-    <div class="test_field">
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  CORR. LIST</strong></h4><br/>
+    <div class="test_field" style="padding-left: 50px; height: 350px; overflow: auto;" >
         <script>
             <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
 
             <c:if test="${hhr_corr.corrM == 1}">
                 var win_day;
-                $(".test_field").prepend("<button class ='win_box'></button>");
-                $("button").prependTo("#<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
+                $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
+
                 $(".win_box").addClass('game_win');
                 <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 0}">
-                $(".test_field").prepend("<button class ='lose_box'></button>");
-                $("button").prependTo("#<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
+                $(".test_field").prepend("<button class ='lose_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
                 $(".lose_box").addClass('game_lose');
                 <c:set var="doneLoop" value="true"/>
             </c:if>
