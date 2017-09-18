@@ -3,6 +3,7 @@ package jips.kor.controller;
 import jips.kor.SystemUtil;
 import jips.kor.domain.*;
 import jips.kor.repository.HHRateMapper;
+import jips.kor.repository.HHScheduleMapper;
 import jips.kor.repository.HitterMapper;
 import jips.kor.repository.PitcherMapper;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,6 +29,9 @@ public class HomeController {
     private HHRateMapper hhrateMapper;
 
     @Inject
+    private HHScheduleMapper hhScheduleMapper;
+
+    @Inject
     private SystemUtil systemUtil;
 
     @Value("${env.text}")
@@ -48,6 +52,9 @@ public class HomeController {
 
         List<HHRate> hhr = hhrateMapper.findAll_hhrate();
         model.addAttribute("home_hhr", hhr);
+
+        List<HHSchedule> hhSche = hhScheduleMapper.findrecent_hhschedule();
+        model.addAttribute("hhschedule",hhSche);
 
         return "index";
     }

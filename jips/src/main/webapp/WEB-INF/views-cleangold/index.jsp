@@ -51,15 +51,15 @@
         </div>
         <div class="row middlepart"><!-- 좌측 가운데 -->
             <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
-                <div class="col-md-5 align_right">
-                    <img src="/resources2/img/jips/team_initial/initials_eagles.png"/>
+                <div id = prevawayteamimg class="col-md-5 align_right">
+                    <%--<img src="/resources2/img/jips/team_initial/initials_eagles.png"/>--%>
                     <h6>한화 이글스</h6>
                 </div>
                 <div class="col-md-2 align_center">
                     <img src="/resources2/img/jips/UI/h_game_vs.png"/>
                 </div>
-                <div id = prevteamimg class="col-md-5 align_left">
-                    <img src="/resources2/img/jips/team_initial/initials_dinos.png"/>
+                <div id = prevhometeamimg class="col-md-5 align_left">
+                    <%--<img src="/resources2/img/jips/team_initial/initials_dinos.png"/>--%>
                     <h6>NC 다이노스</h6>
                 </div>
             </div><br/>
@@ -79,15 +79,15 @@
         </div>
         <div class="row middlepart text_white"><!-- 가운데 중단 -->
             <div class="row"><!-- 각 팀 이름, 로고 -->
-                <div onload="addElement()" class="col-md-5 align_center" style="padding-left:30px; padding-bottom:30px;">
-                    <img src="/resources2/img/jips/team_head/hh.png"/>
+                <div id=todayawayteamimg class="col-md-5 align_center" style="padding-left:30px; padding-bottom:30px;">
+                    <%--<img src="/resources2/img/jips/team_head/hh.png"/>--%>
                     <h3>한화 이글스</h3>
                 </div>
                 <div class="col-md-2 align_center" style="padding-top:50px;">
                     <img src="resources2/img/jips/UI/h_game_live_vs.png"/>
                 </div>
-                <div id = todayteamimg class="col-md-5 align_center" style="padding-right:30px; padding-bottom:30px;">
-                    <img src="/resources2/img/jips/team_head/ss.png"/>
+                <div id = todayhometeamimg class="col-md-5 align_center" style="padding-right:30px; padding-bottom:30px;">
+                    <%--<img src="/resources2/img/jips/team_head/ss.png"/>--%>
                     <h3>삼성 라이온즈</h3>
                 </div>
             </div>
@@ -107,15 +107,15 @@
         </div>
         <div class="row middlepart"><!-- 우측 중단 -->
             <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
-                <div class="col-md-5 align_right" >
-                    <img src="/resources2/img/jips/team_initial/initials_eagles.png"/>
+                <div id = nextawayteamimg class="col-md-5 align_right" >
+                    <%--<img src="/resources2/img/jips/team_initial/initials_eagles.png"/>--%>
                     <h6>한화 이글스</h6>
                 </div>
                 <div class="col-md-2 align_center">
                     <img src="/resources2/img/jips/UI/h_game_vs.png"/>
                 </div>
-                <div id=nextteamimg class="col-md-5 align_left">
-                    <img src="/resources2/img/jips/team_initial/initials_lions.png"/>
+                <div id=nexthometeamimg class="col-md-5 align_left">
+                    <%--<img src="/resources2/img/jips/team_initial/initials_lions.png"/>--%>
                     <h6>삼성 라이온즈</h6>
                 </div>
             </div>
@@ -142,6 +142,7 @@
         </div>
     </div>
 </section>
+<%--
 <section class="container">
     <div class="test_field">
         <script>
@@ -230,122 +231,189 @@
         </script>
     </div>
 </section>
+--%>
 <!-- footer -->
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
 </body>
 
-
 <script>
 
-    var a = 1;
-    var b = 2;
-/*    var a = ${hhschedule.prevawayteamid};
-    var b = ${hhschedule.todayawayteamid};
-    var c = ${hhschedule.nextawayteamid};*/
+    var a3 = ${hhschedule.get(0).prevawayid};
+    var b3 = ${hhschedule.get(0).prevhomeid};
 
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var a1 = ${hhschedule.get(0).todayawayid};
+    var b1 = ${hhschedule.get(0).todayhomeid};
 
-    var img2= document.createElement('img');
-    img2.src = "/resources2/img/jips/team_head/ss.png"
-    /*
-    small image
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
-
-    var img = document.createElement('img');
-    img.src = "/resources2/img/jips/team_initial/initials_dinos.png";*/
+    var a2 = ${hhschedule.get(0).nextawayid};
+    var b2 = ${hhschedule.get(0).nexthomeid};
+    
 
 
-    /*
-     big image
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_1 = document.createElement('img');
+    s_img_1.src = "/resources2/img/jips/team_initial/initials_bears.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_2 = document.createElement('img');
+    s_img_2.src = "/resources2/img/jips/team_initial/initials_lions.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_3 = document.createElement('img');
+    s_img_3.src = "/resources2/img/jips/team_initial/initials_tigers.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_4 = document.createElement('img');
+    s_img_4.src = "/resources2/img/jips/team_initial/initials_heroes.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_5 = document.createElement('img');
+    s_img_5.src = "/resources2/img/jips/team_initial/initials_twins.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_6 = document.createElement('img');
+    s_img_6.src = "/resources2/img/jips/team_initial/initials_wyverns.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_7 = document.createElement('img');
+    s_img_7.src = "/resources2/img/jips/team_initial/initials_dinos.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+    var s_img_8 = document.createElement('img');
+    s_img_8.src = "/resources2/img/jips/team_initial/initials_eagles.png";
 
-     var img = document.createElement('img');
-     img.src = "/resources2/img/jips/team_initial/initials_dinos.png";*/
+    var s_img_9 = document.createElement('img');
+    s_img_9.src = "/resources2/img/jips/team_initial/initials_giants.png";
 
-    if(a==1) {document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==2){document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==3){document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==4){document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==5){document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==6){document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==7){document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==8){document.getElementById('prevteamimg').appendChild(img);}
-    else if(a==9){document.getElementById('prevteamimg').appendChild(img);}
-
-    if(b==1){document.getElementById('todayteamimg').appendChild(img);}
-    else if(b==2){document.getElementById('todayteamimg').appendChild(img2);}
-    else if(b==3){document.getElementById('todayteamimg').appendChild(img);}
-    else if(b==4){document.getElementById('todayteamimg').appendChild(img);}
-    else if(b==5){document.getElementById('todayteamimg').appendChild(img);}
-    else if(b==6){document.getElementById('todayteamimg').appendChild(img);}
-    else if(b==7){document.getElementById('todayteamimg').appendChild(img);}
-    else if(b==8){document.getElementById('todayteamimg').appendChild(img);}
-    else if(b==9){document.getElementById('todayteamimg').appendChild(img);}
+    var s_img_10 = document.createElement('img');
+    s_img_10.src = "/resources2/img/jips/team_initial/initials_wiz.png";
 
 
-    if(c==1){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==2){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==3){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==4){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==5){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==6){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==7){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==8){document.getElementById('nextteamimg').appendChild(img);}
-    else if(b==9){document.getElementById('nextteamimg').appendChild(img);}
+    var s1_img_1 = document.createElement('img');
+    s1_img_1.src = "/resources2/img/jips/team_initial/initials_bears.png";
+
+    var s1_img_2 = document.createElement('img');
+    s1_img_2.src = "/resources2/img/jips/team_initial/initials_lions.png";
+
+    var s1_img_3 = document.createElement('img');
+    s1_img_3.src = "/resources2/img/jips/team_initial/initials_tigers.png";
+
+    var s1_img_4 = document.createElement('img');
+    s1_img_4.src = "/resources2/img/jips/team_initial/initials_heroes.png";
+
+    var s1_img_5 = document.createElement('img');
+    s1_img_5.src = "/resources2/img/jips/team_initial/initials_twins.png";
+
+    var s1_img_6 = document.createElement('img');
+    s1_img_6.src = "/resources2/img/jips/team_initial/initials_wyverns.png";
+
+    var s1_img_7 = document.createElement('img');
+    s1_img_7.src = "/resources2/img/jips/team_initial/initials_dinos.png";
+
+    var s1_img_8 = document.createElement('img');
+    s1_img_8.src = "/resources2/img/jips/team_initial/initials_eagles.png";
+
+    var s1_img_9 = document.createElement('img');
+    s1_img_9.src = "/resources2/img/jips/team_initial/initials_giants.png";
+
+    var s1_img_10 = document.createElement('img');
+    s1_img_10.src = "/resources2/img/jips/team_initial/initials_wiz.png";
 
 
 
 
+    var b_img_1 = document.createElement('img');
+    b_img_1.src = "/resources2/img/jips/team_head/ds.png";
+
+    var b_img_2 = document.createElement('img');
+    b_img_2.src = "/resources2/img/jips/team_head/ss.png";
+
+    var b_img_3 = document.createElement('img');
+    b_img_3.src = "/resources2/img/jips/team_head/kia.png";
+
+    var b_img_4 = document.createElement('img');
+    b_img_4.src = "/resources2/img/jips/team_head/nx.png";
+
+    var b_img_5 = document.createElement('img');
+    b_img_5.src = "/resources2/img/jips/team_head/lg.png";
+
+    var b_img_6 = document.createElement('img');
+    b_img_6.src = "/resources2/img/jips/team_head/sk.png";
+
+    var b_img_7 = document.createElement('img');
+    b_img_7.src = "/resources2/img/jips/team_head/nc.png";
+
+    var b_img_8 = document.createElement('img');
+    b_img_8.src = "/resources2/img/jips/team_head/hh.png";
+
+    var b_img_9 = document.createElement('img');
+    b_img_9.src = "/resources2/img/jips/team_head/lt.png";
+
+    var b_img_10 = document.createElement('img');
+    b_img_10.src = "/resources2/img/jips/team_head/kt.png";
 
 
+    if(a3==1) {document.getElementById('prevawayteamimg').appendChild(s_img_1);}
+    else if(a3==2){document.getElementById('prevawayteamimg').appendChild(s_img_2);}
+    else if(a3==3){document.getElementById('prevawayteamimg').appendChild(s_img_3);}
+    else if(a3==4){document.getElementById('prevawayteamimg').appendChild(s_img_4);}
+    else if(a3==5){document.getElementById('prevawayteamimg').appendChild(s_img_5);}
+    else if(a3==6){document.getElementById('prevawayteamimg').appendChild(s_img_6);}
+    else if(a3==7){document.getElementById('prevawayteamimg').appendChild(s_img_7);}
+    else if(a3==8){document.getElementById('prevawayteamimg').appendChild(s_img_8); }
+    else if(a3==9){document.getElementById('prevawayteamimg').appendChild(s_img_9);}
+    else {document.getElementById('prevawayteamimg').appendChild(s_img_10);}
+
+    if(b3==1) {document.getElementById('prevhometeamimg').appendChild(s_img_1);}
+    else if(b3==2){document.getElementById('prevhometeamimg').appendChild(s_img_2);}
+    else if(b3==3){document.getElementById('prevhometeamimg').appendChild(s_img_3);}
+    else if(b3==4){document.getElementById('prevhometeamimg').appendChild(s_img_4);}
+    else if(b3==5){document.getElementById('prevhometeamimg').appendChild(s_img_5);}
+    else if(b3==6){document.getElementById('prevhometeamimg').appendChild(s_img_6);}
+    else if(b3==7){document.getElementById('prevhometeamimg').appendChild(s_img_7);}
+    else if(b3==8){document.getElementById('prevhometeamimg').appendChild(s_img_8);}
+    else if(b3==9){document.getElementById('prevhometeamimg').appendChild(s_img_9);}
+    else {document.getElementById('prevhometeamimg').appendChild(s_img_10);}
 
 
+    if(a1==1){document.getElementById('todayawayteamimg').appendChild(b_img_1);}
+    else if(a1==2){document.getElementById('todayawayteamimg').appendChild(b_img_2);}
+    else if(a1==3){document.getElementById('todayawayteamimg').appendChild(b_img_3);}
+    else if(a1==4){document.getElementById('todayawayteamimg').appendChild(b_img_4);}
+    else if(a1==5){document.getElementById('todayawayteamimg').appendChild(b_img_5);}
+    else if(a1==6){document.getElementById('todayawayteamimg').appendChild(b_img_6);}
+    else if(a1==7){document.getElementById('todayawayteamimg').appendChild(b_img_7);}
+    else if(a1==8){document.getElementById('todayawayteamimg').appendChild(b_img_8);}
+    else if(a1==9){document.getElementById('todayawayteamimg').appendChild(b_img_9);}
+    else {document.getElementById('todayawayteamimg').appendChild(b_img_10);}
 
+    if(b1==1){document.getElementById('todayhometeamimg').appendChild(b_img_1);}
+    else if(b1==2){document.getElementById('todayhometeamimg').appendChild(b_img_2);}
+    else if(b1==3){document.getElementById('todayhometeamimg').appendChild(b_img_3);}
+    else if(b1==4){document.getElementById('todayhometeamimg').appendChild(b_img_4);}
+    else if(b1==5){document.getElementById('todayhometeamimg').appendChild(b_img_5);}
+    else if(b1==6){document.getElementById('todayhometeamimg').appendChild(b_img_6);}
+    else if(b1==7){document.getElementById('todayhometeamimg').appendChild(b_img_7);}
+    else if(b1==8){document.getElementById('todayhometeamimg').appendChild(b_img_8);}
+    else if(b1==9){document.getElementById('todayhometeamimg').appendChild(b_img_9);}
+    else {document.getElementById('todayhometeamimg').appendChild(b_img_10);}
+
+    if(a2==1){document.getElementById('nextawayteamimg').appendChild(s1_img_1);}
+    else if(a2==2){document.getElementById('nextawayteamimg').appendChild(s1_img_2);}
+    else if(a2==3){document.getElementById('nextawayteamimg').appendChild(s1_img_3);}
+    else if(a2==4){document.getElementById('nextawayteamimg').appendChild(s1_img_4);}
+    else if(a2==5){document.getElementById('nextawayteamimg').appendChild(s1_img_5);}
+    else if(a2==6){document.getElementById('nextawayteamimg').appendChild(s1_img_6);}
+    else if(a2==7){document.getElementById('nextawayteamimg').appendChild(s1_img_7);}
+    else if(a2==8){document.getElementById('nextawayteamimg').appendChild(s1_img_8);}
+    else if(a2==9){document.getElementById('nextawayteamimg').appendChild(s1_img_9);}
+    else {document.getElementById('nextawayteamimg').appendChild(s1_img_10);}
+
+    if(b2==1){document.getElementById('nexthometeamimg').appendChild(s1_img_1);}
+    else if(b2==2){document.getElementById('nexthometeamimg').appendChild(s1_img_2);}
+    else if(b2==3){document.getElementById('nexthometeamimg').appendChild(s1_img_3);}
+    else if(b2==4){document.getElementById('nexthometeamimg').appendChild(s1_img_4);}
+    else if(b2==5){document.getElementById('nexthometeamimg').appendChild(s1_img_5);}
+    else if(b2==6){document.getElementById('nexthometeamimg').appendChild(s1_img_6);}
+    else if(b2==7){document.getElementById('nexthometeamimg').appendChild(s1_img_7);}
+    else if(b2==8){document.getElementById('nexthometeamimg').appendChild(s1_img_8);}
+    else if(b2==9){document.getElementById('nexthometeamimg').appendChild(s1_img_9);}
+    else {document.getElementById('nexthometeamimg').appendChild(s1_img_10);}
+
+</script>
+
+<script>
 
 </script>
 </html>
