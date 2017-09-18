@@ -128,6 +128,8 @@
 		</div>
 	</section>
 	<%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
+
+
 </body>
 <script>
 	$(document).ready(function(){
