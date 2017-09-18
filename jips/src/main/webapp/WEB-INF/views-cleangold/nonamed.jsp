@@ -71,7 +71,7 @@
     <br/>
     <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
-        <table summary = "목록">
+        <table class="hhrate_table" summary = "목록">
             <thead>
             <tr>
                 <th> id</th>
