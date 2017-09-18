@@ -87,15 +87,15 @@
         <table class="hhrate_table" summary = "목록">
             <thead>
             <tr>
-                <th> id</th>
+                <th> ID</th>
                 <th> Date</th>
-                <th> starttime</th>
+                <th> Start time</th>
                 <th> Accuracy</th>
-                <th> Winrate</th>
+                <th> Win_rate</th>
 
-                <th> Drawrate</th>
-                <th> Loserate</th>
-                <th> correct</th>
+                <th> Draw_rate</th>
+                <th> Lose_rate</th>
+                <th> Correct</th>
                 <th> HHscore</th>
 
                 <th> OPPscore</th>
@@ -138,18 +138,32 @@
 </section>
 
 <section class="container">
-    <h4><strong style="padding-left: 20px;">[CORR. List]</strong></h4><br/>
-    <div class="test_field">
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  CORR. LIST</strong></h4><br/>
+    <div class="test_field" style="padding-left: 50px; height: 350px; overflow: auto;" >
         <script>
             <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
 
             <c:if test="${hhr_corr.corrM == 1}">
+<<<<<<< HEAD
                 $(".test_field").prepend("<button class ='win_box'></button>");
                 $("button").prependTo("#<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
                 $(".win_box").addClass('game_win');
                 <c:set var="doneLoop" value="true"/>
             </c:if>
+=======
+                var win_day;
+                $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
+
+                $(".win_box").addClass('game_win');
+                <c:set var="doneLoop" value="true"/>
+            </c:if>
+            <c:if test="${hhr_corr.corrM == 0}">
+                $(".test_field").prepend("<button class ='lose_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
+                $(".lose_box").addClass('game_lose');
+                <c:set var="doneLoop" value="true"/>
+            </c:if>
+>>>>>>> b0b5ff3ccc4c946d60156bfd3e94527a4cfc59f7
             </c:forEach>
         </script>
     </div>
