@@ -68,18 +68,23 @@
 <section class="container">
     <!-- 경기 테이블-->
 
-    <h4><strong style="padding-left: 20px;">[PREDICT GRAPH]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+    <h1 style="padding-left: 30px;"><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>PREDICT</strong></h1>
+    <br/>
+    <div class ="col sep sep-big"></div>
+
+    <h4><strong style="padding-left: 20px;">
+        <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
     <div class="row">
         <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
     </div>
 
     <br/>
     <div class ="col sep sep-big"></div>
-    <h4><strong style="padding-left: 20px;">[PREDICT LIST]</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-list" aria-hidden="true"></i> PREDICT LIST</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
     <br/>
     <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
-        <table summary = "목록">
+        <table class="hhrate_table" summary = "목록">
             <thead>
             <tr>
                 <th> id</th>
@@ -124,7 +129,7 @@
     <br/><br/>
     <!-- HTML -->
 
-    <h4><strong style="padding-left: 20px;">[TODAY PREDICT]</strong></h4>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-bar-chart" aria-hidden="true"></i>  TODAY PREDICT</strong></h4>
 
         <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
 
