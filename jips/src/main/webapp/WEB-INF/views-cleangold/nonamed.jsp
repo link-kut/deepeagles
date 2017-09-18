@@ -28,6 +28,20 @@
         .hhrate_table tbody tr td:nth-child(odd){
             background-color: #ffce4c !important;
         }
+
+        .win_box, .lose_box {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            margin: 10px;
+            float: left;
+        }
+        .game_lose {
+            background-color: yellow;
+        }
+        .game_win {
+            background-color: #20e900;
+        }
     </style>
 
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -50,7 +64,6 @@
 <div class="row" style="height:160px;"><!--상단 메뉴창 출력 -->
     <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
 </div>
-
 
 <section class="container">
     <!-- 경기 테이블-->
@@ -122,6 +135,31 @@
 
         <div class ="col sep sep-big"></div>
 
+</section>
+
+<section class="container">
+    <h4><strong style="padding-left: 20px;">[CORR. List]</strong></h4><br/>
+    <div class="test_field">
+        <script>
+            <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
+            console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
+
+            <c:if test="${hhr_corr.corrM == 1}">
+                var win_day;
+                $(".test_field").prepend("<button class ='win_box'></button>");
+                $("button").prependTo("#<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
+                $(".win_box").addClass('game_win');
+                <c:set var="doneLoop" value="true"/>
+            </c:if>
+            <c:if test="${hhr_corr.corrM == 0}">
+                $(".test_field").prepend("<button class ='lose_box'></button>");
+                $("button").prependTo("#<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
+                $(".lose_box").addClass('game_lose');
+                <c:set var="doneLoop" value="true"/>
+            </c:if>
+            </c:forEach>
+        </script>
+    </div>
 </section>
 
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
@@ -221,7 +259,7 @@
         <c:forEach items="${graphdata}" var="graphdata" varStatus="i">
         var newDate = new Date(firstDate);
         newDate.setDate(${graphdata.datenum});
-        console.log(${graphdata.datenum});
+
         chartData.push({
             date: newDate,
             mWinrate : ${graphdata.mWinrate},

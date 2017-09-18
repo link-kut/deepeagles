@@ -25,9 +25,7 @@ public class HHRate {
 
     public void setId(int id) { this.id = id; }
 
-    public Date getDate() {
-        return Date;
-    }
+    public Date getDate() { return Date; }
 
     public void setDate(Date date) {
         Date = date;
