@@ -87,8 +87,8 @@
             <c:forEach var="test_hhr" items = "${test_hhr}" varStatus = "status">
                 <tr>
                     <td><c:out value = "${test_hhr.id}"/></td>
-                    <td><c:out value = "${test_hhr.date}"/></td>
-                    <td><c:out value = "${test_hhr.starttime}"/></td>
+                    <td><fmt:formatDate value="${test_hhr.date}" pattern="yyyy-MM-dd"/></td>
+                    <td><fmt:formatDate value="${test_hhr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>
                     <td><fmt:formatNumber value = "${test_hhr.mAcc}" pattern=".0000"/></td>
                     <td><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${test_hhr.mWinrate}"/></td>
 

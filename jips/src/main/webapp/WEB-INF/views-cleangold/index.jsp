@@ -62,14 +62,13 @@
                     <%--<img src="/resources2/img/jips/team_initial/initials_dinos.png"/>--%>
                     <h6 id="prevhometeamtext"></h6>
                 </div>
-            </div><br/>
+            </div><br/><br/>
             <div class="row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
-                <h5>예상결과 : 한화이글스 64%로 승리</h5>
-                <h5>결과 : NC 다이노스의 승리</h5><br/>
+                <h1> <strong>${hhschedule.get(0).prevawayscore}  :  ${hhschedule.get(0).prevhomescore}</strong></h1>
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 좌측 하단 -->
-            <h6>[대전], 2017-09-10(일) , [14:00]</h6>
+            <h3><fmt:formatDate value="${hhschedule.get(0).prevdate}" pattern="yyyy-MM-dd"/></h3>
         </div>
     </div>
     <div class="col-md-6 boardpart" style="background-color: rgba( 0, 0, 0, 0.3 );"><!-- 가운데 공간 -->
@@ -92,13 +91,13 @@
                 </div>
             </div>
             <div class="row text_white align_center"><!-- 각 팀 (예상)점수 -->
+                <h1> <strong>${hhschedule.get(0).todayawayscore}  :  ${hhschedule.get(0).todayhomescore}</strong></h1>
                 <h3>한화이글스가 64% 확률로 승리!!</h3><br/>
-                <h5>[ 표본채집기간 2017-07-15 ~ 2017-08-29 ] </h5>
             </div>
         </div>
         <div class="row bottompart align_center text_white" style="padding-top:20px"><!-- 가운데 하단 -->
             <!-- 경기날짜 및 경지장 위치 -->
-            <h5>[대구], 2017-09-12(화) , [18:30]</h5>
+            <h3><fmt:formatDate value="${hhschedule.get(0).todaydate}" pattern="yyyy-MM-dd"/></h3><%--날짜--%>
         </div>
     </div>
     <div class="col-md-3 boardpart" style="background-color: rgba( 0, 0, 0, 0.1 );"><!-- 우측 공간 -->
@@ -118,11 +117,16 @@
                     <%--<img src="/resources2/img/jips/team_initial/initials_lions.png"/>--%>
                     <h6 id = nexthometeamtext></h6>
                 </div>
+                <br/><br/><br/>
+                <div class="row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
+                    <h1> <strong>${hhschedule.get(0).nextawayscore}  :  ${hhschedule.get(0).nexthomescore}</strong></h1>
+                </div>
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 우측 하단 -->
             <!-- 특별이벤트 존재시 기재 -->
-            <h6>[대구], 2017-09-13(수) , [18:30]</h6>
+
+            <h3><fmt:formatDate value="${hhschedule.get(0).todaydate}" pattern="yyyy-MM-dd"/></h3>
         </div>
     </div>
 </section>

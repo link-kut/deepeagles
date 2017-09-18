@@ -126,7 +126,7 @@
                     <c:forEach var="test_p" items = "${test_p}" varStatus = "status">
                         <tr class="pitcher_table_stat">
                             <td><c:out value = "${test_p.id}"/></td>
-                            <td><c:out value = "${test_p.date}"/></td>
+                            <td><fmt:formatDate value="${test_p.date}" pattern="yyyy-MM-dd"/></td>
                             <td><c:out value = "${test_p.w}"/></td>
 
                             <td><c:out value = "${test_p.l}"/></td>
@@ -213,7 +213,7 @@
                     <c:forEach var="test_h" items = "${test_h}" varStatus = "status">
                         <tr>
                             <td><c:out value = "${test_h.id}"/></td>
-                            <td><c:out value = "${test_h.date}"/></td>
+                            <td><fmt:formatDate value="${test_h.date}" pattern="yyyy-MM-dd"/></td>
                             <td><c:out value = "${test_h.TPA}"/></td>
                             <td><c:out value = "${test_h.AB}"/></td>
                             <td><c:out value = "${test_h.h}"/></td>
