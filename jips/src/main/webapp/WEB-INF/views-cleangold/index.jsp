@@ -53,14 +53,14 @@
             <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
                 <div id = prevawayteamimg class="col-md-5 align_right">
                     <%--<img src="/resources2/img/jips/team_initial/initials_eagles.png"/>--%>
-                    <h6>한화 이글스</h6>
+                    <h6 id=prevawayteamtext></h6>
                 </div>
                 <div class="col-md-2 align_center">
                     <img src="/resources2/img/jips/UI/h_game_vs.png"/>
                 </div>
                 <div id = prevhometeamimg class="col-md-5 align_left">
                     <%--<img src="/resources2/img/jips/team_initial/initials_dinos.png"/>--%>
-                    <h6>NC 다이노스</h6>
+                    <h6 id="prevhometeamtext"></h6>
                 </div>
             </div><br/>
             <div class="row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
@@ -81,14 +81,14 @@
             <div class="row"><!-- 각 팀 이름, 로고 -->
                 <div id=todayawayteamimg class="col-md-5 align_center" style="padding-left:30px; padding-bottom:30px;">
                     <%--<img src="/resources2/img/jips/team_head/hh.png"/>--%>
-                    <h3>한화 이글스</h3>
+                    <h3 id = todayawayteamtext></h3>
                 </div>
                 <div class="col-md-2 align_center" style="padding-top:50px;">
                     <img src="resources2/img/jips/UI/h_game_live_vs.png"/>
                 </div>
                 <div id = todayhometeamimg class="col-md-5 align_center" style="padding-right:30px; padding-bottom:30px;">
                     <%--<img src="/resources2/img/jips/team_head/ss.png"/>--%>
-                    <h3>삼성 라이온즈</h3>
+                    <h3 id = todayhometeamtext></h3>
                 </div>
             </div>
             <div class="row text_white align_center"><!-- 각 팀 (예상)점수 -->
@@ -109,14 +109,14 @@
             <div class="row text_white" style="height:120px; padding-top: 100px;"><!-- 각 팀 이름, 로고 -->
                 <div id = nextawayteamimg class="col-md-5 align_right" >
                     <%--<img src="/resources2/img/jips/team_initial/initials_eagles.png"/>--%>
-                    <h6>한화 이글스</h6>
+                    <h6 id = nextawayteamtext></h6>
                 </div>
                 <div class="col-md-2 align_center">
                     <img src="/resources2/img/jips/UI/h_game_vs.png"/>
                 </div>
                 <div id=nexthometeamimg class="col-md-5 align_left">
                     <%--<img src="/resources2/img/jips/team_initial/initials_lions.png"/>--%>
-                    <h6>삼성 라이온즈</h6>
+                    <h6 id = nexthometeamtext></h6>
                 </div>
             </div>
         </div>
@@ -246,7 +246,7 @@
 
     var a2 = ${hhschedule.get(0).nextawayid};
     var b2 = ${hhschedule.get(0).nexthomeid};
-    
+
 
 
     var s_img_1 = document.createElement('img');
@@ -344,72 +344,72 @@
     b_img_10.src = "/resources2/img/jips/team_head/kt.png";
 
 
-    if(a3==1) {document.getElementById('prevawayteamimg').appendChild(s_img_1);}
-    else if(a3==2){document.getElementById('prevawayteamimg').appendChild(s_img_2);}
-    else if(a3==3){document.getElementById('prevawayteamimg').appendChild(s_img_3);}
-    else if(a3==4){document.getElementById('prevawayteamimg').appendChild(s_img_4);}
-    else if(a3==5){document.getElementById('prevawayteamimg').appendChild(s_img_5);}
-    else if(a3==6){document.getElementById('prevawayteamimg').appendChild(s_img_6);}
-    else if(a3==7){document.getElementById('prevawayteamimg').appendChild(s_img_7);}
-    else if(a3==8){document.getElementById('prevawayteamimg').appendChild(s_img_8); }
-    else if(a3==9){document.getElementById('prevawayteamimg').appendChild(s_img_9);}
-    else {document.getElementById('prevawayteamimg').appendChild(s_img_10);}
+    if(a3==1) {document.getElementById('prevawayteamimg').appendChild(s_img_1); var pat_ds = document.getElementById('prevawayteamtext');  pat_ds.innerHTML = "두산베어스";}
+    else if(a3==2){document.getElementById('prevawayteamimg').appendChild(s_img_2); var pat_ss = document.getElementById('prevawayteamtext');  pat_ss.innerHTML = "삼성라이온즈";}
+    else if(a3==3){document.getElementById('prevawayteamimg').appendChild(s_img_3); var pat_kia = document.getElementById('prevawayteamtext');  pat_kia.innerHTML = "기아타이거즈";}
+    else if(a3==4){document.getElementById('prevawayteamimg').appendChild(s_img_3); var pat_nx = document.getElementById('prevawayteamtext');  pat_nx.innerHTML = "넥센히어로즈";}
+    else if(a3==5){document.getElementById('prevawayteamimg').appendChild(s_img_5); var pat_lg = document.getElementById('prevawayteamtext');  pat_lg.innerHTML = "LG트윈스";}
+    else if(a3==6){document.getElementById('prevawayteamimg').appendChild(s_img_6); var pat_sk = document.getElementById('prevawayteamtext');  pat_sk.innerHTML = "SK와이번스";}
+    else if(a3==7){document.getElementById('prevawayteamimg').appendChild(s_img_7); var pat_nc = document.getElementById('prevawayteamtext');  pat_nc.innerHTML = "NC다이노스";}
+    else if(a3==8){document.getElementById('prevawayteamimg').appendChild(s_img_8); var pat_hh = document.getElementById('prevawayteamtext');  pat_hh.innerHTML = "한화이글스";}
+    else if(a3==9){document.getElementById('prevawayteamimg').appendChild(s_img_9); var pat_rd = document.getElementById('prevawayteamtext');  pat_rd.innerHTML = "롯데자이언트";}
+    else {document.getElementById('prevawayteamimg').appendChild(s_img_10);var pat_kt = document.getElementById('prevawayteamtext');  pat.innerHTML = "KT WIZ";}
 
-    if(b3==1) {document.getElementById('prevhometeamimg').appendChild(s_img_1);}
-    else if(b3==2){document.getElementById('prevhometeamimg').appendChild(s_img_2);}
-    else if(b3==3){document.getElementById('prevhometeamimg').appendChild(s_img_3);}
-    else if(b3==4){document.getElementById('prevhometeamimg').appendChild(s_img_4);}
-    else if(b3==5){document.getElementById('prevhometeamimg').appendChild(s_img_5);}
-    else if(b3==6){document.getElementById('prevhometeamimg').appendChild(s_img_6);}
-    else if(b3==7){document.getElementById('prevhometeamimg').appendChild(s_img_7);}
-    else if(b3==8){document.getElementById('prevhometeamimg').appendChild(s_img_8);}
-    else if(b3==9){document.getElementById('prevhometeamimg').appendChild(s_img_9);}
-    else {document.getElementById('prevhometeamimg').appendChild(s_img_10);}
+    if(b3==1) {document.getElementById('prevhometeamimg').appendChild(s_img_1); var pht_ds = document.getElementById('prevhometeamtext');  pht_ds.innerHTML = "두산베어스";}
+    else if(b3==2){document.getElementById('prevhometeamimg').appendChild(s_img_2); var pht_ss = document.getElementById('prevhometeamtext');  pht_ss.innerHTML = "삼성라이온즈";}
+    else if(b3==3){document.getElementById('prevhometeamimg').appendChild(s_img_3); var pht_kia = document.getElementById('prevhometeamtext');  pht_kia.innerHTML = "기아타이거즈";}
+    else if(b3==4){document.getElementById('prevhometeamimg').appendChild(s_img_4); var pht_nx = document.getElementById('prevhometeamtext');  pht_nx.innerHTML = "넥센히어로즈";}
+    else if(b3==5){document.getElementById('prevhometeamimg').appendChild(s_img_5); var pht_lg = document.getElementById('prevhometeamtext');  pht_lg.innerHTML = "LG트윈스";}
+    else if(b3==6){document.getElementById('prevhometeamimg').appendChild(s_img_6); var pht_sk = document.getElementById('prevhometeamtext');  pht_sk.innerHTML = "SK와이번스";}
+    else if(b3==7){document.getElementById('prevhometeamimg').appendChild(s_img_7); var pht_nc = document.getElementById('prevhometeamtext');  pht_nc.innerHTML = "NC다이노스";}
+    else if(b3==8){document.getElementById('prevhometeamimg').appendChild(s_img_8); var pht_hh = document.getElementById('prevhometeamtext');  pht_hh.innerHTML = "한화이글스";}
+    else if(b3==9){document.getElementById('prevhometeamimg').appendChild(s_img_9); var pht_ld = document.getElementById('prevhometeamtext');  pht_ld.innerHTML = "롯데자이언트";}
+    else {document.getElementById('prevhometeamimg').appendChild(s_img_10); var pht_kt = document.getElementById('prevhometeamtext');  pht_kt.innerHTML = "KT WIZ";}
 
 
-    if(a1==1){document.getElementById('todayawayteamimg').appendChild(b_img_1);}
-    else if(a1==2){document.getElementById('todayawayteamimg').appendChild(b_img_2);}
-    else if(a1==3){document.getElementById('todayawayteamimg').appendChild(b_img_3);}
-    else if(a1==4){document.getElementById('todayawayteamimg').appendChild(b_img_4);}
-    else if(a1==5){document.getElementById('todayawayteamimg').appendChild(b_img_5);}
-    else if(a1==6){document.getElementById('todayawayteamimg').appendChild(b_img_6);}
-    else if(a1==7){document.getElementById('todayawayteamimg').appendChild(b_img_7);}
-    else if(a1==8){document.getElementById('todayawayteamimg').appendChild(b_img_8);}
-    else if(a1==9){document.getElementById('todayawayteamimg').appendChild(b_img_9);}
-    else {document.getElementById('todayawayteamimg').appendChild(b_img_10);}
+    if(a1==1){document.getElementById('todayawayteamimg').appendChild(b_img_1); var tat_ds = document.getElementById('todayawayteamtext');  tat_ds.innerHTML = "두산베어스";}
+    else if(a1==2){document.getElementById('todayawayteamimg').appendChild(b_img_2); var tat_ss = document.getElementById('todayawayteamtext');  tat_ss.innerHTML = "삼성라이온즈";}
+    else if(a1==3){document.getElementById('todayawayteamimg').appendChild(b_img_3); var tat_kia = document.getElementById('todayawayteamtext');  tat_kia.innerHTML = "기아타이거즈";}
+    else if(a1==4){document.getElementById('todayawayteamimg').appendChild(b_img_4); var tat_nx = document.getElementById('todayawayteamtext');  tat_nx.innerHTML = "넥센히어로즈";}
+    else if(a1==5){document.getElementById('todayawayteamimg').appendChild(b_img_5); var tat_lg = document.getElementById('todayawayteamtext');  tat_lg.innerHTML = "LG트윈스";}
+    else if(a1==6){document.getElementById('todayawayteamimg').appendChild(b_img_6); var tat_sk = document.getElementById('todayawayteamtext');  tat_sk.innerHTML = "SK와이번스";}
+    else if(a1==7){document.getElementById('todayawayteamimg').appendChild(b_img_7); var tat_nc = document.getElementById('todayawayteamtext');  tat_nc.innerHTML = "NC다이노스";}
+    else if(a1==8){document.getElementById('todayawayteamimg').appendChild(b_img_8); var tat_hh = document.getElementById('todayawayteamtext');  tat_hh.innerHTML = "한화이글스";}
+    else if(a1==9){document.getElementById('todayawayteamimg').appendChild(b_img_9); var tat_ld = document.getElementById('todayawayteamtext');  tat_ld.innerHTML = "롯데자이언트";}
+    else {document.getElementById('todayawayteamimg').appendChild(b_img_10); var tat_kt = document.getElementById('todayawayteamtext');  tat_kt.innerHTML = "KT WIZ";}
 
-    if(b1==1){document.getElementById('todayhometeamimg').appendChild(b_img_1);}
-    else if(b1==2){document.getElementById('todayhometeamimg').appendChild(b_img_2);}
-    else if(b1==3){document.getElementById('todayhometeamimg').appendChild(b_img_3);}
-    else if(b1==4){document.getElementById('todayhometeamimg').appendChild(b_img_4);}
-    else if(b1==5){document.getElementById('todayhometeamimg').appendChild(b_img_5);}
-    else if(b1==6){document.getElementById('todayhometeamimg').appendChild(b_img_6);}
-    else if(b1==7){document.getElementById('todayhometeamimg').appendChild(b_img_7);}
-    else if(b1==8){document.getElementById('todayhometeamimg').appendChild(b_img_8);}
-    else if(b1==9){document.getElementById('todayhometeamimg').appendChild(b_img_9);}
-    else {document.getElementById('todayhometeamimg').appendChild(b_img_10);}
+    if(b1==1){document.getElementById('todayhometeamimg').appendChild(b_img_1); var tht_ds = document.getElementById('todayhometeamtext');  tht_ds.innerHTML = "두산베어스";}
+    else if(b1==2){document.getElementById('todayhometeamimg').appendChild(b_img_2); var tht_ss = document.getElementById('todayhometeamtext');  tht_ss.innerHTML = "삼성라이온즈";}
+    else if(b1==3){document.getElementById('todayhometeamimg').appendChild(b_img_3);var tht_kia = document.getElementById('todayhometeamtext');  tht_kia.innerHTML = "기아타이거즈";}
+    else if(b1==4){document.getElementById('todayhometeamimg').appendChild(b_img_4); var tht_nx = document.getElementById('todayhometeamtext');  tht_nx.innerHTML = "넥센히어로즈";}
+    else if(b1==5){document.getElementById('todayhometeamimg').appendChild(b_img_5); var tht_lg = document.getElementById('todayhometeamtext');  tht_lg.innerHTML = "LG트윈스";}
+    else if(b1==6){document.getElementById('todayhometeamimg').appendChild(b_img_6); var tht_sk = document.getElementById('todayhometeamtext');  tht_sk.innerHTML = "SK와이번스";}
+    else if(b1==7){document.getElementById('todayhometeamimg').appendChild(b_img_7); var tht_nc = document.getElementById('todayhometeamtext');  tht_nc.innerHTML = "NC다이노스";}
+    else if(b1==8){document.getElementById('todayhometeamimg').appendChild(b_img_8); var tht_hh = document.getElementById('todayhometeamtext');  tht_hh.innerHTML = "한화이글스";}
+    else if(b1==9){document.getElementById('todayhometeamimg').appendChild(b_img_9); var tht_ld = document.getElementById('todayhometeamtext');  tht_ld.innerHTML = "롯데자이언트";}
+    else {document.getElementById('todayhometeamimg').appendChild(b_img_10); var tht_kt = document.getElementById('todayhometeamtext');  tht_ds.innerHTML = "KT WIZ";}
 
-    if(a2==1){document.getElementById('nextawayteamimg').appendChild(s1_img_1);}
-    else if(a2==2){document.getElementById('nextawayteamimg').appendChild(s1_img_2);}
-    else if(a2==3){document.getElementById('nextawayteamimg').appendChild(s1_img_3);}
-    else if(a2==4){document.getElementById('nextawayteamimg').appendChild(s1_img_4);}
-    else if(a2==5){document.getElementById('nextawayteamimg').appendChild(s1_img_5);}
-    else if(a2==6){document.getElementById('nextawayteamimg').appendChild(s1_img_6);}
-    else if(a2==7){document.getElementById('nextawayteamimg').appendChild(s1_img_7);}
-    else if(a2==8){document.getElementById('nextawayteamimg').appendChild(s1_img_8);}
-    else if(a2==9){document.getElementById('nextawayteamimg').appendChild(s1_img_9);}
-    else {document.getElementById('nextawayteamimg').appendChild(s1_img_10);}
+    if(a2==1){document.getElementById('nextawayteamimg').appendChild(s1_img_1); var nat_ds = document.getElementById('nextawayteamtext');  nat_ds.innerHTML = "두산베어스";}
+    else if(a2==2){document.getElementById('nextawayteamimg').appendChild(s1_img_2); var nat_ss = document.getElementById('nextawayteamtext');  nat_ss.innerHTML = "삼성라이온즈";}
+    else if(a2==3){document.getElementById('nextawayteamimg').appendChild(s1_img_3); var nat_kia = document.getElementById('nextawayteamtext');  nat_kia.innerHTML = "기아타이거즈";}
+    else if(a2==4){document.getElementById('nextawayteamimg').appendChild(s1_img_4); var nat_nx= document.getElementById('nextawayteamtext');  nat_nx.innerHTML = "넥센히어로즈";}
+    else if(a2==5){document.getElementById('nextawayteamimg').appendChild(s1_img_5); var nat_lg = document.getElementById('nextawayteamtext');  nat_lg.innerHTML = "LG트윈스";}
+    else if(a2==6){document.getElementById('nextawayteamimg').appendChild(s1_img_6); var nat_sk = document.getElementById('nextawayteamtext');  nat_sk.innerHTML = "SK와이번스";}
+    else if(a2==7){document.getElementById('nextawayteamimg').appendChild(s1_img_7); var nat_nc = document.getElementById('nextawayteamtext');  nat_nc.innerHTML = "NC다이노스";}
+    else if(a2==8){document.getElementById('nextawayteamimg').appendChild(s1_img_8); var nat_hh = document.getElementById('nextawayteamtext');  nat_hh.innerHTML = "한화이글스";}
+    else if(a2==9){document.getElementById('nextawayteamimg').appendChild(s1_img_9); var nat_ld = document.getElementById('nextawayteamtext');  nat_ld.innerHTML = "롯데자이언트";}
+    else {document.getElementById('nextawayteamimg').appendChild(s1_img_10); var nat_kt = document.getElementById('nextawayteamtext');  nat_kt.innerHTML = "KT WIZ";}
 
-    if(b2==1){document.getElementById('nexthometeamimg').appendChild(s1_img_1);}
-    else if(b2==2){document.getElementById('nexthometeamimg').appendChild(s1_img_2);}
-    else if(b2==3){document.getElementById('nexthometeamimg').appendChild(s1_img_3);}
-    else if(b2==4){document.getElementById('nexthometeamimg').appendChild(s1_img_4);}
-    else if(b2==5){document.getElementById('nexthometeamimg').appendChild(s1_img_5);}
-    else if(b2==6){document.getElementById('nexthometeamimg').appendChild(s1_img_6);}
-    else if(b2==7){document.getElementById('nexthometeamimg').appendChild(s1_img_7);}
-    else if(b2==8){document.getElementById('nexthometeamimg').appendChild(s1_img_8);}
-    else if(b2==9){document.getElementById('nexthometeamimg').appendChild(s1_img_9);}
-    else {document.getElementById('nexthometeamimg').appendChild(s1_img_10);}
+    if(b2==1){document.getElementById('nexthometeamimg').appendChild(s1_img_1); var nht_ds = document.getElementById('nexthometeamtext');  nht_ds.innerHTML = "두산베어스";}
+    else if(b2==2){document.getElementById('nexthometeamimg').appendChild(s1_img_2); var nht_ss = document.getElementById('nexthometeamtext');  nht_ss.innerHTML = "삼성라이온즈";}
+    else if(b2==3){document.getElementById('nexthometeamimg').appendChild(s1_img_3); var nht_kia = document.getElementById('nexthometeamtext');  nht_kia.innerHTML = "기아타이거즈";}
+    else if(b2==4){document.getElementById('nexthometeamimg').appendChild(s1_img_4); var nht_nx = document.getElementById('nexthometeamtext');  nht_nx.innerHTML = "넥센히어로즈";}
+    else if(b2==5){document.getElementById('nexthometeamimg').appendChild(s1_img_5); var nht_lg = document.getElementById('nexthometeamtext');  nht_lg.innerHTML = "LG트윈스";}
+    else if(b2==6){document.getElementById('nexthometeamimg').appendChild(s1_img_6); var nht_sk = document.getElementById('nexthometeamtext');  nht_sk.innerHTML = "SK와이번스";}
+    else if(b2==7){document.getElementById('nexthometeamimg').appendChild(s1_img_7); var nht_nc = document.getElementById('nexthometeamtext');  nht_nc.innerHTML = "NC다이노스";}
+    else if(b2==8){document.getElementById('nexthometeamimg').appendChild(s1_img_8); var nht_hh = document.getElementById('nexthometeamtext');  nht_hh.innerHTML = "한화이글스";}
+    else if(b2==9){document.getElementById('nexthometeamimg').appendChild(s1_img_9); var nht_ld = document.getElementById('nexthometeamtext');  nht_ld.innerHTML = "롯데자이언트";}
+    else {document.getElementById('nexthometeamimg').appendChild(s1_img_10); var nht_kt = document.getElementById('nexthometeamtext');  nht_kt.innerHTML = "KT WIZ";}
 
 </script>
 
