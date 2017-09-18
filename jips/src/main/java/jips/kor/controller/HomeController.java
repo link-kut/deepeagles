@@ -50,9 +50,6 @@ public class HomeController {
         model.addAttribute("cPage", "home");
         model.addAttribute("test","정상적으로 호출되었습니다.");
 
-        List<HHRate> hhr = hhrateMapper.findAll_hhrate();
-        model.addAttribute("home_hhr", hhr);
-
         List<HHSchedule> hhSche = hhScheduleMapper.findrecent_hhschedule();
         model.addAttribute("hhschedule",hhSche);
 
@@ -96,6 +93,9 @@ public class HomeController {
 
         List<HHRate> hhrecent = hhrateMapper.findrecent_hhrate();
         model.addAttribute("datarecent",hhrecent);
+
+        List<HHRate> hhr_corr = hhrateMapper.findAll_hhrate();
+        model.addAttribute("hhr_corr", hhr_corr);
 
         return "nonamed";
     }
