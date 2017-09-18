@@ -74,11 +74,11 @@
     </div>
     <!-- 두번째 섹션 : 데이터 표현그래프 -->
     <section class="container"><!-- 센터 -->
-        <h1 style="padding-left: 30px;"><strong>DATA</strong></h1>
+        <h1 style="padding-left: 30px;"><i class="fa fa-database" aria-hidden="true"></i> <strong>DATA</strong></h1>
         <br/>
         <div class ="col sep sep-big"></div>
 
-        <h4><strong style="padding-left: 20px">[Pitcher Info]</strong></h4>
+        <h4><strong style="padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i> Pitcher Info</strong></h4>
         <br/>
         <!-- 투수 정보 -->
 
@@ -167,7 +167,7 @@
 
         <br/><br/>
         <div class ="col sep sep-big"></div>
-        <h4><strong style=" padding-left: 20px">[Hitter Info]</strong></h4>
+        <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i> Hitter Info</strong></h4>
         <br/>
         <!-- 타자 테이블-->
         <div class="row" style="width:100%; padding-left: 50px;height:200px;overflow:auto;">
@@ -250,6 +250,8 @@
 
         <br/><br/>
 
+        <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i> WINS RECORD</strong></h4>
+        <br/><br/>
         <div class="row">
             <div class="col-md-6" id="chartDiv" style="height: 300px;"></div><!-- -->
             <div class="col-md-6" id="chartDiv2" style="width: 550px;height: 300px;"></div><!-- -->

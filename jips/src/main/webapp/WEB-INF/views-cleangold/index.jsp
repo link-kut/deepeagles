@@ -131,15 +131,22 @@
     </div>
 </section>
     <br/>
+
 <section class="container">
+
+    <div class ="col sep sep-big"></div>
+
+
     <div>
         <div class="col-md-6" style="height:auto; margin-bottom: 20px">
-            <h4><strong style="padding-left: 20px;">[불꽃 REC.]</strong></h4>
+            <h4><i class="fa fa-film" aria-hidden="true"></i><strong style="padding-left: 20px;">[불꽃 REC.]</strong></h4>
+            <br/>
             <!-- 재생목록재생 -->
             <object width="560" height="315" data ="https://www.youtube.com/embed?n-NyIEHpIhM&index=0&list=PLH13Vc2FtHHikliELagq_vqFhL1DGkiOQ"frameborder ="0" allowFullScreen> </object>
         </div>
         <div class="col-md-6" style="height:auto;">
-            <h4><strong style="padding-left: 20px;">[불꽃 MOMENT]</strong></h4>
+            <h4><i class="fa fa-film" aria-hidden="true"></i><strong style="padding-left: 20px;">[불꽃 MOMENT]</strong></h4>
+            <br/>
             <!-- 단일영상재생 -->
             <object width="560" height="315" data ="https://www.youtube.com/embed/SHCCFYOPHBY"frameborder ="0" allowFullScreen> </object>
             <%--<object width="560" height="315" data="https://www.youtube.com/embed/Gs069dndIYk" frameborder="0" allowfullscreen></object>--%>
