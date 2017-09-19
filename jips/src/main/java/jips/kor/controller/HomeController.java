@@ -82,8 +82,8 @@ public class HomeController {
         return "data";
     }
 
-    @RequestMapping("/nonamed")
-    public String Nonamed(Model model) {
+    @RequestMapping("/history")
+    public String History(Model model) {
         List<HHRate> hhr = hhrateMapper.findAll_hhrate();
 
         for(int i=0; i<hhr.size(); i++){
@@ -100,7 +100,13 @@ public class HomeController {
         List<HHRate> hhr_corr = hhrateMapper.findAll_hhrate();
         model.addAttribute("hhr_corr", hhr_corr);
 
-        return "nonamed";
+        return "history";
+    }
+
+    @RequestMapping("/todaypredict")
+    public String todayPredict(Model model) {
+
+        return "todaypredict";
     }
 
     @RequestMapping("/about")
