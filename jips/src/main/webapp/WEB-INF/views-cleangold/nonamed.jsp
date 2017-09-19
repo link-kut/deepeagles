@@ -29,7 +29,7 @@
             background-color: #ffce4c !important;
         }
 
-        .win_box, .lose_box {
+        .win_box, .lose_box, .none_box {
             width: 100px;
             height: 100px;
             background-color: #ffffff;
@@ -40,7 +40,11 @@
             background-color: yellow;
         }
         .game_win {
-            background-color: #20e900;
+            background-color: #00ff00;
+
+        }
+        .game_none{
+            background-color: white;
         }
     </style>
 
@@ -147,7 +151,6 @@
             <c:if test="${hhr_corr.corrM == 1}">
                 var win_day;
                 $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
-
                 $(".win_box").addClass('game_win');
                 <c:set var="doneLoop" value="true"/>
             </c:if>
@@ -156,6 +159,12 @@
                 $(".lose_box").addClass('game_lose');
                 <c:set var="doneLoop" value="true"/>
             </c:if>
+            <c:if test="${hhr_corr.corrM == 3}">
+            $(".test_field").prepend("<button class ='none_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
+            $(".none_box").addClass('game_none');
+            <c:set var="doneLoop" value="true"/>
+            </c:if>
+
             </c:forEach>
         </script>
     </div>

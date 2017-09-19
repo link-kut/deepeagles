@@ -78,7 +78,7 @@
             </div>
             <div class="row text_white align_center"><!-- 각 팀 (예상)점수 -->
                 <h1> <strong>${hhschedule.get(0).todayawayscore}  :  ${hhschedule.get(0).todayhomescore}</strong></h1>
-                <h3>한화이글스가 64% 확률로 승리!!</h3><br/>
+                <h3>한화이글스가  <strong>${datarecent.get(0).mWinrate}%</strong>  확률로 승리!!</h3><br/>
             </div>
         </div>
         <div class="row bottompart align_center text_white" style="padding-top:20px"><!-- 가운데 하단 -->

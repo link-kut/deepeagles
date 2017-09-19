@@ -53,6 +53,9 @@ public class HomeController {
         List<HHSchedule> hhSche = hhScheduleMapper.findrecent_hhschedule();
         model.addAttribute("hhschedule",hhSche);
 
+        List<HHRate> hhrecent = hhrateMapper.findrecent_hhrate();
+        model.addAttribute("datarecent",hhrecent);
+
         return "index";
     }
 
