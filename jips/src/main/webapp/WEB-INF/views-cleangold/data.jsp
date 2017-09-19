@@ -78,7 +78,7 @@
         <br/>
         <div class ="col sep sep-big"></div>
 
-        <h4><strong style="padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i> Pitcher Info</strong></h4>
+        <h4><strong style="padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>투수 정보</strong></h4>
         <br/>
         <!-- 투수 정보 -->
 
@@ -161,13 +161,36 @@
                 </table>
             </div>
         </div>
+        <div class="row" style="padding-left:50px;">
+            <br/>
+            <span><strong>1. W : </strong>승리 여부</span><br/>
+            <span><strong>2. W : </strong>승리 여부</span><br/>
+            <span><strong>3. W : </strong>승리 여부</span><br/>
+            <span><strong>4. W : </strong>승리 여부</span><br/>
+            <span><strong>5. W : </strong>승리 여부</span><br/>
+            <span><strong>6. W : </strong>승리 여부</span><br/>
+            <span><strong>7. W : </strong>승리 여부</span><br/>
+            <span><strong>8. W : </strong>승리 여부</span><br/>
+            <span><strong>9. W : </strong>승리 여부</span><br/>
+            <span><strong>10. W : </strong>승리 여부</span><br/>
+            <span><strong>11. W : </strong>승리 여부</span><br/>
+            <span><strong>12. W : </strong>승리 여부</span><br/>
+            <span><strong>13. W : </strong>승리 여부</span><br/>
+            <span><strong>14. W : </strong>승리 여부</span><br/>
+            <span><strong>15. W : </strong>승리 여부</span><br/>
+            <span><strong>16. W : </strong>승리 여부</span><br/>
+            <span><strong>17. W : </strong>승리 여부</span><br/>
+            <span><strong>18. W : </strong>승리 여부</span><br/>
+            <span><strong>19. W : </strong>승리 여부</span><br/>
+            <span><strong>20. W : </strong>승리 여부</span><br/>
+            <span><strong>21. W : </strong>승리 여부</span><br/>
+            <span><strong>22. W : </strong>승리 여부</span><br/>
+            <span><strong>23. W : </strong>승리 여부</span><br/>
+        </div>
 
-
-
-
-        <br/><br/>
+        <br/>
         <div class ="col sep sep-big"></div>
-        <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i> Hitter Info</strong></h4>
+        <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>타자 정보</strong></h4>
         <br/>
         <!-- 타자 테이블-->
         <div class="row" style="width:100%; padding-left: 50px;height:200px;overflow:auto;">
@@ -244,8 +267,29 @@
             </div>
         </div>
 
-        <br/><br/>
-
+        <div class="row" style="padding-left:50px;">
+            <br/>
+            <span><strong>1. TPA(Total Plate Appearances) : </strong>타석에 들어선 총 횟수</span><br/>
+            <span><strong>2. W : </strong>승리 여부</span><br/>
+            <span><strong>3. W : </strong>승리 여부</span><br/>
+            <span><strong>4. W : </strong>승리 여부</span><br/>
+            <span><strong>5. W : </strong>승리 여부</span><br/>
+            <span><strong>6. W : </strong>승리 여부</span><br/>
+            <span><strong>7. W : </strong>승리 여부</span><br/>
+            <span><strong>8. W : </strong>승리 여부</span><br/>
+            <span><strong>9. W : </strong>승리 여부</span><br/>
+            <span><strong>10. W : </strong>승리 여부</span><br/>
+            <span><strong>11. W : </strong>승리 여부</span><br/>
+            <span><strong>12. W : </strong>승리 여부</span><br/>
+            <span><strong>13. W : </strong>승리 여부</span><br/>
+            <span><strong>14. W : </strong>승리 여부</span><br/>
+            <span><strong>15. W : </strong>승리 여부</span><br/>
+            <span><strong>16. W : </strong>승리 여부</span><br/>
+            <span><strong>17. W : </strong>승리 여부</span><br/>
+            <span><strong>18. W : </strong>승리 여부</span><br/>
+            <span><strong>19. W : </strong>승리 여부</span><br/>
+        </div>
+        <br/>
         <div class ="col sep sep-big"></div>
 
         <br/><br/>

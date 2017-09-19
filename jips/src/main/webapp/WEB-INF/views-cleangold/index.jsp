@@ -326,8 +326,6 @@
     var p = ${datarecent.get(1).mWinrate};
     var t = ${datarecent.get(0).mWinrate};
 
-
-
     if (p<=50.0){
         var pre_game = document.getElementById('pregame');
         pre_game.innerHTML ="한화이글스가 <strong> ${datarecent.get(1).mLoserate}%</strong>로 패!!";

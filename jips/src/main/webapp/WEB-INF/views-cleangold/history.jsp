@@ -30,20 +30,23 @@
         }
 
         .win_box, .lose_box, .none_box {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             background-color: #ffffff;
-            margin: 10px;
+            margin: 5px;
             float: left;
         }
         .game_lose {
+            font-size: 9px;
             background-color: yellow;
         }
         .game_win {
+            font-size: 9px;
             background-color: #00ff00;
 
         }
         .game_none{
+            font-size: 9px;
             background-color: white;
         }
     </style>
@@ -69,13 +72,42 @@
     <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
 </div>
 
+<h1 style="padding-left: 30px;"><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>History</strong></h1>
+<br/>
+
+
 <section class="container">
-    <!-- 경기 테이블-->
-
-    <h1 style="padding-left: 30px;"><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>PREDICT</strong></h1>
-    <br/>
     <div class ="col sep sep-big"></div>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p><br/>
+    <div class="test_field" style="padding-left: 0px; height: 150px; overflow: auto;" >
+        <script>
+            <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
+            console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
+            <c:if test="${hhr_corr.corrM == 1}">
+            var win_day;
+            $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".win_box").addClass('game_win');
+            <c:set var="doneLoop" value="true"/>
+            </c:if>
+            <c:if test="${hhr_corr.corrM == 0}">
+            $(".test_field").prepend("<button class ='lose_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".lose_box").addClass('game_lose');
+            <c:set var="doneLoop" value="true"/>
+            </c:if>
+            <c:if test="${hhr_corr.corrM == 3}">
+            $(".test_field").prepend("<button class ='none_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".none_box").addClass('game_none');
+            <c:set var="doneLoop" value="true"/>
+            </c:if>
+            </c:forEach>
+        </script>
+    </div>
+</section>
 
+<section class="container">
+    <div class ="col sep sep-big"></div>
+    <br/>
+    <!-- 경기 테이블-->
     <h4><strong style="padding-left: 20px;">
         <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
     <div class="row">
@@ -116,8 +148,8 @@
 
                     <td><c:out value = "${test_hhr.mDrawrate}"/></td>
                     <td><c:out value = "${test_hhr.mLoserate}"/></td>
-                    <td><c:out value = "${test_hhr.corrM}"/></td>
-                        <%--<td><c:out value = "${test_hhr.corrL}"/></td>--%>
+                    <td class="corrM_backgnd"><c:out value = "${test_hhr.corrM}"/></td>
+                    <%--<td><c:out value = "${test_hhr.corrL}"/></td>--%>
                     <td><c:out value = "${test_hhr.HHscore}"/></td>
                     <td><c:out value = "${test_hhr.OPPscore}"/></td>
                 </tr>
@@ -136,38 +168,7 @@
     <h4><strong style="padding-left: 20px;"><i class="fa fa-bar-chart" aria-hidden="true"></i>  TODAY PREDICT</strong></h4>
 
         <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-
         <div class ="col sep sep-big"></div>
-
-</section>
-
-<section class="container">
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  CORR. LIST</strong></h4><br/>
-    <div class="test_field" style="padding-left: 50px; height: 350px; overflow: auto;" >
-        <script>
-            <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
-            console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
-
-            <c:if test="${hhr_corr.corrM == 1}">
-                var win_day;
-                $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
-                $(".win_box").addClass('game_win');
-                <c:set var="doneLoop" value="true"/>
-            </c:if>
-            <c:if test="${hhr_corr.corrM == 0}">
-                $(".test_field").prepend("<button class ='lose_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
-                $(".lose_box").addClass('game_lose');
-                <c:set var="doneLoop" value="true"/>
-            </c:if>
-            <c:if test="${hhr_corr.corrM == 3}">
-            $(".test_field").prepend("<button class ='none_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
-            $(".none_box").addClass('game_none');
-            <c:set var="doneLoop" value="true"/>
-            </c:if>
-
-            </c:forEach>
-        </script>
-    </div>
 </section>
 
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
