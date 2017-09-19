@@ -145,13 +145,6 @@
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
 
             <c:if test="${hhr_corr.corrM == 1}">
-<<<<<<< HEAD
-                $(".test_field").prepend("<button class ='win_box'></button>");
-                $("button").prependTo("#<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
-                $(".win_box").addClass('game_win');
-                <c:set var="doneLoop" value="true"/>
-            </c:if>
-=======
                 var win_day;
                 $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/></strong></button>");
 
@@ -163,7 +156,6 @@
                 $(".lose_box").addClass('game_lose');
                 <c:set var="doneLoop" value="true"/>
             </c:if>
->>>>>>> b0b5ff3ccc4c946d60156bfd3e94527a4cfc59f7
             </c:forEach>
         </script>
     </div>
