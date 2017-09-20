@@ -49,13 +49,6 @@
             font-size: 9px;
             background-color: white;
         }
-<<<<<<< HEAD
-        .corrM_win_backgnd{
-            background-color: #00ff00;
-        }
-        .corrM_lose_backgnd{
-            background-color: yellow;
-=======
 
 
         /*말풍선디자인*/
@@ -89,7 +82,6 @@
 
         span:hover + p.arrow_box {
             display: block;
->>>>>>> e41aa34f200a95add2d7ed7e0920dd9ae53af7a7
         }
     </style>
 
@@ -257,7 +249,8 @@
             "gridAlpha": 0,
             "offset": 40,
             "axisAlpha": 1,
-            "position": "left"
+            "position": "left",
+            "autoGridCount" : "false"
         }],
         "graphs": [{
             "valueAxis": "v1",
@@ -267,8 +260,7 @@
             "hideBulletsCount": 30,
             "title": "승리할 확률 : ",
             "valueField": "mWinrate",
-            "fillAlphas": 0,
-            "autoGridCount" : "false"
+            "fillAlphas": 0
         }, {
             "valueAxis": "v2",
             "lineColor": "#FCD202",
