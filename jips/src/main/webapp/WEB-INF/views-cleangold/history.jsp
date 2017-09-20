@@ -139,7 +139,7 @@
         </script>
     </div>
 </section>
-
+<br/><br/>
 <section class="container">
     <div class ="col sep sep-big"></div>
     <br/>
@@ -237,7 +237,7 @@
             "axisColor": "#FCD202",
             "axisThickness": 2,
             "axisAlpha": 1,
-            "position": "right"
+            "position": "right",
         }, {
             "id":"v3",
             "axisColor": "#B0DE09",
