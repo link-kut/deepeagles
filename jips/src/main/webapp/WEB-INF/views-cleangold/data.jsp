@@ -163,29 +163,29 @@
         </div>
         <div class="row" style="padding-left:50px;">
             <br/>
-            <span><strong>1. W : </strong>승리 여부</span><br/>
-            <span><strong>2. W : </strong>승리 여부</span><br/>
-            <span><strong>3. W : </strong>승리 여부</span><br/>
-            <span><strong>4. W : </strong>승리 여부</span><br/>
-            <span><strong>5. W : </strong>승리 여부</span><br/>
-            <span><strong>6. W : </strong>승리 여부</span><br/>
-            <span><strong>7. W : </strong>승리 여부</span><br/>
-            <span><strong>8. W : </strong>승리 여부</span><br/>
-            <span><strong>9. W : </strong>승리 여부</span><br/>
-            <span><strong>10. W : </strong>승리 여부</span><br/>
-            <span><strong>11. W : </strong>승리 여부</span><br/>
-            <span><strong>12. W : </strong>승리 여부</span><br/>
-            <span><strong>13. W : </strong>승리 여부</span><br/>
-            <span><strong>14. W : </strong>승리 여부</span><br/>
-            <span><strong>15. W : </strong>승리 여부</span><br/>
-            <span><strong>16. W : </strong>승리 여부</span><br/>
-            <span><strong>17. W : </strong>승리 여부</span><br/>
-            <span><strong>18. W : </strong>승리 여부</span><br/>
-            <span><strong>19. W : </strong>승리 여부</span><br/>
-            <span><strong>20. W : </strong>승리 여부</span><br/>
-            <span><strong>21. W : </strong>승리 여부</span><br/>
-            <span><strong>22. W : </strong>승리 여부</span><br/>
-            <span><strong>23. W : </strong>승리 여부</span><br/>
+            <span><strong>1. W  (Wins) : </strong>승리 여부</span><br/>
+            <span><strong>2. L  (Losses) : </strong>패전투수有無여부</span><br/>
+            <span><strong>3. SV (Saves) : </strong>세이브 有無여부 : 팀이 3점이내 점수차로 이기고 있는 상황에서 1회이상 투구해 승리를 지켜내는 경우(추가로 점수차가 더 많이 나더라도 3회이상 던져서 승리를 지켜내도 SV요건 만족) SV가 1, 아니라면 0</span><br/>
+            <span><strong>4. HLD(Holds) : </strong>홀드 有無여부 : 팀이 이기고있는 상태에서 등판, 하나의 공이라도 던진 후 팀이 이기고 있는 상태에서 다음 투수에게 마운드를 넘겨주는 경우 하나의 홀드로 계산 (SV와 달리 한 경기에 2이상의 홀드가 가능)</span><br/>
+            <span><strong>5. BS (Blown Save) : </strong>블론세이브 有無여부 : 세이브(SV)요건에서 등판한 투수가 동점 내지 역전을 허용한 경우 1, 아니라면 0"</span><br/>
+            <span><strong>6. QS (Quality Start) : </strong>퀄리티스타트 유무 여부 : 선발투수가 6이닝 이상 공을 던짐과 동시에 상대에게 3점이하의 ER(투수자책점)을 허용한 경우 1로, 아니라면 0</span><br/>
+            <span><strong>7. IP (Innings Pitched) : </strong>총 투구 이닝수</span><br/>
+            <span><strong>8. TBP(Total Base Percentage) : </strong>상대한 총 타자수</span><br/>
+            <span><strong>9. H  (Hits) : </strong>피안타 개수</span><br/>
+            <span><strong>10. 2B (Doubles) : </strong>2루타 허용개수</span><br/>
+            <span><strong>11. 3B (Triples) : </strong>3루타 허용개수</span><br/>
+            <span><strong>12. HR (Home Runs) : </strong>홈런 허용개수</span><br/>
+            <span><strong>13. R  (Runs) : </strong>피득점수</span><br/>
+            <span><strong>14. ER (Earned Runs) : </strong>투수 자책점</span><br/>
+            <span><strong>15. SO (Strikeouts) : </strong>삼진 개수/span><br/>
+            <span><strong>16. BB (Bases on Balls) : </strong>포볼 개수</span><br/>
+            <span><strong>17. IBB(Intentional Bases on Balls) : </strong>고의 볼넷</span><br/>
+            <span><strong>18. HBP(Hit By Pitch) : </strong>몸에 맞힌 공</span><br/>
+            <span><strong>19. WP (Wild Pitches) : </strong>폭투 갯수</span><br/>
+            <span><strong>20. BK (Balks) : </strong>보크 갯수</span><br/>
+            <span><strong>21. PK (Pick-offs) : </strong>견제구로 잡아낸 주자 수</span><br/>
+            <span><strong>22. CS (Caught Stealing) : </strong>잡아낸 도루 수</span><br/>
+            <span><strong>23. SB (Stolen Bases) : </strong>허용한 도루 수</span><br/>
         </div>
 
         <br/>
@@ -270,24 +270,24 @@
         <div class="row" style="padding-left:50px;">
             <br/>
             <span><strong>1. TPA(Total Plate Appearances) : </strong>타석에 들어선 총 횟수</span><br/>
-            <span><strong>2. W : </strong>승리 여부</span><br/>
-            <span><strong>3. W : </strong>승리 여부</span><br/>
-            <span><strong>4. W : </strong>승리 여부</span><br/>
-            <span><strong>5. W : </strong>승리 여부</span><br/>
-            <span><strong>6. W : </strong>승리 여부</span><br/>
-            <span><strong>7. W : </strong>승리 여부</span><br/>
-            <span><strong>8. W : </strong>승리 여부</span><br/>
-            <span><strong>9. W : </strong>승리 여부</span><br/>
-            <span><strong>10. W : </strong>승리 여부</span><br/>
-            <span><strong>11. W : </strong>승리 여부</span><br/>
-            <span><strong>12. W : </strong>승리 여부</span><br/>
-            <span><strong>13. W : </strong>승리 여부</span><br/>
-            <span><strong>14. W : </strong>승리 여부</span><br/>
-            <span><strong>15. W : </strong>승리 여부</span><br/>
-            <span><strong>16. W : </strong>승리 여부</span><br/>
-            <span><strong>17. W : </strong>승리 여부</span><br/>
-            <span><strong>18. W : </strong>승리 여부</span><br/>
-            <span><strong>19. W : </strong>승리 여부</span><br/>
+            <span><strong>2. AB(At Bats) : </strong>타수 : 타석에 들어선 총횟수(TPA)에서 사사구(몸에맞힌 공,사구, 고의사구 모두 포함)와 희생타(타석에 들어선 타자는 out당하지만, 이로 인해 득점을 하는 경우)를 뺀 횟수</span><br/>
+            <span><strong>3. H(Hits) : </strong>안타수</span><br/>
+            <span><strong>4. 1B(Singles) : </strong>단타 수</span><br/>
+            <span><strong>5. 2B(Doubles) : </strong>2루타 수</span><br/>
+            <span><strong>6. 3B(Triples) : </strong>3루타 수</span><br/>
+            <span><strong>7. HR(Home Runs) : </strong>홈런 수</span><br/>
+            <span><strong>8. R(Runs) : </strong>득점 수</span><br/>
+            <span><strong>9. RBI(Runs Batted In) : </strong>타점 수 : R(팀의 득점수)에서 상대의 실수로 얻은 점수를 제외한 것</span><br/>
+            <span><strong>10. BB(Bases on Balls) : </strong>상대로부터 얻은 볼넷</span><br/>
+            <span><strong>11. IBB(International Bases on Balls) : </strong>상대로부터 얻은 고의사구</span><br/>
+            <span><strong>12. HPB(Hit by Pitch) : </strong>몸에 맞은 공</span><br/>
+            <span><strong>13. SO(Strikeouts) : </strong>허용한 삼진수</span><br/>
+            <span><strong>14. SF(Sacrifice Flies) : </strong>희생플라이 : 타석의 타자는 뜬 공으로 out되지만, 이로 인해 팀이 득점하게 되는 경우</span><br/>
+            <span><strong>15. SH(Sacrifice Hit) : </strong>희생타 : SF(희생플라이)를 포함해, 타자 자신이 아웃될 것을 예상하고 대는 번트까지 포함한 것</span><br/>
+            <span><strong>16. GDP(Grounded into Double play) : </strong>병살타 수 : 병살타 개수, 병살타란 타석에 들어선 타자의 타격으로 인해 자신은 물론 다른 주자까지 아웃되는 경우를 뜻한다</span><br/>
+            <span><strong>17. SB(Stolen Bases) : </strong>도루</span><br/>
+            <span><strong>18. CS(Caught Stealing) : </strong>도루 실패</span><br/>
+            <span><strong>19. AVG(Batting Average) : </strong>팀 타율</span><br/>
         </div>
         <br/>
         <div class ="col sep sep-big"></div>

@@ -15,6 +15,4 @@ public interface HHScheduleMapper {
 
     @Select("SELECT prevdate,prevawayid,prevawayscore,prevhomeid,todaydate,todayawayid,todayawayscore,todayhomescore, todayhomeid,nextdate,nextawayid,nexthomeid FROM HHSchedule ORDER BY id DESC limit 1")
     List<HHSchedule> findrecent_hhschedule();
-
-
 }
