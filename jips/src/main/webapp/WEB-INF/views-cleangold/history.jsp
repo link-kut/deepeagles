@@ -49,11 +49,47 @@
             font-size: 9px;
             background-color: white;
         }
+<<<<<<< HEAD
         .corrM_win_backgnd{
             background-color: #00ff00;
         }
         .corrM_lose_backgnd{
             background-color: yellow;
+=======
+
+
+        /*말풍선디자인*/
+
+
+        .arrow_box {
+            display: none;
+            position: absolute;
+            padding: 10px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            background: #333;
+            color: #fff;
+        }
+
+        .arrow_box:after {
+            position: absolute;
+            bottom: 100%;
+            left: 30%;
+            width: 0;
+            height: 0;
+            margin-left: -10px;
+            border: solid transparent;
+            border-color: rgba(51, 51, 51, 0);
+            border-bottom-color: #333;
+            border-width: 10px;
+            pointer-events: none;
+            content: " ";
+        }
+
+        span:hover + p.arrow_box {
+            display: block;
+>>>>>>> e41aa34f200a95add2d7ed7e0920dd9ae53af7a7
         }
     </style>
 
@@ -86,24 +122,24 @@
     <br/>
 
     <div class ="col sep sep-big"></div>
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p><br/>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
     <div class="test_field" style="padding-left: 0px; height: 150px; overflow: auto;" >
         <script>
             <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
             <c:if test="${hhr_corr.corrM == 1}">
             var win_day;
-            $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".test_field").prepend("<button class ='win_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore} </p></a> </button>");
             $(".win_box").addClass('game_win');
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 0}">
-            $(".test_field").prepend("<button class ='lose_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".test_field").prepend("<button class ='lose_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
             $(".lose_box").addClass('game_lose');
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 3}">
-            $(".test_field").prepend("<button class ='none_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".test_field").prepend("<button class ='none_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
             $(".none_box").addClass('game_none');
             <c:set var="doneLoop" value="true"/>
             </c:if>
@@ -117,14 +153,14 @@
     <br/>
     <!-- 경기 테이블-->
     <h4><strong style="padding-left: 20px;">
-        <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+        <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
     <div class="row">
         <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
     </div>
 
     <br/>
     <div class ="col sep sep-big"></div>
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-list" aria-hidden="true"></i> PREDICT LIST</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-list" aria-hidden="true"></i> PREDICT LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
     <br/>
     <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
@@ -174,10 +210,8 @@
     <br/><br/>
     <!-- HTML -->
 
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-bar-chart" aria-hidden="true"></i>  TODAY PREDICT</strong></h4>
 
-        <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-        <div class ="col sep sep-big"></div>
+        <div id="myDiv" style="display: none;"><!-- Plotly chart will be drawn inside this DIV --></div>
 </section>
 
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>
