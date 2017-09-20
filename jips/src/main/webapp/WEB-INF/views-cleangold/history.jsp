@@ -49,6 +49,40 @@
             font-size: 9px;
             background-color: white;
         }
+
+
+        /*말풍선디자인*/
+
+
+        .arrow_box {
+            display: none;
+            position: absolute;
+            padding: 10px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            background: #333;
+            color: #fff;
+        }
+
+        .arrow_box:after {
+            position: absolute;
+            bottom: 100%;
+            left: 30%;
+            width: 0;
+            height: 0;
+            margin-left: -10px;
+            border: solid transparent;
+            border-color: rgba(51, 51, 51, 0);
+            border-bottom-color: #333;
+            border-width: 10px;
+            pointer-events: none;
+            content: " ";
+        }
+
+        span:hover + p.arrow_box {
+            display: block;
+        }
     </style>
 
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -87,17 +121,17 @@
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
             <c:if test="${hhr_corr.corrM == 1}">
             var win_day;
-            $(".test_field").prepend("<button class ='win_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".test_field").prepend("<button class ='win_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore} </p></a> </button>");
             $(".win_box").addClass('game_win');
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 0}">
-            $(".test_field").prepend("<button class ='lose_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".test_field").prepend("<button class ='lose_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
             $(".lose_box").addClass('game_lose');
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 3}">
-            $(".test_field").prepend("<button class ='none_box'><strong><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></strong></button>");
+            $(".test_field").prepend("<button class ='none_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
             $(".none_box").addClass('game_none');
             <c:set var="doneLoop" value="true"/>
             </c:if>
