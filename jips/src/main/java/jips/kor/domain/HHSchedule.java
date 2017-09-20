@@ -23,7 +23,6 @@ public class HHSchedule {
     private int todayhomeid;
     private int todayhomescore;
 
-
     private Date nextdate;
     private int nextawayid;
     private int nextawayscore;

@@ -49,6 +49,12 @@
             font-size: 9px;
             background-color: white;
         }
+        .corrM_win_backgnd{
+            background-color: #00ff00;
+        }
+        .corrM_lose_backgnd{
+            background-color: yellow;
+        }
     </style>
 
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -150,11 +156,12 @@
 
                     <td><c:out value = "${test_hhr.mDrawrate}"/></td>
                     <td><c:out value = "${test_hhr.mLoserate}"/></td>
-                    <td class="corrM_backgnd"><c:out value = "${test_hhr.corrM}"/></td>
+                    <td class="corrM_backgnd">${test_hhr.corrM}</td>
                     <%--<td><c:out value = "${test_hhr.corrL}"/></td>--%>
                     <td><c:out value = "${test_hhr.HHscore}"/></td>
                     <td><c:out value = "${test_hhr.OPPscore}"/></td>
                 </tr>
+                <!-- corrM 배경색 조절 스크립트 -->
             </c:forEach>
             </tbody>
         </table>
@@ -195,23 +202,26 @@
         "dataProvider": chartData,
         "synchronizeGrid":true,
         "valueAxes": [{
-            "id":"v1",
+            "id":"v1",      // 승리확률
             "axisColor": "#FF6600",
             "axisThickness": 2,
             "axisAlpha": 1,
-            "position": "left"
+            "position": "left",
+            "autoGridCount" : "false"
         }, {
-            "id":"v2",
+            "id":"v2",      // 무승부확률
             "axisColor": "#FCD202",
             "axisThickness": 2,
+            "offset": 80,
             "axisAlpha": 1,
-            "position": "right"
+            "position": "left",
+            "autoGridCount" : "false"
         }, {
-            "id":"v3",
+            "id":"v3",      // 패배확률
             "axisColor": "#B0DE09",
             "axisThickness": 2,
             "gridAlpha": 0,
-            "offset": 50,
+            "offset": 40,
             "axisAlpha": 1,
             "position": "left"
         }],
@@ -223,7 +233,8 @@
             "hideBulletsCount": 30,
             "title": "승리할 확률 : ",
             "valueField": "mWinrate",
-            "fillAlphas": 0
+            "fillAlphas": 0,
+            "autoGridCount" : "false"
         }, {
             "valueAxis": "v2",
             "lineColor": "#FCD202",
@@ -232,7 +243,8 @@
             "hideBulletsCount": 30,
             "title": "무승부 확률 : ",
             "valueField": "mDrawrate",
-            "fillAlphas": 0
+            "fillAlphas": 0,
+            "autoGridCount" : "false"
         }, {
             "valueAxis": "v3",
             "lineColor": "#de0c16",
@@ -241,7 +253,8 @@
             "hideBulletsCount": 30,
             "title": "패배할 확률 : ",
             "valueField": "mLoserate",
-            "fillAlphas": 0
+            "fillAlphas": 0,
+            "autoGridCount" : "false"
         }],
         "chartScrollbar": {},
         "chartCursor": {
