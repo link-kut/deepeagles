@@ -13,6 +13,6 @@ import java.util.List;
 public interface HitterMapper {
 
      //* 타자수데이터를 나타내기 위해 데이터를 받아옴. *//
-    @Select("SELECT * FROM HH_H")
+    @Select("SELECT * FROM HH_H ORDER BY id DESC")
     List<Hitter> findAll_hitter();
 }

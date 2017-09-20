@@ -37,11 +37,11 @@
             float: left;
         }
         .game_lose {
-            font-size: 9px;
+            font-size: 5px;
             background-color: yellow;
         }
         .game_win {
-            font-size: 9px;
+            font-size: 5px;
             background-color: #00ff00;
 
         }
@@ -72,11 +72,13 @@
     <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
 </div>
 
-<h1 style="padding-left: 30px;"><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>History</strong></h1>
-<br/>
+
 
 
 <section class="container">
+    <h1 style="padding-left: 30px;"><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>History</strong></h1>
+    <br/>
+
     <div class ="col sep sep-big"></div>
     <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p><br/>
     <div class="test_field" style="padding-left: 0px; height: 150px; overflow: auto;" >

@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface PitcherMapper {
 
-    @Select("SELECT * FROM HH_P")
+    @Select("SELECT * FROM HH_P ORDER BY id DESC")
     List<Pitcher> findAll_pitcher();
 
 }

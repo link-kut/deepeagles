@@ -97,7 +97,7 @@ public class HomeController {
         List<HHRate> hhrecent = hhrateMapper.findrecent_hhrate();
         model.addAttribute("datarecent",hhrecent);
 
-        List<HHRate> hhr_corr = hhrateMapper.findAll_hhrate();
+        List<HHRate> hhr_corr = hhrateMapper.findcorrect_hhrate();
         model.addAttribute("hhr_corr", hhr_corr);
 
         return "history";

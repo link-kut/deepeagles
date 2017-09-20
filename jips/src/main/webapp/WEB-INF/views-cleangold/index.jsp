@@ -51,7 +51,7 @@
             </div><br/><br/>
             <div class= "row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
                 <h1> <strong>${hhschedule.get(0).prevawayscore}  :  ${hhschedule.get(0).prevhomescore}</strong></h1>
-                <h6 id="pregame">한화이글스가  <strong>${datarecent.get(1).mLoserate}%</strong>  확률로 패배!!</h6><br/>
+                <h6 id="pregame"></h6><br/>
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 좌측 하단 -->
@@ -79,7 +79,7 @@
             </div>
             <div class="row text_white align_center"><!-- 각 팀 (예상)점수 -->
                 <h1> <strong>${hhschedule.get(0).todayawayscore}  :  ${hhschedule.get(0).todayhomescore}</strong></h1>
-                <h3 id = todaygame>한화이글스가  <strong>${datarecent.get(0).mWinrate}%</strong>  확률로 승리!!</h3><br/>
+                <h3 id = todaygame></h3><br/>
             </div>
         </div>
         <div class="row bottompart align_center text_white" style="padding-top:20px"><!-- 가운데 하단 -->
