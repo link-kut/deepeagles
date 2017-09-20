@@ -167,7 +167,7 @@
     <br/><br/>
     <!-- HTML -->
 
-    
+
         <div id="myDiv" style="display: none;"><!-- Plotly chart will be drawn inside this DIV --></div>
 </section>
 
