@@ -80,7 +80,7 @@
     <br/>
 
     <div class ="col sep sep-big"></div>
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p><br/>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
     <div class="test_field" style="padding-left: 0px; height: 150px; overflow: auto;" >
         <script>
             <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
@@ -111,14 +111,14 @@
     <br/>
     <!-- 경기 테이블-->
     <h4><strong style="padding-left: 20px;">
-        <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+        <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
     <div class="row">
         <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
     </div>
 
     <br/>
     <div class ="col sep sep-big"></div>
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-list" aria-hidden="true"></i> PREDICT LIST</strong></h4><p style="padding-left:20px; font-size: 2px;">[2017-08-01 ~ ]</p>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-list" aria-hidden="true"></i> PREDICT LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
     <br/>
     <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
@@ -167,10 +167,8 @@
     <br/><br/>
     <!-- HTML -->
 
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-bar-chart" aria-hidden="true"></i>  TODAY PREDICT</strong></h4>
-
-        <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-        <div class ="col sep sep-big"></div>
+    
+        <div id="myDiv" style="display: none;"><!-- Plotly chart will be drawn inside this DIV --></div>
 </section>
 
 <%@ include file="/WEB-INF/views-cleangold/include/footer.jsp" %>

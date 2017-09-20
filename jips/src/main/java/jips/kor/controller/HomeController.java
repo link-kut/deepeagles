@@ -106,6 +106,22 @@ public class HomeController {
     @RequestMapping("/todaypredict")
     public String todayPredict(Model model) {
 
+        List<HHRate> hhr = hhrateMapper.findAll_hhrate();
+
+        for(int i=0; i<hhr.size(); i++){
+            hhr.get(i).toString();
+        }
+        model.addAttribute("test_hhr", hhr);
+
+        List<HHRate> hhgraph = hhrateMapper.findgraph_hhrate();
+        model.addAttribute("graphdata",hhgraph);
+
+        List<HHRate> hhrecent = hhrateMapper.findrecent_hhrate();
+        model.addAttribute("datarecent",hhrecent);
+
+        List<HHRate> hhr_corr = hhrateMapper.findcorrect_hhrate();
+        model.addAttribute("hhr_corr", hhr_corr);
+
         return "todaypredict";
     }
 
