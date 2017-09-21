@@ -18,7 +18,7 @@
             font-family: "Nanum Gothic", sans-serif; !important;
         }
 
-        .pitcher_table thead tr th{
+        .pitcher_table thead tr th, .table_head{
             width:auto;
             background-color: #d3702a;
             text-align: center;
@@ -26,7 +26,7 @@
         .pitcher_table tbody tr td{
             text-align: center;
         }
-        .pitcher_table tbody tr td:nth-child(odd){
+        .pitcher_table tbody tr td:nth-child(odd), #p_exp_table tr td:nth-child(1), #p_exp_table tr td:nth-child(3){
             background-color: #ffce4c !important;
         }
 
@@ -36,10 +36,10 @@
             background-color: #d3702a;
             text-align: center;
         }
-        .hitter_table tbody tr td{
+        .hitter_table tbody tr td, .align_item{
             text-align: center;
         }
-        .hitter_table tbody tr td:nth-child(odd){
+        .hitter_table tbody tr td:nth-child(odd), #h_exp_table tr td:nth-child(1), #h_exp_table tr td:nth-child(3){
             background-color: #ffce4c !important;
         }
 
@@ -82,7 +82,7 @@
         <br/>
         <!-- 투수 정보 -->
 
-        <div class="row" style="width:100%; padding-left:50px; height:200px; overflow:auto;">
+        <div class="row container" style="width:100%;height:260px; overflow:auto;">
             <div>
                 <table style="" border=1 class="pitcher_table" summary = "목록">
                     <thead >
@@ -161,39 +161,141 @@
                 </table>
             </div>
         </div>
-        <div class="row" style="padding-left:50px;">
-            <br/>
-            <span><strong>1. W  (Wins) : </strong>승리 여부</span><br/>
-            <span><strong>2. L  (Losses) : </strong>패전투수有無여부</span><br/>
-            <span><strong>3. SV (Saves) : </strong>세이브 有無여부 : 팀이 3점이내 점수차로 이기고 있는 상황에서 1회이상 투구해 승리를 지켜내는 경우(추가로 점수차가 더 많이 나더라도 3회이상 던져서 승리를 지켜내도 SV요건 만족) SV가 1, 아니라면 0</span><br/>
-            <span><strong>4. HLD(Holds) : </strong>홀드 有無여부 : 팀이 이기고있는 상태에서 등판, 하나의 공이라도 던진 후 팀이 이기고 있는 상태에서 다음 투수에게 마운드를 넘겨주는 경우 하나의 홀드로 계산 (SV와 달리 한 경기에 2이상의 홀드가 가능)</span><br/>
-            <span><strong>5. BS (Blown Save) : </strong>블론세이브 有無여부 : 세이브(SV)요건에서 등판한 투수가 동점 내지 역전을 허용한 경우 1, 아니라면 0"</span><br/>
-            <span><strong>6. QS (Quality Start) : </strong>퀄리티스타트 유무 여부 : 선발투수가 6이닝 이상 공을 던짐과 동시에 상대에게 3점이하의 ER(투수자책점)을 허용한 경우 1로, 아니라면 0</span><br/>
-            <span><strong>7. IP (Innings Pitched) : </strong>총 투구 이닝수</span><br/>
-            <span><strong>8. TBP(Total Base Percentage) : </strong>상대한 총 타자수</span><br/>
-            <span><strong>9. H  (Hits) : </strong>피안타 개수</span><br/>
-            <span><strong>10. 2B (Doubles) : </strong>2루타 허용개수</span><br/>
-            <span><strong>11. 3B (Triples) : </strong>3루타 허용개수</span><br/>
-            <span><strong>12. HR (Home Runs) : </strong>홈런 허용개수</span><br/>
-            <span><strong>13. R  (Runs) : </strong>피득점수</span><br/>
-            <span><strong>14. ER (Earned Runs) : </strong>투수 자책점</span><br/>
-            <span><strong>15. SO (Strikeouts) : </strong>삼진 개수/span><br/>
-            <span><strong>16. BB (Bases on Balls) : </strong>포볼 개수</span><br/>
-            <span><strong>17. IBB(Intentional Bases on Balls) : </strong>고의 볼넷</span><br/>
-            <span><strong>18. HBP(Hit By Pitch) : </strong>몸에 맞힌 공</span><br/>
-            <span><strong>19. WP (Wild Pitches) : </strong>폭투 갯수</span><br/>
-            <span><strong>20. BK (Balks) : </strong>보크 갯수</span><br/>
-            <span><strong>21. PK (Pick-offs) : </strong>견제구로 잡아낸 주자 수</span><br/>
-            <span><strong>22. CS (Caught Stealing) : </strong>잡아낸 도루 수</span><br/>
-            <span><strong>23. SB (Stolen Bases) : </strong>허용한 도루 수</span><br/>
+
+        <br/><br/>
+
+        <div class="row container" style="height:260px; overflow:auto;">
+            <table id="p_exp_table">
+                <tr>
+                    <th class="align_item table_head">No.</th>
+                    <th class="align_item table_head">용어</th>
+                    <th class="align_item table_head">의미</th>
+                </tr>
+                <tr>
+                    <td class="align_item">1</td>
+                    <td>W(Wins)</td>
+                    <td>승리 여부</td>
+                </tr>
+                <tr>
+                    <td class="align_item">2</td>
+                    <td>L(Losses)</td>
+                    <td>패전투수有無여부</td>
+                </tr>
+                <tr>
+                    <td class="align_item">3</td>
+                    <td>SV(Saves)</td>
+                    <td>세이브 有無여부 : 팀이 3점이내 점수차로 이기고 있는 상황에서 1회이상 투구해 승리를 지켜내는 경우(추가로 점수차가 더 많이 나더라도 3회이상 던져서 승리를 지켜내도 SV요건 만족) SV가 1, 아니라면 0</td>
+                </tr>
+                <tr>
+                    <td class="align_item">4</td>
+                    <td>HLD(Holds)</td>
+                    <td>홀드 有無여부 : 팀이 이기고있는 상태에서 등판, 하나의 공이라도 던진 후 팀이 이기고 있는 상태에서 다음 투수에게 마운드를 넘겨주는 경우 하나의 홀드로 계산 (SV와 달리 한 경기에 2이상의 홀드가 가능)</td>
+                </tr>
+                <tr>
+                    <td class="align_item">5</td>
+                    <td>BS(Blown Save)</td>
+                    <td>블론세이브 有無여부 : 세이브(SV)요건에서 등판한 투수가 동점 내지 역전을 허용한 경우 1, 아니라면 0</td>
+                </tr>
+                <tr>
+                    <td class="align_item">6</td>
+                    <td>QS(Quality Start)</td>
+                    <td>퀄리티스타트 유무 여부 : 선발투수가 6이닝 이상 공을 던짐과 동시에 상대에게 3점이하의 ER(투수자책점)을 허용한 경우 1로, 아니라면 0</td>
+                </tr>
+                <tr>
+                    <td class="align_item">7</td>
+                    <td>IP(Innings Pitched)</td>
+                    <td>총 투구 이닝수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">8</td>
+                    <td>TBP(Total Base Percentage)</td>
+                    <td>상대한 총 타자수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">9</td>
+                    <td>H(Hits)</td>
+                    <td>피안타 개수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">10</td>
+                    <td>2B(Doubles)</td>
+                    <td>2루타 허용개수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">11</td>
+                    <td>3B(Triples)</td>
+                    <td>3루타 허용개수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">12</td>
+                    <td>HR(Home Runs)</td>
+                    <td>홈런 허용개수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">13</td>
+                    <td>R(Runs)</td>
+                    <td>피득점수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">14</td>
+                    <td>ER(Earned Runs)</td>
+                    <td>투수 자책점</td>
+                </tr>
+                <tr>
+                    <td class="align_item">15</td>
+                    <td>SO(Strikeouts)</td>
+                    <td>삼진 개수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">16</td>
+                    <td>BB(Bases on Balls)</td>
+                    <td>포볼 개수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">17</td>
+                    <td>IBB(Intentional Bases on Balls)</td>
+                    <td>고의 볼넷</td>
+                </tr>
+                <tr>
+                    <td class="align_item">18</td>
+                    <td>HBP(Hit By Pitch)</td>
+                    <td>몸에 맞힌 공</td>
+                </tr>
+                <tr>
+                    <td class="align_item">19</td>
+                    <td>WP(Wild Pitches)</td>
+                    <td>폭투 갯수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">20</td>
+                    <td>BK(Balks)</td>
+                    <td>보크 갯수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">21</td>
+                    <td>PK(Pick-offs)</td>
+                    <td>견제구로 잡아낸 주자 수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">22</td>
+                    <td>CS(Caught Stealing)</td>
+                    <td>잡아낸 도루 수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">23</td>
+                    <td>SB(Stolen Bases)</td>
+                    <td>허용한 도루 수</td>
+                </tr>
+            </table>
         </div>
 
         <br/>
         <div class ="col sep sep-big"></div>
+
         <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>타자 정보</strong></h4>
         <br/>
         <!-- 타자 테이블-->
-        <div class="row" style="width:100%; padding-left: 50px;height:200px;overflow:auto;">
+        <div class="row container" style="width:100%; height:260px;overflow:auto;">
             <div>
                 <table class="hitter_table" summary = "목록">
                     <thead>
@@ -267,27 +369,112 @@
             </div>
         </div>
 
-        <div class="row" style="padding-left:50px;">
+        <br/>
+
+        <div class="row container" style="height:260px; overflow:auto;">
             <br/>
-            <span><strong>1. TPA(Total Plate Appearances) : </strong>타석에 들어선 총 횟수</span><br/>
-            <span><strong>2. AB(At Bats) : </strong>타수 : 타석에 들어선 총횟수(TPA)에서 사사구(몸에맞힌 공,사구, 고의사구 모두 포함)와 희생타(타석에 들어선 타자는 out당하지만, 이로 인해 득점을 하는 경우)를 뺀 횟수</span><br/>
-            <span><strong>3. H(Hits) : </strong>안타수</span><br/>
-            <span><strong>4. 1B(Singles) : </strong>단타 수</span><br/>
-            <span><strong>5. 2B(Doubles) : </strong>2루타 수</span><br/>
-            <span><strong>6. 3B(Triples) : </strong>3루타 수</span><br/>
-            <span><strong>7. HR(Home Runs) : </strong>홈런 수</span><br/>
-            <span><strong>8. R(Runs) : </strong>득점 수</span><br/>
-            <span><strong>9. RBI(Runs Batted In) : </strong>타점 수 : R(팀의 득점수)에서 상대의 실수로 얻은 점수를 제외한 것</span><br/>
-            <span><strong>10. BB(Bases on Balls) : </strong>상대로부터 얻은 볼넷</span><br/>
-            <span><strong>11. IBB(International Bases on Balls) : </strong>상대로부터 얻은 고의사구</span><br/>
-            <span><strong>12. HPB(Hit by Pitch) : </strong>몸에 맞은 공</span><br/>
-            <span><strong>13. SO(Strikeouts) : </strong>허용한 삼진수</span><br/>
-            <span><strong>14. SF(Sacrifice Flies) : </strong>희생플라이 : 타석의 타자는 뜬 공으로 out되지만, 이로 인해 팀이 득점하게 되는 경우</span><br/>
-            <span><strong>15. SH(Sacrifice Hit) : </strong>희생타 : SF(희생플라이)를 포함해, 타자 자신이 아웃될 것을 예상하고 대는 번트까지 포함한 것</span><br/>
-            <span><strong>16. GDP(Grounded into Double play) : </strong>병살타 수 : 병살타 개수, 병살타란 타석에 들어선 타자의 타격으로 인해 자신은 물론 다른 주자까지 아웃되는 경우를 뜻한다</span><br/>
-            <span><strong>17. SB(Stolen Bases) : </strong>도루</span><br/>
-            <span><strong>18. CS(Caught Stealing) : </strong>도루 실패</span><br/>
-            <span><strong>19. AVG(Batting Average) : </strong>팀 타율</span><br/>
+            <table id="h_exp_table">
+                <tr>
+                    <th class="align_item table_head">No.</th>
+                    <th class="align_item table_head">용어</th>
+                    <th class="align_item table_head">의미</th>
+                </tr>
+                <tr>
+                    <td class="align_item">1</td>
+                    <td>TPA(Total Plate Appearances)</td>
+                    <td>타석에 들어선 총 횟수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">2</td>
+                    <td>AB(At Bats)</td>
+                    <td>타수 : 타석에 들어선 총횟수(TPA)에서 사사구(몸에맞힌 공,사구, 고의사구 모두 포함)와 희생타를 뺀 횟수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">3</td>
+                    <td>H(Hits)</td>
+                    <td>안타수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">4</td>
+                    <td>1B(Singles)</td>
+                    <td>단타 수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">5</td>
+                    <td>2B(Doubles)</td>
+                    <td>2루타 수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">6</td>
+                    <td>3B(Triples)</td>
+                    <td>3루타 수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">7</td>
+                    <td>HR(Home Runs)</td>
+                    <td>홈런 수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">8</td>
+                    <td>R(Runs)</td>
+                    <td>득점 수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">9</td>
+                    <td>RBI(Runs Batted In)</td>
+                    <td>타점 수 : R(팀의 득점수)에서 상대의 실수로 얻은 점수를 제외한 것</td>
+                </tr>
+                <tr>
+                    <td class="align_item">10</td>
+                    <td>BB(Bases on Balls)</td>
+                    <td>상대로부터 얻은 볼넷</td>
+                </tr>
+                <tr>
+                    <td class="align_item">11</td>
+                    <td>IBB(International Bases on Balls)</td>
+                    <td>상대로부터 얻은 고의사구</td>
+                </tr>
+                <tr>
+                    <td class="align_item">12</td>
+                    <td>HPB(Hit by Pitch)</td>
+                    <td>몸에 맞은 공</td>
+                </tr>
+                <tr>
+                    <td class="align_item">13</td>
+                    <td>SO(Strikeouts)</td>
+                    <td>허용한 삼진수</td>
+                </tr>
+                <tr>
+                    <td class="align_item">14</td>
+                    <td>SF(Sacrifice Flies)</td>
+                    <td>희생플라이 : 타석의 타자는 뜬 공으로 out되지만, 이로 인해 팀이 득점하게 되는 경우</td>
+                </tr>
+                <tr>
+                    <td class="align_item">15</td>
+                    <td>SH(Sacrifice Hit)</td>
+                    <td>희생타 : SF(희생플라이)를 포함해, 타자 자신이 아웃될 것을 예상하고 대는 번트까지 포함한 것</td>
+                </tr>
+                <tr>
+                    <td class="align_item">16</td>
+                    <td>GDP(Grounded into Double play)</td>
+                    <td>병살타 수 : 병살타 개수, 병살타란 타석에 들어선 타자의 타격으로 인해 자신은 물론 다른 주자까지 아웃되는 경우를 뜻한다</td>
+                </tr>
+                <tr>
+                    <td class="align_item">17</td>
+                    <td>SB(Stolen Bases)</td>
+                    <td>도루</td>
+                </tr>
+                <tr>
+                    <td class="align_item">18</td>
+                    <td>CS(Caught Stealing)</td>
+                    <td>도루 실패</td>
+                </tr>
+                <tr>
+                    <td class="align_item">19</td>
+                    <td>AVG(Batting Average)</td>
+                    <td>팀 타율</td>
+                </tr>
+            </table>
         </div>
         <br/>
         <div class ="col sep sep-big"></div>
@@ -373,7 +560,7 @@
         "dataProvider": [{
             "country": "승",
             "year2016": 66,
-            "year2017": 51
+            "year2017": 59
         }, {
             "country": "무",
             "year2016": 3,
@@ -381,7 +568,7 @@
         }, {
             "country": "패",
             "year2016": 75,
-            "year2017": 70
+            "year2017": 75
         }],
         "startDuration": 1,
         "graphs": [{

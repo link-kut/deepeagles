@@ -49,10 +49,6 @@
             font-size: 9px;
             background-color: white;
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> fbf47ca8887cd67c391fc8464c215194e30a66f5
 
         /*말풍선디자인*/
 
@@ -85,10 +81,6 @@
 
         span:hover + p.arrow_box {
             display: block;
-<<<<<<< HEAD
-=======
-
->>>>>>> fbf47ca8887cd67c391fc8464c215194e30a66f5
         }
     </style>
 
