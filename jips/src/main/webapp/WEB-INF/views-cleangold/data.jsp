@@ -161,6 +161,7 @@
                 </table>
             </div>
         </div>
+<<<<<<< HEAD
 
         <br/><br/>
 
@@ -287,6 +288,33 @@
                     <td>허용한 도루 수</td>
                 </tr>
             </table>
+=======
+        <div class="row" style="padding-left:50px;">
+            <br/>
+            <span><strong>1. W  (Wins) : </strong>승리 여부</span><br/>
+            <span><strong>2. L  (Losses) : </strong>패전투수有無여부</span><br/>
+            <span><strong>3. SV (Saves) : </strong>세이브 有無여부 : 팀이 3점이내 점수차로 이기고 있는 상황에서 1회이상 투구해 승리를 지켜내는 경우(추가로 점수차가 더 많이 나더라도 3회이상 던져서 승리를 지켜내도 SV요건 만족) SV가 1, 아니라면 0</span><br/>
+            <span><strong>4. HLD(Holds) : </strong>홀드 有無여부 : 팀이 이기고있는 상태에서 등판, 하나의 공이라도 던진 후 팀이 이기고 있는 상태에서 다음 투수에게 마운드를 넘겨주는 경우 하나의 홀드로 계산 (SV와 달리 한 경기에 2이상의 홀드가 가능)</span><br/>
+            <span><strong>5. BS (Blown Save) : </strong>블론세이브 有無여부 : 세이브(SV)요건에서 등판한 투수가 동점 내지 역전을 허용한 경우 1, 아니라면 0"</span><br/>
+            <span><strong>6. QS (Quality Start) : </strong>퀄리티스타트 유무 여부 : 선발투수가 6이닝 이상 공을 던짐과 동시에 상대에게 3점이하의 ER(투수자책점)을 허용한 경우 1로, 아니라면 0</span><br/>
+            <span><strong>7. IP (Innings Pitched) : </strong>총 투구 이닝수</span><br/>
+            <span><strong>8. TBP(Total Base Percentage) : </strong>상대한 총 타자수</span><br/>
+            <span><strong>9. H  (Hits) : </strong>피안타 개수</span><br/>
+            <span><strong>10. 2B (Doubles) : </strong>2루타 허용개수</span><br/>
+            <span><strong>11. 3B (Triples) : </strong>3루타 허용개수</span><br/>
+            <span><strong>12. HR (Home Runs) : </strong>홈런 허용개수</span><br/>
+            <span><strong>13. R  (Runs) : </strong>피득점수</span><br/>
+            <span><strong>14. ER (Earned Runs) : </strong>투수 자책점</span><br/>
+            <span><strong>15. SO (Strikeouts) : </strong>삼진 개수</span><br/>
+            <span><strong>16. BB (Bases on Balls) : </strong>포볼 개수</span><br/>
+            <span><strong>17. IBB(Intentional Bases on Balls) : </strong>고의 볼넷</span><br/>
+            <span><strong>18. HBP(Hit By Pitch) : </strong>몸에 맞힌 공</span><br/>
+            <span><strong>19. WP (Wild Pitches) : </strong>폭투 갯수</span><br/>
+            <span><strong>20. BK (Balks) : </strong>보크 갯수</span><br/>
+            <span><strong>21. PK (Pick-offs) : </strong>견제구로 잡아낸 주자 수</span><br/>
+            <span><strong>22. CS (Caught Stealing) : </strong>잡아낸 도루 수</span><br/>
+            <span><strong>23. SB (Stolen Bases) : </strong>허용한 도루 수</span><br/>
+>>>>>>> caa2838c033513cb55417ad60d157c01e31baa39
         </div>
 
         <br/>
