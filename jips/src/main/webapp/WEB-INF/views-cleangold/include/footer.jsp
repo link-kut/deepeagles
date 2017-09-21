@@ -12,7 +12,6 @@
             </div>
             <div class="grid4 col" style="margin-top: 15px;">
                 <div class="row" id="dt_now"></div><!-- 현재시간 -->
-                <div class="row" id="serverTime"></div>
             </div>
             <div class="grid6 col">
                 <p>

@@ -51,7 +51,7 @@
             </div><br/><br/>
             <div class= "row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
                 <h1> <strong>${hhschedule.get(0).prevawayscore}  :  ${hhschedule.get(0).prevhomescore}</strong></h1>
-                <h6 id="pregame"></h6><br/>
+                <h6 id="pregame"></h6><h6 id = "precorr"></h6>
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 좌측 하단 -->
@@ -325,6 +325,8 @@
 
     var p = ${datarecent.get(1).mWinrate};
     var t = ${datarecent.get(0).mWinrate};
+    var pc = ${datarecent.get(1).corrM};
+    var tc = ${datarecent.get(0).corrM};
 
     if (p<=50.0){
         var pre_game = document.getElementById('pregame');
@@ -343,6 +345,17 @@
         var today_game = document.getElementById('todaygame');
         today_game.innerHTML ="한화이글스가 <strong> ${datarecent.get(0).mWinrate}%</strong>로 승!!";
     }
+
+   /* if (pc==0){
+        var precorr = document.getElementById('precorr');
+        precorr.prepend("예측실패!");
+    }
+    else if(pc==1){
+        var precorr = document.getElementById('precorr');
+        precorr.prepend("예측성공!");
+    }*/
+
+
 
 
 

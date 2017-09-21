@@ -177,7 +177,7 @@
             <span><strong>12. HR (Home Runs) : </strong>홈런 허용개수</span><br/>
             <span><strong>13. R  (Runs) : </strong>피득점수</span><br/>
             <span><strong>14. ER (Earned Runs) : </strong>투수 자책점</span><br/>
-            <span><strong>15. SO (Strikeouts) : </strong>삼진 개수/span><br/>
+            <span><strong>15. SO (Strikeouts) : </strong>삼진 개수</span><br/>
             <span><strong>16. BB (Bases on Balls) : </strong>포볼 개수</span><br/>
             <span><strong>17. IBB(Intentional Bases on Balls) : </strong>고의 볼넷</span><br/>
             <span><strong>18. HBP(Hit By Pitch) : </strong>몸에 맞힌 공</span><br/>

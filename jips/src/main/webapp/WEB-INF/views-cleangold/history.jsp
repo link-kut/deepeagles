@@ -113,7 +113,12 @@
     <br/>
 
     <div class ="col sep sep-big"></div>
-    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
+    <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong>  </h6><br/>
+    <div  class="row" style="padding-left: 15px;">
+    <button class ='win_box'><strong>예측성공</strong></button> <button class ='lose_box'><strong>예측실패</strong></button>
+    </div>
+    <br/>
+
     <div class="test_field" style="padding-left: 0px; height: 150px; overflow: auto;" >
         <script>
             <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
@@ -140,19 +145,13 @@
 </section>
 <br/><br/>
 <section class="container">
-    <div class ="col sep sep-big"></div>
-    <br/>
-    <!-- 경기 테이블-->
-    <h4><strong style="padding-left: 20px;">
-        <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
-    <div class="row">
-        <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
-    </div>
 
     <br/>
     <div class ="col sep sep-big"></div>
     <h4><strong style="padding-left: 20px;"><i class="fa fa-list" aria-hidden="true"></i> PREDICT LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
     <br/>
+
+    <br/><br/>
     <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
 
         <table  summary = "목록">
@@ -172,28 +171,28 @@
                 <th> OPPscore</th>
             </tr>
             </thead>
-           <%-- <tbody>
-            <c:forEach var="test_hhr" items = "${test_hhr}" varStatus = "status">
-                <tr>
-                    <td><c:out value = "${test_hhr.id}"/></td>
-                    <td><fmt:formatDate value="${test_hhr.date}" pattern="yyyy-MM-dd"/></td>
-                    <td><fmt:formatDate value="${test_hhr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>
-                    <td><fmt:formatNumber value = "${test_hhr.mAcc}" pattern=".0000"/></td>
-                    <td><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${test_hhr.mWinrate}"/></td>
+            <%-- <tbody>
+             <c:forEach var="test_hhr" items = "${test_hhr}" varStatus = "status">
+                 <tr>
+                     <td><c:out value = "${test_hhr.id}"/></td>
+                     <td><fmt:formatDate value="${test_hhr.date}" pattern="yyyy-MM-dd"/></td>
+                     <td><fmt:formatDate value="${test_hhr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>
+                     <td><fmt:formatNumber value = "${test_hhr.mAcc}" pattern=".0000"/></td>
+                     <td><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${test_hhr.mWinrate}"/></td>
 
-                    <td><c:out value = "${test_hhr.mDrawrate}"/></td>
-                    <td><c:out value = "${test_hhr.mLoserate}"/></td>
-                    <td id = 'corrM_${test_hhr.id}'>${test_hhr.corrM}</td>
-                    <td><c:out value = "${test_hhr.HHscore}"/></td>
-                    <td><c:out value = "${test_hhr.OPPscore}"/></td>
-                </tr>
-                <!-- corrM 배경색 조절 스크립트 -->
-            </c:forEach>
+                     <td><c:out value = "${test_hhr.mDrawrate}"/></td>
+                     <td><c:out value = "${test_hhr.mLoserate}"/></td>
+                     <td id = 'corrM_${test_hhr.id}'>${test_hhr.corrM}</td>
+                     <td><c:out value = "${test_hhr.HHscore}"/></td>
+                     <td><c:out value = "${test_hhr.OPPscore}"/></td>
+                 </tr>
+                 <!-- corrM 배경색 조절 스크립트 -->
+             </c:forEach>
 
-            <script>
+             <script>
 
-            </script>
-            </tbody>--%>
+             </script>
+             </tbody>--%>
             <%--<c:if test="${hhr_corr.corrM == 1}">
                         $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00; '><c:out value = "${hhr_corr.corrM}"/></td>");
                         </c:if>
@@ -202,45 +201,45 @@
                         </c:if>--%>
 
             <tbody class="tbody_field">
-                    <script>
+            <script>
 
-                        <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
-                        <c:if test="${hhr_corr.corrM == 1}">
-                        <%--<c:if test="${hhr_corr.corrM == 1}">--%>
-                        $(".tbody_field").prepend("<tr class = 'table_${hhr_corr.id}'></tr>")
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.OPPscore}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.HHscore}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.corrM}"/></td>")
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.mLoserate}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.mDrawrate}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.id}"/></td>");
-                        </c:if>
+                <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
+                <c:if test="${hhr_corr.corrM == 1}">
+                <%--<c:if test="${hhr_corr.corrM == 1}">--%>
+                $(".tbody_field").prepend("<tr class = 'table_${hhr_corr.id}'></tr>")
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.OPPscore}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.HHscore}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.corrM}"/></td>")
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.mLoserate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.mDrawrate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.id}"/></td>");
+                </c:if>
 
-                        <c:if test="${hhr_corr.corrM == 0}">
-                        <%--<c:if test="${hhr_corr.corrM == 1}">--%>
-                        $(".tbody_field").prepend("<tr class = 'table_${hhr_corr.id}'></tr>")
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.OPPscore}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.HHscore}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; ' ><c:out value = "${hhr_corr.corrM}"/></td>")
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.mLoserate}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.mDrawrate}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.id}"/></td>");
-                        </c:if>
+                <c:if test="${hhr_corr.corrM == 0}">
+                <%--<c:if test="${hhr_corr.corrM == 1}">--%>
+                $(".tbody_field").prepend("<tr class = 'table_${hhr_corr.id}'></tr>")
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.OPPscore}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.HHscore}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; ' ><c:out value = "${hhr_corr.corrM}"/></td>")
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.mLoserate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.mDrawrate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.id}"/></td>");
+                </c:if>
 
 
-                        <c:set var="doneLoop" value="true"/>
-                        <%--</c:if>--%>
+                <c:set var="doneLoop" value="true"/>
+                <%--</c:if>--%>
 
-                        </c:forEach>
-                    </script>
+                </c:forEach>
+            </script>
             </tbody>
         </table>
 
@@ -248,8 +247,19 @@
 
     <br/><br/>
     <div class ="col sep sep-big"></div>
+    <br/>
+    <!-- 경기 테이블-->
+    <h4><strong style="padding-left: 20px;">
+        <i class="fa fa-line-chart" aria-hidden="true"></i> PREDICT GRAPH</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
+    <div class="row">
+        <div id="chartDiv3" style="width: 1200px;height: 300px;"></div>
+    </div>
 
     <br/><br/>
+
+    <div class ="col sep sep-big"></div>
+
+    <br/><br/><br/>
     <!-- HTML -->
 
 
