@@ -115,7 +115,7 @@
     <div class ="col sep sep-big"></div>
     <h4><strong style="padding-left: 20px;"><i class="fa fa-check-circle" aria-hidden="true"></i>  HISTORY LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong>  </h6><br/>
     <div  class="row" style="padding-left: 15px;">
-    <button class ='win_box'><strong>예측성공</strong></button> <button class ='lose_box'><strong>예측실패</strong></button>
+        <button class ='win_box'><strong>예측<br/>성공</strong></button> <button class ='lose_box'><strong>예측<br/>실패</strong></button>
     </div>
     <br/>
 
@@ -145,15 +145,15 @@
 </section>
 <br/><br/>
 <section class="container">
-
     <br/>
     <div class ="col sep sep-big"></div>
     <h4><strong style="padding-left: 20px;"><i class="fa fa-list" aria-hidden="true"></i> PREDICT LIST</strong></h4><br/><h6 style="padding-left:20px; "><strong>[2017-08-01 ~ <fmt:formatDate value="${test_hhr.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h6><br/>
+    <div  class="row" style="padding-left: 15px">
+        <button class ='win_box game_win'>예측<br/>성공</button>
+        <button class ='lose_box game_lose'>예측<br/>실패</button>
+    </div>
     <br/>
-
-    <br/><br/>
     <div class="row" style="padding-left: 50px; width:100%; height:200px;overflow:auto;">
-
         <table  summary = "목록">
             <thead>
             <tr>
@@ -171,35 +171,6 @@
                 <th> 상대 점수</th>
             </tr>
             </thead>
-            <%-- <tbody>
-             <c:forEach var="test_hhr" items = "${test_hhr}" varStatus = "status">
-                 <tr>
-                     <td><c:out value = "${test_hhr.id}"/></td>
-                     <td><fmt:formatDate value="${test_hhr.date}" pattern="yyyy-MM-dd"/></td>
-                     <td><fmt:formatDate value="${test_hhr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>
-                     <td><fmt:formatNumber value = "${test_hhr.mAcc}" pattern=".0000"/></td>
-                     <td><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${test_hhr.mWinrate}"/></td>
-
-                     <td><c:out value = "${test_hhr.mDrawrate}"/></td>
-                     <td><c:out value = "${test_hhr.mLoserate}"/></td>
-                     <td id = 'corrM_${test_hhr.id}'>${test_hhr.corrM}</td>
-                     <td><c:out value = "${test_hhr.HHscore}"/></td>
-                     <td><c:out value = "${test_hhr.OPPscore}"/></td>
-                 </tr>
-                 <!-- corrM 배경색 조절 스크립트 -->
-             </c:forEach>
-
-             <script>
-
-             </script>
-             </tbody>--%>
-            <%--<c:if test="${hhr_corr.corrM == 1}">
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00; '><c:out value = "${hhr_corr.corrM}"/></td>");
-                        </c:if>
-                        <c:if test="${hhr_corr.corrM == 0}">
-                        $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.corrM}"/></td>");
-                        </c:if>--%>
-
             <tbody class="tbody_field">
             <script>
 
