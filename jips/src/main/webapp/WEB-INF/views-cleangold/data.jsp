@@ -88,7 +88,7 @@
                     <thead >
                         <tr>
                             <th> ID</th>
-                            <th> DATE</th>
+                            <th> 날짜</th>
                             <th title="승리"> W</th>
                             <th title="패배"> L</th>
                             <th title="세이브"> SV</th>
@@ -199,7 +199,7 @@
                     <thead>
                     <tr>
                         <th title="test"> ID</th>
-                        <th> DATE</th>
+                        <th> 날</th>
                         <th title="타석수"> TPA</th>
                         <th title="타수"> AB</th>
                         <th title="안타"> H</th>

@@ -158,17 +158,17 @@
             <thead>
             <tr>
                 <th> ID</th>
-                <th> Date</th>
-                <th> Start time</th>
-                <th> Accuracy</th>
-                <th> Win_rate</th>
+                <th> 날짜</th>
+                <th> 완료시간</th>
+                <th> Back-Test 정확도</th>
+                <th> 승률</th>
 
-                <th> Draw_rate</th>
-                <th> Lose_rate</th>
-                <th> Correct</th>
-                <th> HHscore</th>
+                <th> 무승부율</th>
+                <th> 패율</th>
+                <th> 예측일치여부</th>
+                <th> 한화 점수</th>
 
-                <th> OPPscore</th>
+                <th> 상대 점수</th>
             </tr>
             </thead>
             <%-- <tbody>
@@ -232,6 +232,20 @@
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.id}"/></td>");
+                </c:if>
+                <c:if test="${hhr_corr.corrM == 3}">
+                <%--<c:if test="${hhr_corr.corrM == 1}">--%>
+                $(".tbody_field").prepend("<tr class = 'table_${hhr_corr.id}'></tr>")
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.OPPscore}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.HHscore}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; ' ><c:out value = "${hhr_corr.corrM}"/></td>")
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.mLoserate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.mDrawrate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.id}"/></td>");
                 </c:if>
 
 
