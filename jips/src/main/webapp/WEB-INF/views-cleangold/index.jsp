@@ -51,7 +51,7 @@
             </div><br/><br/>
             <div class= "row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
                 <h1> <strong>${hhschedule.get(0).prevawayscore}  :  ${hhschedule.get(0).prevhomescore}</strong></h1>
-                <h6 id="pregame"></h6><h6 id = "precorr"></h6>
+                <h6 id="pregame"></h6><box style="padding: 3px; background-color: black" id = "precorr"></box>
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 좌측 하단 -->
@@ -79,7 +79,7 @@
             </div>
             <div class="row text_white align_center"><!-- 각 팀 (예상)점수 -->
                 <h1> <strong>${hhschedule.get(0).todayawayscore}  :  ${hhschedule.get(0).todayhomescore}</strong></h1>
-                <h3 id = todaygame></h3><br/>
+                <h3 id = todaygame></h3><box style="padding: 3px; background-color: black; font-size: 20px;"  id = "tocorr"></box>
             </div>
         </div>
         <div class="row bottompart align_center text_white" style="padding-top:20px"><!-- 가운데 하단 -->
@@ -330,30 +330,43 @@
 
     if (p<=50.0){
         var pre_game = document.getElementById('pregame');
-        pre_game.innerHTML ="한화이글스가 <strong> ${datarecent.get(1).mLoserate}%</strong>로 패!!";
+        pre_game.innerHTML ="한화이글스가 <strong> <fmt:formatNumber value = "${datarecent.get(1).mLoserate}" pattern="0.0"/>%</strong>로 패!!";
     }
     else {
         var pre_game = document.getElementById('pregame');
-        pre_game.innerHTML ="한화이글스가 <strong> ${datarecent.get(1).mWinrate}%</strong>로 승!!";
+        pre_game.innerHTML ="한화이글스가 <strong>  <fmt:formatNumber value = "${datarecent.get(1).mWinrate}" pattern="0.0"/>%</strong>로 승!!";
     }
 
     if (t<=50.0){
         var today_game = document.getElementById('todaygame');
-        today_game.innerHTML ="한화이글스가 <strong> ${datarecent.get(0).mLoserate}%</strong>로 패!!";
+        today_game.innerHTML ="한화이글스가 <strong>  <fmt:formatNumber value = "${datarecent.get(0).mLoserate}" pattern="0.0"/>%</strong>로 패!!";
     }
     else {
         var today_game = document.getElementById('todaygame');
-        today_game.innerHTML ="한화이글스가 <strong> ${datarecent.get(0).mWinrate}%</strong>로 승!!";
+        today_game.innerHTML ="한화이글스가 <strong> <fmt:formatNumber value = "${datarecent.get(0).mWinrate}" pattern="0.0"/>%</strong>로 승!!";
     }
 
-   /* if (pc==0){
+    if (pc==0){
         var precorr = document.getElementById('precorr');
         precorr.prepend("예측실패!");
     }
     else if(pc==1){
         var precorr = document.getElementById('precorr');
         precorr.prepend("예측성공!");
-    }*/
+    }
+
+    if (tc==0){
+        var tocorr = document.getElementById('tocorr');
+        tocorr.prepend("예측실패!");
+    }
+    else if(tc==1){
+        var tocorr = document.getElementById('tocorr');
+        tocorr.prepend("예측성공!");
+    }
+    else if(tc==3){
+        var tocorr = document.getElementById('tocorr');
+        tocorr.prepend("경기 전!");
+    }
 
 
 

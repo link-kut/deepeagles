@@ -68,7 +68,7 @@
         <br/>
         <div class ="col sep sep-big"></div>
 
-        <h4><strong style="padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>  투수 정보</strong></h4>
+        <h4><strong style="padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>  수비 관련 데이터 ( 투수 )</strong></h4>
         <br/>
         <!-- 투수 정보 -->
 
@@ -164,117 +164,117 @@
                 </tr>
                 <tr>
                     <td class="align_item">1</td>
-                    <td>W(Wins)</td>
+                    <td>W (Wins)</td>
                     <td>승리 여부</td>
                 </tr>
                 <tr>
                     <td class="align_item">2</td>
-                    <td>L(Losses)</td>
+                    <td>L (Losses)</td>
                     <td>패전투수有無여부</td>
                 </tr>
                 <tr>
                     <td class="align_item">3</td>
-                    <td>SV(Saves)</td>
+                    <td>SV (Saves)</td>
                     <td>세이브 有無여부 : 팀이 3점이내 점수차로 이기고 있는 상황에서 1회이상 투구해 승리를 지켜내는 경우(추가로 점수차가 더 많이 나더라도 3회이상 던져서 승리를 지켜내도 SV요건 만족) SV가 1, 아니라면 0</td>
                 </tr>
                 <tr>
                     <td class="align_item">4</td>
-                    <td>HLD(Holds)</td>
+                    <td>HLD (Holds)</td>
                     <td>홀드 有無여부 : 팀이 이기고있는 상태에서 등판, 하나의 공이라도 던진 후 팀이 이기고 있는 상태에서 다음 투수에게 마운드를 넘겨주는 경우 하나의 홀드로 계산 (SV와 달리 한 경기에 2이상의 홀드가 가능)</td>
                 </tr>
                 <tr>
                     <td class="align_item">5</td>
-                    <td>BS(Blown Save)</td>
+                    <td>BS (Blown Save)</td>
                     <td>블론세이브 有無여부 : 세이브(SV)요건에서 등판한 투수가 동점 내지 역전을 허용한 경우 1, 아니라면 0</td>
                 </tr>
                 <tr>
                     <td class="align_item">6</td>
-                    <td>QS(Quality Start)</td>
+                    <td>QS (Quality Start)</td>
                     <td>퀄리티스타트 유무 여부 : 선발투수가 6이닝 이상 공을 던짐과 동시에 상대에게 3점이하의 ER(투수자책점)을 허용한 경우 1로, 아니라면 0</td>
                 </tr>
                 <tr>
                     <td class="align_item">7</td>
-                    <td>IP(Innings Pitched)</td>
+                    <td>IP (Innings Pitched)</td>
                     <td>총 투구 이닝수</td>
                 </tr>
                 <tr>
                     <td class="align_item">8</td>
-                    <td>TBP(Total Base Percentage)</td>
+                    <td>TBP (Total Base Percentage)</td>
                     <td>상대한 총 타자수</td>
                 </tr>
                 <tr>
                     <td class="align_item">9</td>
-                    <td>H(Hits)</td>
+                    <td>H (Hits)</td>
                     <td>피안타 개수</td>
                 </tr>
                 <tr>
                     <td class="align_item">10</td>
-                    <td>2B(Doubles)</td>
+                    <td>2B (Doubles)</td>
                     <td>2루타 허용개수</td>
                 </tr>
                 <tr>
                     <td class="align_item">11</td>
-                    <td>3B(Triples)</td>
+                    <td>3B (Triples)</td>
                     <td>3루타 허용개수</td>
                 </tr>
                 <tr>
                     <td class="align_item">12</td>
-                    <td>HR(Home Runs)</td>
+                    <td>HR (Home Runs)</td>
                     <td>홈런 허용개수</td>
                 </tr>
                 <tr>
                     <td class="align_item">13</td>
-                    <td>R(Runs)</td>
+                    <td>R (Runs)</td>
                     <td>피득점수</td>
                 </tr>
                 <tr>
                     <td class="align_item">14</td>
-                    <td>ER(Earned Runs)</td>
+                    <td>ER (Earned Runs)</td>
                     <td>투수 자책점</td>
                 </tr>
                 <tr>
                     <td class="align_item">15</td>
-                    <td>SO(Strikeouts)</td>
+                    <td>SO (Strikeouts)</td>
                     <td>삼진 개수</td>
                 </tr>
                 <tr>
                     <td class="align_item">16</td>
-                    <td>BB(Bases on Balls)</td>
+                    <td>BB (Bases on Balls)</td>
                     <td>포볼 개수</td>
                 </tr>
                 <tr>
                     <td class="align_item">17</td>
-                    <td>IBB(Intentional Bases on Balls)</td>
+                    <td>IBB (Intentional Bases on Balls)</td>
                     <td>고의 볼넷</td>
                 </tr>
                 <tr>
                     <td class="align_item">18</td>
-                    <td>HBP(Hit By Pitch)</td>
+                    <td>HBP (Hit By Pitch)</td>
                     <td>몸에 맞힌 공</td>
                 </tr>
                 <tr>
                     <td class="align_item">19</td>
-                    <td>WP(Wild Pitches)</td>
+                    <td>WP (Wild Pitches)</td>
                     <td>폭투 갯수</td>
                 </tr>
                 <tr>
                     <td class="align_item">20</td>
-                    <td>BK(Balks)</td>
+                    <td>BK (Balks)</td>
                     <td>보크 갯수</td>
                 </tr>
                 <tr>
                     <td class="align_item">21</td>
-                    <td>PK(Pick-offs)</td>
+                    <td>PK (Pick-offs)</td>
                     <td>견제구로 잡아낸 주자 수</td>
                 </tr>
                 <tr>
                     <td class="align_item">22</td>
-                    <td>CS(Caught Stealing)</td>
+                    <td>CS (Caught Stealing)</td>
                     <td>잡아낸 도루 수</td>
                 </tr>
                 <tr>
                     <td class="align_item">23</td>
-                    <td>SB(Stolen Bases)</td>
+                    <td>SB (Stolen Bases)</td>
                     <td>허용한 도루 수</td>
                 </tr>
             </table>
@@ -283,7 +283,7 @@
         <br/><br/>
         <div class ="col sep sep-big"></div>
 
-        <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>  타자 정보</strong></h4>
+        <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>  공격 관련 정보 ( 타자 )</strong></h4>
         <br/>
         <!-- 타자 테이블-->
         <div class="row container" style="width:100%; height:260px;overflow:auto;">
@@ -372,7 +372,7 @@
                 </tr>
                 <tr>
                     <td class="align_item">1</td>
-                    <td>TPA(Total Plate Appearances)</td>
+                    <td>TPA (Total Plate Appearances)</td>
                     <td>타석에 들어선 총 횟수</td>
                 </tr>
                 <tr>
@@ -382,87 +382,87 @@
                 </tr>
                 <tr>
                     <td class="align_item">3</td>
-                    <td>H(Hits)</td>
+                    <td>H (Hits)</td>
                     <td>안타수</td>
                 </tr>
                 <tr>
                     <td class="align_item">4</td>
-                    <td>1B(Singles)</td>
+                    <td>1B (Singles)</td>
                     <td>단타 수</td>
                 </tr>
                 <tr>
                     <td class="align_item">5</td>
-                    <td>2B(Doubles)</td>
+                    <td>2B (Doubles)</td>
                     <td>2루타 수</td>
                 </tr>
                 <tr>
                     <td class="align_item">6</td>
-                    <td>3B(Triples)</td>
+                    <td>3B (Triples)</td>
                     <td>3루타 수</td>
                 </tr>
                 <tr>
                     <td class="align_item">7</td>
-                    <td>HR(Home Runs)</td>
+                    <td>HR (Home Runs)</td>
                     <td>홈런 수</td>
                 </tr>
                 <tr>
                     <td class="align_item">8</td>
-                    <td>R(Runs)</td>
+                    <td>R (Runs)</td>
                     <td>득점 수</td>
                 </tr>
                 <tr>
                     <td class="align_item">9</td>
-                    <td>RBI(Runs Batted In)</td>
+                    <td>RBI (Runs Batted In)</td>
                     <td>타점 수 : R(팀의 득점수)에서 상대의 실수로 얻은 점수를 제외한 것</td>
                 </tr>
                 <tr>
                     <td class="align_item">10</td>
-                    <td>BB(Bases on Balls)</td>
+                    <td>BB (Bases on Balls)</td>
                     <td>상대로부터 얻은 볼넷</td>
                 </tr>
                 <tr>
                     <td class="align_item">11</td>
-                    <td>IBB(International Bases on Balls)</td>
+                    <td>IBB (International Bases on Balls)</td>
                     <td>상대로부터 얻은 고의사구</td>
                 </tr>
                 <tr>
                     <td class="align_item">12</td>
-                    <td>HPB(Hit by Pitch)</td>
+                    <td>HPB (Hit by Pitch)</td>
                     <td>몸에 맞은 공</td>
                 </tr>
                 <tr>
                     <td class="align_item">13</td>
-                    <td>SO(Strikeouts)</td>
+                    <td>SO (Strikeouts)</td>
                     <td>허용한 삼진수</td>
                 </tr>
                 <tr>
                     <td class="align_item">14</td>
-                    <td>SF(Sacrifice Flies)</td>
+                    <td>SF (Sacrifice Flies)</td>
                     <td>희생플라이 : 타석의 타자는 뜬 공으로 out되지만, 이로 인해 팀이 득점하게 되는 경우</td>
                 </tr>
                 <tr>
                     <td class="align_item">15</td>
-                    <td>SH(Sacrifice Hit)</td>
+                    <td>SH (Sacrifice Hit)</td>
                     <td>희생타 : SF(희생플라이)를 포함해, 타자 자신이 아웃될 것을 예상하고 대는 번트까지 포함한 것</td>
                 </tr>
                 <tr>
                     <td class="align_item">16</td>
-                    <td>GDP(Grounded into Double play)</td>
+                    <td>GDP (Grounded into Double play)</td>
                     <td>병살타 수 : 병살타 개수, 병살타란 타석에 들어선 타자의 타격으로 인해 자신은 물론 다른 주자까지 아웃되는 경우를 뜻한다</td>
                 </tr>
                 <tr>
                     <td class="align_item">17</td>
-                    <td>SB(Stolen Bases)</td>
+                    <td>SB (Stolen Bases)</td>
                     <td>도루</td>
                 </tr>
                 <tr>
                     <td class="align_item">18</td>
-                    <td>CS(Caught Stealing)</td>
+                    <td>CS (Caught Stealing)</td>
                     <td>도루 실패</td>
                 </tr>
                 <tr>
                     <td class="align_item">19</td>
-                    <td>AVG(Batting Average)</td>
+                    <td>AVG (Batting Average)</td>
                     <td>팀 타율</td>
                 </tr>
             </table>

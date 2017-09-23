@@ -28,7 +28,7 @@
                 <li class="${cPage == 'of' ? 'current_page_item' : ''}">
                     <a href="${baseUrl}/about">About</a> </li>
                 <li class="${cPage == 'of' ? 'current_page_i[tem' : ''}">
-                    <a href="http://link.koreatech.ac.kr" target="_blank">KUT. LinkLab</a> </li>
+                    <a href="http://link.koreatech.ac.kr" target="_blank">LinkLab</a> </li>
                     <!-- 새창에서 띄우고 싶을땐 target="_blank" 속성을 추가해준다. -->
             </ul>
         </nav>

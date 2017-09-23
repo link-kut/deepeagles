@@ -125,17 +125,17 @@
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
             <c:if test="${hhr_corr.corrM == 1}">
             var win_day;
-            $(".test_field").prepend("<button class ='win_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore} </p></a> </button>");
+            $(".test_field").prepend("<button class ='win_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore} </p></a> </button>");
             $(".win_box").addClass('game_win');
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 0}">
-            $(".test_field").prepend("<button class ='lose_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
+            $(".test_field").prepend("<button class ='lose_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
             $(".lose_box").addClass('game_lose');
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 3}">
-            $(".test_field").prepend("<button class ='none_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : ${hhr_corr.mWinrate}<br/>무 : ${hhr_corr.mDrawrate}<br/>패 : ${hhr_corr.mLoserate}<br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
+            $(".test_field").prepend("<button class ='none_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 :<fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
             $(".none_box").addClass('game_none');
             <c:set var="doneLoop" value="true"/>
             </c:if>
@@ -181,10 +181,10 @@
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.OPPscore}"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.HHscore}"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.corrM}"/></td>")
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.mLoserate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.mDrawrate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern="0.0"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: #00ff00;'><c:out value = "${hhr_corr.id}"/></td>");
@@ -196,10 +196,10 @@
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.OPPscore}"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.HHscore}"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; ' ><c:out value = "${hhr_corr.corrM}"/></td>")
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.mLoserate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.mDrawrate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern="0.0"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: yellow; '><c:out value = "${hhr_corr.id}"/></td>");
@@ -210,10 +210,10 @@
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.OPPscore}"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.HHscore}"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; ' ><c:out value = "${hhr_corr.corrM}"/></td>")
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.mLoserate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.mDrawrate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${hhr_corr.mWinrate}"/></td>");
-                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern=".0000"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/></td>");
+                $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatNumber value = "${hhr_corr.mAcc}" pattern="0.0"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatDate value="${hhr_corr.starttime}" pattern="yyyy-MM-dd HH:MM:SS"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><fmt:formatDate value="${hhr_corr.date}" pattern="yyyy-MM-dd"/></td>");
                 $(".table_${hhr_corr.id}").prepend("<td style='background-color: white; '><c:out value = "${hhr_corr.id}"/></td>");
