@@ -129,20 +129,20 @@
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
             <c:if test="${hhr_corr.corrM == 1}">
             var win_day;
-            $(".test_field").prepend("<button class ='win_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore} </p></a> </button>");
+            $(".test_field").prepend("<button class ='win_box'><span><fmt:formatDate value="${hhr_corr.date}" pattern="MMdd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore} </p> </button>");
             $(".win_box").addClass('game_win');
             count+=1;
             total_count+=1;
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 0}">
-            $(".test_field").prepend("<button class ='lose_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
+            $(".test_field").prepend("<button class ='lose_box'><span><fmt:formatDate value="${hhr_corr.date}" pattern="MMdd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p> </button>");
             $(".lose_box").addClass('game_lose');
             <c:set var="doneLoop" value="true"/>
 
             </c:if>
             <c:if test="${hhr_corr.corrM == 3}">
-            $(".test_field").prepend("<button class ='none_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 :<fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
+            $(".test_field").prepend("<button class ='none_box'><span><fmt:formatDate value="${hhr_corr.date}" pattern="MMdd"/></span><p class='arrow_box'>승 :<fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p> </button>");
             $(".none_box").addClass('game_none');
             <c:set var="doneLoop" value="true"/>
             </c:if>
@@ -172,7 +172,7 @@
                 <th> 승률</th>
 
                 <th> 무승부율</th>
-                <th> 패율</th>
+                <th> 패배율</th>
                 <th> 예측일치여부</th>
                 <th> 한화 점수</th>
 

@@ -14,21 +14,21 @@ import java.util.List;
 public interface HHRateMapper {
 
      //* 타자수데이터를 나타내기 위해 데이터를 받아옴. *//*
-    @Select("SELECT * FROM HHRate ORDER BY id DESC")
+    @Select("SELECT * FROM temp ORDER BY id DESC")
     List<HHRate> findAll_hhrate();
 
-    @Select("SELECT * FROM HHRate")
+    @Select("SELECT * FROM temp")
     List<HHRate> findcorrect_hhrate();
 
-    @Select("SELECT Datenum,M_winrate,M_drawrate,M_loserate FROM HHRate")
+    @Select("SELECT Datenum,M_winrate,M_drawrate,M_loserate FROM temp")
     List<HHRate> findgraph_hhrate();
 
-    @Select("SELECT M_winrate,M_drawrate,M_loserate,corrM FROM HHRate ORDER BY id DESC")
+    @Select("SELECT M_winrate,M_drawrate,M_loserate,corrM FROM temp ORDER BY id DESC")
     List<HHRate> findrecent_hhrate();
 
-    @Select("SELECT count(*) FROM HHRate where corrM=1")
+    @Select("SELECT count(*) FROM temp where corrM=1")
     Integer count_correct();
 
-    @Select("SELECT count(*) FROM HHRate")
+    @Select("SELECT count(*) FROM temp")
     Integer count_total();
 }
