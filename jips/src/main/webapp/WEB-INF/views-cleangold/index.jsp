@@ -51,7 +51,7 @@
             </div><br/><br/>
             <div class= "row text_white align_center" style="padding-top:50px;"><!-- 각 팀 (예상)점수 -->
                 <h1> <strong>${hhschedule.get(0).prevawayscore}  :  ${hhschedule.get(0).prevhomescore}</strong></h1>
-                <h6 id="pregame"></h6><box style="padding: 3px; background-color: black" id = "precorr"></box>
+                <h6 id="pregame"></h6><box style="padding: 3px; background-color: black;" id = "precorr"></box>
             </div>
         </div>
         <div class="row bottompart text_white align_center"><!-- 좌측 하단 -->

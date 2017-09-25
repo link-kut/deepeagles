@@ -109,7 +109,7 @@
 
 
 <section class="container">
-    <h1 style="padding-left: 30px;"><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>History</strong></h1>
+    <h1 style="padding-left: 30px;"><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>History</strong>  [<span style="color:#3c763d; ">${count_corr}</span>/${count_total}]</h1>
     <br/>
 
     <div class ="col sep sep-big"></div>
@@ -121,18 +121,25 @@
 
     <div class="test_field" style="padding-left: 0px; height: 150px; overflow: auto;" >
         <script>
+
+            var count=0;
+            var total_count = 0;
+
             <c:forEach var="hhr_corr" items = "${hhr_corr}" varStatus = "status">
             console.log("<fmt:formatDate value="${hhr_corr.date}" pattern="yy-MM-dd"/>");
             <c:if test="${hhr_corr.corrM == 1}">
             var win_day;
             $(".test_field").prepend("<button class ='win_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore} </p></a> </button>");
             $(".win_box").addClass('game_win');
+            count+=1;
+            total_count+=1;
             <c:set var="doneLoop" value="true"/>
             </c:if>
             <c:if test="${hhr_corr.corrM == 0}">
             $(".test_field").prepend("<button class ='lose_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 : <fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
             $(".lose_box").addClass('game_lose');
             <c:set var="doneLoop" value="true"/>
+
             </c:if>
             <c:if test="${hhr_corr.corrM == 3}">
             $(".test_field").prepend("<button class ='none_box'><a><span><fmt:formatDate value="${hhr_corr.date}" pattern="MM-dd"/></span><p class='arrow_box'>승 :<fmt:formatNumber value = "${hhr_corr.mWinrate}" pattern="0.0"/><br/>무 : <fmt:formatNumber value = "${hhr_corr.mDrawrate}" pattern="0.0"/><br/>패 : <fmt:formatNumber value = "${hhr_corr.mLoserate}" pattern="0.0"/><br/>한화 ${hhr_corr.HHscore} : ${hhr_corr.OPPscore}</p></a> </button>");
@@ -140,6 +147,7 @@
             <c:set var="doneLoop" value="true"/>
             </c:if>
             </c:forEach>
+
         </script>
     </div>
 </section>

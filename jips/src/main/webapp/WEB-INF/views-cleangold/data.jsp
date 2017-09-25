@@ -68,10 +68,11 @@
         <br/>
         <div class ="col sep sep-big"></div>
 
-        <h4><strong style="padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>  수비 관련 데이터 ( 투수 )</strong></h4>
+        <h4><strong style="padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>  수비 관련 데이터 ( 투수 ) </strong></h4>
+        <br/>
+        <h5 style="padding-left: 20px;"><strong>[2012-08-01 ~ <fmt:formatDate value="${test_p.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h5>
         <br/>
         <!-- 투수 정보 -->
-
         <div class="row container" style="width:100%;height:260px; overflow:auto;">
             <div>
                 <table style="" border=1 class="pitcher_table" summary = "목록">
@@ -284,6 +285,8 @@
         <div class ="col sep sep-big"></div>
 
         <h4><strong style=" padding-left: 20px"><i class="fa fa-list" aria-hidden="true"></i>  공격 관련 정보 ( 타자 )</strong></h4>
+        <br/>
+        <h5 style="padding-left: 20px;"><strong>[2012-08-01 ~ <fmt:formatDate value="${test_p.get(0).date}" pattern="yyyy-MM-dd"/>]</strong></h5>
         <br/>
         <!-- 타자 테이블-->
         <div class="row container" style="width:100%; height:260px;overflow:auto;">

@@ -100,6 +100,12 @@ public class HomeController {
         List<HHRate> hhr_corr = hhrateMapper.findcorrect_hhrate();
         model.addAttribute("hhr_corr", hhr_corr);
 
+        Integer count_corr = hhrateMapper.count_correct();
+        model.addAttribute("count_corr",count_corr);
+
+        Integer count_total = hhrateMapper.count_total();
+        model.addAttribute("count_total",count_total);
+
         return "history";
     }
 

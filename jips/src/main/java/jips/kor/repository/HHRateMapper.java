@@ -25,4 +25,10 @@ public interface HHRateMapper {
 
     @Select("SELECT M_winrate,M_drawrate,M_loserate,corrM FROM HHRate ORDER BY id DESC")
     List<HHRate> findrecent_hhrate();
+
+    @Select("SELECT count(*) FROM HHRate where corrM=1")
+    Integer count_correct();
+
+    @Select("SELECT count(*) FROM HHRate")
+    Integer count_total();
 }
