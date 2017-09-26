@@ -37,11 +37,11 @@
             float: left;
         }
         .game_lose {
-            font-size: 5px;
+            font-size: 9px;
             background-color: yellow;
         }
         .game_win {
-            font-size: 5px;
+            font-size: 9px;
             background-color: #00ff00;
 
         }

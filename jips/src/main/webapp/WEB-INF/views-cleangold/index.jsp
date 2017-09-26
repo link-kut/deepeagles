@@ -29,8 +29,8 @@
 
 <body>
     <%@ include file="/WEB-INF/views-cleangold/include/header.jsp" %>
+    <div class="gameboard section">
 
-<section class="gameboard container">
     <div class="col-md-3 boardpart" style="background-color: rgba( 0, 0, 0, 0.1 );"><!-- 좌측 공간 -->
         <div class="row toppart text_white align_center" style="padding-top : 20px"><!-- 좌측 상단 -->
             <strong><h3>지난 경기</h3></strong>
@@ -116,14 +116,12 @@
             <h3><fmt:formatDate value="${hhschedule.get(0).todaydate}" pattern="yyyy-MM-dd"/></h3>
         </div>
     </div>
-</section>
+    </div>
+
     <br/>
 
 <section class="container">
-
     <div class ="col sep sep-big"></div>
-
-
     <div>
         <div class="col-md-6" style="height:auto; margin-bottom: 20px">
             <h4><i class="fa fa-film" aria-hidden="true"></i><strong style="padding-left: 20px;">[불꽃 REC.]</strong></h4>
@@ -135,7 +133,7 @@
             <h4><i class="fa fa-film" aria-hidden="true"></i><strong style="padding-left: 20px;">[불꽃 MOMENT]</strong></h4>
             <br/>
             <!-- 단일영상재생 -->
-            <object width="560" height="315" data ="https://www.youtube.com/embed/SHCCFYOPHBY" frameborder ="0" allowFullScreen> </object>
+            <object width="560" height="315" data ="https://www.youtube.com/embed?v=JIhSw37z4OE&list=LLdq4Ji3772xudYRUatdzRrg&index=0" frameborder ="0" allowFullScreen> </object>
             <%--<object width="560" height="315" data="https://www.youtube.com/embed/Gs069dndIYk" frameborder="0" allowfullscreen></object>--%>
         </div>
     </div>
